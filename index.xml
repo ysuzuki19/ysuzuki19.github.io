@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ysuzuki Blog</title>
+    <title>とある大学院生の備忘録</title>
     <link>https://ysuzuki19.github.io/</link>
-    <description>Recent content on ysuzuki Blog</description>
+    <description>Recent content on とある大学院生の備忘録</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <managingEditor>sample@yahoo.co.jp (ysuzuki)</managingEditor>
