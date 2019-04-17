@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ysuzuki blog</title>
-    <link>https://ysuzuki19.github.io/</link>
-    <description>Recent content on ysuzuki blog</description>
+    <title>Posts on ysuzuki blog</title>
+    <link>https://ysuzuki19.github.io/post/</link>
+    <description>Recent content in Posts on ysuzuki blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <managingEditor>sample@yahoo.co.jp (ysuzuki)</managingEditor>
     <webMaster>sample@yahoo.co.jp (ysuzuki)</webMaster>
     <lastBuildDate>Wed, 17 Apr 2019 22:33:12 +0900</lastBuildDate>
     
-	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
