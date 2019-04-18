@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>sample@yahoo.co.jp (ysuzuki)</managingEditor>
     <webMaster>sample@yahoo.co.jp (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 17 Apr 2019 22:33:12 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 23:28:02 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HUGOの簡単な使い方</title>
+      <link>https://ysuzuki19.github.io/2019/04/18/hugotutorial/</link>
+      <pubDate>Thu, 18 Apr 2019 23:28:02 +0900</pubDate>
+      <author>sample@yahoo.co.jp (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/2019/04/18/hugotutorial/</guid>
+      <description>HUGOとは HUGOとはSSG(Static Site Generator)の一つで，GO言語で開発されている． SSGとは：日本語では静的サイトジェネ</description>
+    </item>
     
     <item>
       <title>Ubuntu18.04のログインループへの対処</title>
