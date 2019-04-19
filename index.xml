@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>sample@yahoo.co.jp (ysuzuki)</managingEditor>
     <webMaster>sample@yahoo.co.jp (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 18 Apr 2019 23:28:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2019 01:03:32 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>プログラミング初心者が解いたAtCoderの過去問</title>
+      <link>https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/</link>
+      <pubDate>Fri, 19 Apr 2019 01:03:32 +0900</pubDate>
+      <author>sample@yahoo.co.jp (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/</guid>
+      <description>はじめに 最近競技プログラミングに興味を持ち，AtCoderのABC123に参加してみました．しかし，思うように解けなかったため，AtCode</description>
+    </item>
     
     <item>
       <title>HUGOの簡単な使い方</title>
