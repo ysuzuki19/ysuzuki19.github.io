@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Github Pages x HUGOをセットアップする  &middot; とある大学院生の備忘録</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="Github Pages x HUGOをセットアップする  &middot; とある大学院生の備忘録 ">
+<meta property="og:site_name" content="とある大学院生の備忘録"/>
+<meta property="og:url" content="https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/" />
+<meta property="og:locale" content="ja-jp">
+
+<meta property="content-source" content="post/hugoSetupMemo.md">
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2019-04-19T14:26:27&#43;09:00" />
+<meta property="og:article:modified_time" content="2019-04-19T14:26:27&#43;09:00" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ysuzuki" />
+<meta name="twitter:creator" content="@ysuzuki" />
+<meta name="twitter:title" content="Github Pages x HUGOをセットアップする" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/" />
+<meta name="twitter:domain" content="https://ysuzuki19.github.io/">
+  
+
+  
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Github Pages x HUGOをセットアップする",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2019-04-19",
+    "description": "",
+    "wordCount":  2320 
+  }
+</script>
+  
+
+
+
+<link rel="canonical" href="https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.55.1" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="https://ysuzuki19.github.io/css/bundle.min.068a8fc80b9e5f1229c330b7ccc5bb5c4d69668e9fba710b25928c253bbd7b48c7396b69680a3ec5a3adb868d800de683bb75cf17e2d2d4c615c4320d0911c14.css" >
+
+</head>
+<body class="map[name:yeti]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+          
+          <a class="navbar-brand-img" href="/">
+            <img alt="ysuzuki blog" src="/logo.png">
+            
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="">
+              
+		<a href="https://ysuzuki19.github.io/"  title="Home">
+                  <i class='fa fa-home'></i>
+                  Home
+                </a>
+              
+            </li>
+            
+            <li class="">
+              
+		<a href="https://ysuzuki19.github.io/post/"  title="Archives">
+                  <i class='fa fa-archive'></i>
+                  Archives
+                </a>
+              
+            </li>
+            
+            <li class="">
+              
+		<a href="https://ysuzuki19.github.io/about/"  title="About">
+                  <i class='fa fa-info-circle'></i>
+                  About
+                </a>
+              
+            </li>
+            
+            
+              
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="title-metas text-center">
+
+    <h1>Github Pages x HUGOをセットアップする
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2019-04-19">19 Apr, 2019</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 5 min
+  &middot; (2320 words)
+  &middot; 
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f&amp;title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b&amp;body=Check out this site https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  </small>
+
+<div class="margin-10">
+
+</div>
+
+<br>
+</div>
+
+  </div>
+</div>
+
+
+      <div class="content">
+  
+
+<p>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて，</p>
+
+<p>「自分のサイトが欲しいなあ・・・」</p>
+
+<p>と思うようになってきた．しかし，調べてみると</p>
+
+<pre><code>・　自宅サーバを立てる
+・　レンタルサーバを借りる
+</code></pre>
+
+<p>など，貧困学生には手の出しづらいものが次々と出てきた．
+その中で，簡単に始められて無料でできるものとして，</p>
+
+<p>Github Pagesが出てきた．Github Pagesは以前，</p>
+
+<p>「Github Pagesはページ公開は楽だけどhtmlとかよくわからないし・・・」</p>
+
+<p>と思って，リポジトリを作ったまま何もできないまま停滞していた．</p>
+
+<p>そこで見つけたのがSSG(Static Site Generator)である．SSGは日本語では静的サイトジェネレータと呼ばれ，その名の通り静的なサイトを生成することができる．
+SSGはHUGOを使っているのだが，HUGOはGO言語で開発されており，高速に動作すると言われている．（他を実際に使ったことがないので本当はわかりません．）</p>
+
+<p>パソコンは苦手なので，環境構築には１日ほどかかってしまったが，手順としては簡単に導入することができた．他の方の手順紹介に，どこでコマンドを実行したら良いかを追加して紹介する．
+自分は，Githubで管理しているリポジトリはすべて<code>~/Github/</code>にあるので，その部分だけ自分似合わせてもらえばいいと思う．
+ここでは，環境構築の手順を紹介する．手順の概要は以下．</p>
+
+<h1 id="gihub-pages-x-hugo-導入手順">Gihub Pages x HUGO 導入手順</h1>
+
+<ol>
+<li>Githubのアカウント作成</li>
+<li>Github Pages のためのリポジトリ作成</li>
+<li>Github Pages のソースファイルを保存するリポジトリ作成</li>
+<li>サブモジュール化</li>
+<li>HUGOサイト作成</li>
+<li>記事の作成</li>
+<li>デプロイ</li>
+<li>サイト確認</li>
+</ol>
+
+<p>以上が手順であるが，環境構築中はほとんど<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/">chanmitsu55さんのこちらの記事</a>を参考にさせてもらったので，こちらを見てもらうとわかりやすいと思う．</p>
+
+<p>Githubは知っている人が多いと思うが，Github PagesとはGithubでサイトを公開するサービスである．</p>
+
+<h2 id="githubのアカウント作成">Githubのアカウント作成</h2>
+
+<p>Githubのアカウントをすでに持っている場合はスルーして良いが，まだな方は<a href="https://github.com">Githubのホーム</a>からまずはアカウントを作る．また，作成したリポジトリをローカルにクローンする．</p>
+
+<h2 id="github-pagesのためのリポジトリ作成">Github Pagesのためのリポジトリ作成</h2>
+
+<p>Githubでは，通常は好きなリポジトリ名をつけることができるのだが，リポジトリ名を<code>username.github.io</code>とするとネットに公開される．</p>
+
+<pre><code class="language-bash:~/Github">$ cd ~/Github
+$ git clone https://github.com/username/username.github.io
+</code></pre>
+
+<h2 id="github-pagesのソースファイルを保存するリポジトリ作成">Github Pagesのソースファイルを保存するリポジトリ作成</h2>
+
+<p>Github Pages x HUGOでブログの作成方法を紹介している方をみると，<code>username.github.io</code>リポジトリとソースファイルを保存するリポジトリは分けた方がいいようだ．今回は，<code>blog</code>という名前のリポジトリを作成した．</p>
+
+<pre><code class="language-bash:~/Github">$ cd ~/Github
+$ git clone https://github.com/username/blog
+</code></pre>
+
+<h2 id="hugoサイト作成">HUGOサイト作成</h2>
+
+<p>HUGOコマンドを用いてHUGOサイトを作成する．ここで，サイトのテーマは<a href="https://themes.gohugo.io">こちら</a>から選択することができ，好みのテーマがあればgithubリポジトリなどが記載されている．</p>
+
+<pre><code class="language-bash:~/Github">$ cd ~/Gibhub
+$ hugo new site temp
+$ cd temp/theme
+$ git clone https://github.com/appernetic/hugo-bootstrap-premium
+$ cd ..
+</code></pre>
+
+<p>ここまでで，HUGOサイトと使用するテーマは準備された．次は，<code>~Github/temp/config.toml</code>を書き換える必要がある．<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml">公式のリポジトリ</a>に記載されている．以下の<code>config.toml</code>は先ほど言及した<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/">chanmitsu55さんのこちらの記事</a>を参考にした．</p>
+
+<p>自分の<code>config.toml</code>にする際は<code>username</code>などを自分に合うように変更すると良い．</p>
+
+<pre><code>baseURL = &quot;https://username.github.io/&quot;
+languageCode = &quot;ja-jp&quot;
+weight = 1
+title = &quot;title&quot;
+publishDir = &quot;public&quot;
+theme= &quot;hugo-bootstrap-premium&quot;
+hasCJKLanguage = true
+paginate = 10
+paginatePath = &quot;page&quot;
+
+[permalinks]
+	post = &quot;/:year/:month/:day/:filename/&quot;
+	code = &quot;/:filename/&quot;
+
+[author]
+	name = &quot;author name&quot;
+	email = &quot;mailaddress@yahoo.co.jp&quot;
+
+[params.theme]
+	name = &quot;yeti&quot;
+
+[params]
+	BrandImage = &quot;/logo.png&quot;
+	brand = &quot;brand name&quot;
+	topline = &quot;topline&quot;
+	footline = &quot;Copyright&amp;copy; &lt;a href='/about/'&gt;name&lt;/a&gt;&quot;
+	showRightSidebar = true
+	highlight = &quot;default&quot;
+	twitter  = &quot;acount id&quot;
+	github   = &quot;acount id&quot;
+
+[[menu.main]]
+	name = &quot;Home&quot;
+	identifier = &quot;home&quot;
+	url = &quot;/&quot;
+	weight = -200
+	pre = &quot;&lt;i class='fa fa-home'&gt;&lt;/i&gt;&quot;
+
+[[menu.main]]
+	name = &quot;Archives&quot;
+	identifier = &quot;archives&quot;
+	url = &quot;/post/&quot;
+	weight = -180
+	pre = &quot;&lt;i class='fa fa-archive'&gt;&lt;/i&gt;&quot;
+
+[[menu.main]]
+	name = &quot;About&quot;
+	identifier = &quot;&quot;
+	url = &quot;/about/&quot;
+	weight = -100
+	pre = &quot;&lt;i class='fa fa-info-circle'&gt;&lt;/i&gt;&quot;
+
+</code></pre>
+
+<p>こちらも<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml">公式リポジトリ</a>にサンプルがあるので，少しづつ自分用に変更していこうと思う．</p>
+
+<h2 id="サブモジュール化">サブモジュール化</h2>
+
+<p>サブモジュール化するためには，一度<code>~/Github/blog</code>内の<code>public</code>を消去する必要がある．この方法は<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions">公式ドキュメント</a>に記載されている．</p>
+
+<pre><code class="language-~/Github/blog">$ cd ~/Github/blog
+$ rm -rf public
+$ git summodule add -b master https://github.com/username/username.github.io public
+</code></pre>
+
+<h2 id="記事の作成">記事の作成</h2>
+
+<p>記事の作成は<code>hugo</code>コマンどを用いると簡単にできる．</p>
+
+<pre><code>$ cd ~/Github/blog
+$ hugo new post/articlename.md
+</code></pre>
+
+<p>ここで作成されたファイルを編集することで記事が完成する．生成ファイルの4行目に</p>
+
+<pre><code>draft : true
+</code></pre>
+
+<p>とあり，これは下書き中を意味する．ネットに載せるためには</p>
+
+<pre><code>draft : false
+</code></pre>
+
+<p>に変更すると良い．</p>
+
+<h2 id="デプロイ">デプロイ</h2>
+
+<p><code>~/Gibhub/blog</code>内に記事を書いてもデプロイしなければGithub Pagesで公開されない．デプロイする処理のスクリプトが<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script">公式</a>で紹介されている．以下のファイルは<code>~/Github/blog/deploy.sh</code>とする．</p>
+
+<pre><code>#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# Build the project.
+hugo
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+
+# Come Back up to the Project Root
+cd ..
+</code></pre>
+
+<p><code>deploy.sh</code>を実行する際には</p>
+
+<pre><code>$ ./deploy.sh
+</code></pre>
+
+<p>とすると良いのだが，ファイル作成直後は実行権がなくて実行ができない．</p>
+
+<pre><code>$ bash ./deploy.sh
+</code></pre>
+
+<p>としたら実行できる．しかし，後のことも考えると</p>
+
+<pre><code>$ chmod +x deploy.sh
+</code></pre>
+
+<p>として実行権を与えておくとよい．</p>
+
+<h2 id="サイト確認">サイト確認</h2>
+
+<p>ここまでで，ネットにサイトを公開することができる．実際にサイトを閲覧するためには，ブラウザを開き，URL欄に<code>https://username,github.io</code>とするとサイトのホームが表示される．</p>
+
+<h2 id="編集時のススメ">編集時のススメ</h2>
+
+<p>実際に記事を編集している際にはなんどもデプロイせずに</p>
+
+<pre><code>~/Github/blog $ hugo server
+</code></pre>
+
+<p>と実行することでローカルサーバを立て，ブラウザのURL欄に</p>
+
+<p><code>localhost:1313</code></p>
+
+<p>と入力することで逐次記事の状態を確認しながら作業できる．
+これは<a href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">こちら</a>にも方法を記載した．</p>
+
+</div>
+
+
+      <footer>
+  
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b&amp;url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f&amp;title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b&amp;body=Check out this site https%3a%2f%2fysuzuki19.github.io%2f2019%2f04%2f19%2fhugosetupmemo%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/" title="プログラミング初心者が解いたAtCoderの過去問">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/">Github Pages x HUGOをセットアップする</a>
+          </li>
+        
+          <li>
+          <a href="https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/">プログラミング初心者が解いたAtCoderの過去問</a>
+          </li>
+        
+          <li>
+          <a href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">HUGOの簡単な使い方</a>
+          </li>
+        
+          <li>
+          <a href="https://ysuzuki19.github.io/2019/04/17/ubuntu1804loginloop/">Ubuntu18.04のログインループへの対処</a>
+          </li>
+        
+          <li>
+          <a href="https://ysuzuki19.github.io/2019/04/17/first_content/">First_content</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+      
+      
+    
+      
+      
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
+</div>
+<div class="pull-right">
+
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+<div class="container footline">
+    <small>
+  Copyright&copy; <a href='/about/'>ysuzuki</a>
+
+</small>
+</div>
+
+
+    
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="//s3.amazonaws.com/mailmunch/static/site.js" id="mailmunch-script" data-mailmunch-site-id="" async="async"></script>
+
+
+
+<script src="//load.sumome.com/" data-sumo-site-id="" async="async"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var ENABLE_POPOVER =  null , 
+EXPIRE_COOKIE =  null , 
+SHOW_MODAL_TIMEOUT =  null , 
+MOUSE_LEAVE =  null , 
+MODAL_SIZE =  null , 
+POST_URL =  null , 
+SIGNUP_HEADER =  null ,
+HEADER_IMAGE =  null ,
+IMG_DESCRIPTION =  null ,
+SIGNUP_TEXT =  null ,
+INPUT_PLACEHOLDER =  null ,
+SUBMIT_BUTTON =  null ,
+SUCCESS_MESSAGE =  null ,
+ERROR_MESSAGE =  null ,
+OPTIN =  null ,
+COOKIE_NAME =  null ,
+CONTENTLANGUAGE =  null ; 
+</script>
+
+
+
+
+
+
+
+<script  src="https://ysuzuki19.github.io/js/bundle.min.a0761bf8598edda2bb2c0e348a3160c418f2bc30908f40740ee7f30dabbdeed27d82ee58e16400badd1ae84ce7be7ce10702c9be216abe5de1cb497de995e850.js" ></script>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax//MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax//config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    for(var all in MathJax.Hub.getAllJax()) {
+        all.SourceElement().parentNode.className += ' has-jax';
+
+    }
+});
+</script>
+
+
+
+
+
+  </body>
+</html>
+
