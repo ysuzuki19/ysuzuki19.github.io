@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>email@yahoo.co.jp (ysuzuki)</managingEditor>
     <webMaster>email@yahoo.co.jp (ysuzuki)</webMaster>
-    <lastBuildDate>Fri, 19 Apr 2019 14:26:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Apr 2019 14:28:07 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>D・カーネギー 人を動かす　の感想</title>
+      <link>https://ysuzuki19.github.io/2019/04/21/bookreviewhowtowinfriendsandinfluencepeople/</link>
+      <pubDate>Sun, 21 Apr 2019 14:28:07 +0900</pubDate>
+      <author>email@yahoo.co.jp (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/2019/04/21/bookreviewhowtowinfriendsandinfluencepeople/</guid>
+      <description>はじめに 私は， D・カーネギー マンガで読み解く 人を動かす 超訳 カーネギー 人を動かす の２冊を読んだ． 前者は，本を読むのが苦手な方におすすめで，「人</description>
+    </item>
     
     <item>
       <title>Github Pages x HUGOをセットアップする</title>
@@ -47,15 +56,6 @@
       <author>email@yahoo.co.jp (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/2019/04/17/ubuntu1804loginloop/</guid>
       <description># 最初に ubuntuのログインループへの対処は調べるといろんな方が紹介されいましたが、Ubuntu18.04LTSでの例は少なかったので今回</description>
-    </item>
-    
-    <item>
-      <title>First_content</title>
-      <link>https://ysuzuki19.github.io/2019/04/17/first_content/</link>
-      <pubDate>Wed, 17 Apr 2019 22:21:18 +0900</pubDate>
-      <author>email@yahoo.co.jp (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/2019/04/17/first_content/</guid>
-      <description></description>
     </item>
     
   </channel>
