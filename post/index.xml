@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on title</title>
+    <title>Posts on ysuzuki blog</title>
     <link>https://ysuzuki19.github.io/post/</link>
-    <description>Recent content in Posts on title</description>
+    <description>Recent content in Posts on ysuzuki blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <managingEditor>email@yahoo.co.jp (ysuzuki)</managingEditor>
-    <webMaster>email@yahoo.co.jp (ysuzuki)</webMaster>
+    <managingEditor>ysuzuki.cpp@gmail.com (Yuya Suzuki)</managingEditor>
+    <webMaster>ysuzuki.cpp@gmail.com (Yuya Suzuki)</webMaster>
     <lastBuildDate>Fri, 19 Apr 2019 14:26:27 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
@@ -15,37 +15,37 @@
     
     <item>
       <title>Github Pages x HUGOをセットアップする</title>
-      <link>https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/</link>
+      <link>https://ysuzuki19.github.io/post/hugosetupmemo/</link>
       <pubDate>Fri, 19 Apr 2019 14:26:27 +0900</pubDate>
-      <author>email@yahoo.co.jp (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/</guid>
+      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/hugosetupmemo/</guid>
       <description>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて， 「自分のサイトが欲しいなあ・・・」 と思うようになってき</description>
     </item>
     
     <item>
       <title>プログラミング初心者が解いたAtCoderの過去問</title>
-      <link>https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/</link>
+      <link>https://ysuzuki19.github.io/post/atcoderpastquestions10/</link>
       <pubDate>Fri, 19 Apr 2019 01:03:32 +0900</pubDate>
-      <author>email@yahoo.co.jp (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/2019/04/19/atcoderpastquestions10/</guid>
+      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/atcoderpastquestions10/</guid>
       <description>はじめに 最近競技プログラミングに興味を持ち，AtCoderのABC123に参加してみました．しかし，思うように解けなかったため，AtCode</description>
     </item>
     
     <item>
       <title>HUGOの簡単な使い方</title>
-      <link>https://ysuzuki19.github.io/2019/04/18/hugotutorial/</link>
+      <link>https://ysuzuki19.github.io/post/hugotutorial/</link>
       <pubDate>Thu, 18 Apr 2019 23:28:02 +0900</pubDate>
-      <author>email@yahoo.co.jp (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/2019/04/18/hugotutorial/</guid>
+      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/hugotutorial/</guid>
       <description>HUGOとは HUGOとはSSG(Static Site Generator)の一つで，GO言語で開発されている． SSGとは：日本語では静的サイトジェネ</description>
     </item>
     
     <item>
       <title>Ubuntu18.04のログインループへの対処</title>
-      <link>https://ysuzuki19.github.io/2019/04/17/ubuntu1804loginloop/</link>
+      <link>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</link>
       <pubDate>Wed, 17 Apr 2019 22:33:12 +0900</pubDate>
-      <author>email@yahoo.co.jp (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/2019/04/17/ubuntu1804loginloop/</guid>
+      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</guid>
       <description># 最初に ubuntuのログインループへの対処は調べるといろんな方が紹介されいましたが、Ubuntu18.04LTSでの例は少なかったので今回</description>
     </item>
     
