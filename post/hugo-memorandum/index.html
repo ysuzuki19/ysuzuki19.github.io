@@ -71,6 +71,10 @@ if (!doNotTrack) {
 <ul>
 <li><a href="#新しい記事の生成">新しい記事の生成</a></li>
 <li><a href="#ローカルサーバによるデモ">ローカルサーバによるデモ</a></li>
+<li><a href="#記事の書き方">記事の書き方</a>
+<ul>
+<li><a href="#自己記事参照方法">自己記事参照方法</a></li>
+</ul></li>
 </ul>
 </nav>
 </details>
@@ -89,7 +93,14 @@ if (!doNotTrack) {
 <h1 id="ローカルサーバによるデモ">ローカルサーバによるデモ</h1>
 
 <p>必要性として、GithubPagesにデプロイする回数には限りがある事が挙げられる。また、デプロイしたからといってすぐに変更が適用されるわけではなく、編集中のページがどのように表示されるのかを見る目的であればローカルサーバでプレビューすべきである。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh:simple" data-lang="sh:simple">$ hugo server</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh:with_theme" data-lang="sh:with_theme">$ hugo server -D -t &lt;theme-name&gt;</code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh:simple" data-lang="sh:simple">$ hugo server</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh:with_theme" data-lang="sh:with_theme">$ hugo server -D -t &lt;theme-name&gt;</code></pre></div>
+<h1 id="記事の書き方">記事の書き方</h1>
+
+<h2 id="自己記事参照方法">自己記事参照方法</h2>
+
+<p>以下のどちらかでリンクできる。個人的には後者がすき。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">1.</span> [<span style="color:#f92672">文</span>](<span style="color:#a6e22e">&lt;username&gt;github.io/post/&lt;filename&gt;</span>)
+2. [<span style="color:#f92672">文</span>](<span style="color:#a6e22e">/post/&lt;filename&gt;</span>)</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					
