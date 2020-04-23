@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (Yuya Suzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (Yuya Suzuki)</webMaster>
-    <lastBuildDate>Fri, 19 Apr 2019 14:26:27 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2020 13:29:58 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo備忘録</title>
+      <link>https://ysuzuki19.github.io/post/hugo-memorandum/</link>
+      <pubDate>Thu, 23 Apr 2020 13:29:58 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/hugo-memorandum/</guid>
+      <description>Github Pagesのブログを以前セットアップしたがほとんど使っていなかった。 そろそろコンテンツを追加していこうと思うので、手始めにHUGOの使い方</description>
+    </item>
     
     <item>
       <title>Github Pages x HUGOをセットアップする</title>
