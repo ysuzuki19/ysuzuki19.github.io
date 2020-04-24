@@ -6,18 +6,27 @@
     <description>Recent content in Posts on ysuzuki blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <managingEditor>ysuzuki.cpp@gmail.com (Yuya Suzuki)</managingEditor>
-    <webMaster>ysuzuki.cpp@gmail.com (Yuya Suzuki)</webMaster>
-    <lastBuildDate>Thu, 23 Apr 2020 13:29:58 +0900</lastBuildDate>
+    <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
+    <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
+    <lastBuildDate>Thu, 23 Apr 2020 14:23:28 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>C&#43;&#43;のvectorメモ</title>
+      <link>https://ysuzuki19.github.io/post/vector-memo/</link>
+      <pubDate>Thu, 23 Apr 2020 14:23:28 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/vector-memo/</guid>
+      <description>C++リファレンスやC++日本語リファレンス で使い方が理解できる方にとってはあまり意味をなさない情報かもしれません。 また、私のQiita上の</description>
+    </item>
+    
+    <item>
       <title>Hugo備忘録</title>
       <link>https://ysuzuki19.github.io/post/hugo-memorandum/</link>
       <pubDate>Thu, 23 Apr 2020 13:29:58 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/hugo-memorandum/</guid>
       <description>Github Pagesのブログを以前セットアップしたがほとんど使っていなかった。 そろそろコンテンツを追加していこうと思うので、手始めにHUGOの使い方</description>
     </item>
@@ -26,7 +35,7 @@
       <title>Github Pages x HUGOをセットアップする</title>
       <link>https://ysuzuki19.github.io/post/hugosetupmemo/</link>
       <pubDate>Fri, 19 Apr 2019 14:26:27 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/hugosetupmemo/</guid>
       <description>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて， 「自分のサイトが欲しいなあ・・・」 と思うようになってき</description>
     </item>
@@ -35,7 +44,7 @@
       <title>プログラミング初心者が解いたAtCoderの過去問</title>
       <link>https://ysuzuki19.github.io/post/atcoderpastquestions10/</link>
       <pubDate>Fri, 19 Apr 2019 01:03:32 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/atcoderpastquestions10/</guid>
       <description>はじめに 最近競技プログラミングに興味を持ち，AtCoderのABC123に参加してみました．しかし，思うように解けなかったため，AtCode</description>
     </item>
@@ -44,7 +53,7 @@
       <title>HUGOの簡単な使い方</title>
       <link>https://ysuzuki19.github.io/post/hugotutorial/</link>
       <pubDate>Thu, 18 Apr 2019 23:28:02 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/hugotutorial/</guid>
       <description>HUGOとは HUGOとはSSG(Static Site Generator)の一つで，GO言語で開発されている． SSGとは：日本語では静的サイトジェネ</description>
     </item>
@@ -53,9 +62,9 @@
       <title>Ubuntu18.04のログインループへの対処</title>
       <link>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</link>
       <pubDate>Wed, 17 Apr 2019 22:33:12 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (Yuya Suzuki)</author>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</guid>
-      <description># 最初に ubuntuのログインループへの対処は調べるといろんな方が紹介されいましたが、Ubuntu18.04LTSでの例は少なかったので今回</description>
+      <description>最初に ubuntuのログインループへの対処は調べるといろんな方が紹介されいましたが、Ubuntu18.04LTSでの例は少なかったので今回解</description>
     </item>
     
   </channel>

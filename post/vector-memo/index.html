@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja-jp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1b1b1b">
+	<title>C&#43;&#43;のvectorメモ | ysuzuki blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="C&#43;&#43;のvectorメモ" />
+<meta property="og:description" content="C&#43;&#43;リファレンスやC&#43;&#43;日本語リファレンス で使い方が理解できる方にとってはあまり意味をなさない情報かもしれません。 また、私のQiita上の" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ysuzuki19.github.io/post/vector-memo/" />
+<meta property="article:published_time" content="2020-04-23T14:23:28+09:00" />
+<meta property="article:modified_time" content="2020-04-23T14:23:28+09:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;のvectorメモ"/>
+<meta name="twitter:description" content="C&#43;&#43;リファレンスやC&#43;&#43;日本語リファレンス で使い方が理解できる方にとってはあまり意味をなさない情報かもしれません。 また、私のQiita上の"/>
+
+	<link rel="stylesheet" href="/css/bundle.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/themes/dark-blue.css">
+	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="manifest" href="/manifest.json">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-162997770-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+	<header class="header">
+	<a class="logo" href="/">ysuzuki blog</a>
+	
+</header>
+	<div class="primary">
+	
+	<main class="main">
+		
+<nav class="breadcrumb block" aria-label="breadcrumb">
+	<ol class="breadcrumb__list">
+		
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/">home</a>
+		</li>
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/post/">Posts</a>
+		</li>
+		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">C&#43;&#43;のvectorメモ</li>
+	</ol>
+</nav>
+		<div class="single block">
+			<article class="entry">
+	<div class="entry__meta meta mb">
+	<time class="entry__meta-published meta-published" datetime="2020-04-23T14:23:28&#43;09:00">April 40, 23230</time>
+	</div>
+				<h1 class="entry__title">C&#43;&#43;のvectorメモ</h1>
+<details class="entry__toc toc" open>
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+<ul>
+<li><a href="#vectorとは">vectorとは</a></li>
+<li><a href="#new-deleteと比べるとどうか">new/deleteと比べるとどうか</a></li>
+<li><a href="#私の考えるvectorの利点">私の考えるvectorの利点</a></li>
+<li><a href="#私の考えるvectorの欠点">私の考えるvectorの欠点</a></li>
+<li><a href="#欠点の理由について">欠点の理由について</a></li>
+<li><a href="#使用方法">使用方法</a>
+<ul>
+<li><a href="#インクルード">インクルード</a></li>
+<li><a href="#宣言-初期化">宣言・初期化</a>
+<ul>
+<li><a href="#1次元配列">1次元配列</a></li>
+<li><a href="#2次元配列">2次元配列</a></li>
+<li><a href="#3次元以上の配列">3次元以上の配列</a></li>
+</ul></li>
+<li><a href="#要素へのアクセス">要素へのアクセス</a>
+<ul>
+<li><a href="#1次元配列-1">1次元配列</a>
+<ul>
+<li><a href="#シンプル">シンプル</a></li>
+</ul></li>
+<li><a href="#2次元配列-1">2次元配列</a></li>
+</ul></li>
+<li><a href="#要素数の確認">要素数の確認</a>
+<ul>
+<li><a href="#1次元配列-2">1次元配列</a></li>
+<li><a href="#2次元配列-2">2次元配列</a>
+<ul>
+<li><a href="#2次元配列の一部分">2次元配列の一部分</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#要素数の変更">要素数の変更</a>
+<ul>
+<li><a href="#1次元配列-3">1次元配列</a></li>
+<li><a href="#2次元配列-3">2次元配列</a>
+<ul>
+<li><a href="#2次元配列の一部分-1">2次元配列の一部分</a></li>
+<li><a href="#2次元配列の全体">2次元配列の全体</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#末尾に要素を追加">末尾に要素を追加</a></li>
+<li><a href="#配列のコピー">配列のコピー</a></li>
+<li><a href="#関数の引数にする">関数の引数にする</a>
+<ul>
+<li><a href="#値渡し-参照渡しについて">値渡し・参照渡しについて</a></li>
+<li><a href="#関数の例">関数の例</a>
+<ul>
+<li><a href="#配列の要素の総和を求める関数">配列の要素の総和を求める関数</a>
+<ul>
+<li><a href="#値渡し-非推奨">値渡し（非推奨）</a></li>
+<li><a href="#参照渡し">参照渡し</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#配列の要素を標準出力する関数-参照渡しのみ">配列の要素を標準出力する関数（参照渡しのみ）</a></li>
+<li><a href="#関数の戻り値にする">関数の戻り値にする</a>
+<ul>
+<li><a href="#ベクトルとスカラーの積">ベクトルとスカラーの積</a></li>
+</ul></li>
+<li><a href="#algorithmライブラリを用いたソート">algorithmライブラリを用いたソート</a></li>
+<li><a href="#指定要素の削除">指定要素の削除</a></li>
+</ul></li>
+<li><a href="#おまけ">おまけ</a>
+<ul>
+<li><a href="#at-関数の挙動の検証">at()関数の挙動の検証</a></li>
+<li><a href="#コマンドライン引数をvector-string-に格納">コマンドライン引数をvector&lt;string&gt;に格納</a></li>
+<li><a href="#範囲for文の活用">範囲for文の活用</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+</details>
+				<div class="entry__content">
+
+<p><a href="https://en.cppreference.com/w/cpp/container/vector">C++リファレンス</a>や<a href="https://cpprefjp.github.io/reference/vector/vector.html">C++日本語リファレンス</a>
+で使い方が理解できる方にとってはあまり意味をなさない情報かもしれません。
+また、<a href="https://qiita.com/ysuzuki19/items/df872d91c9c89cc31aee">私のQiita上のvector記事</a>の焼き増しとなっております。</p>
+
+<h1 id="vectorとは">vectorとは</h1>
+
+<p>動的配列のシーケンスコンテナの１つ。
+機能は<code>array</code>と似ているが、具体的な理由で選ぶ事ができない限りは<code>vector</code>を使う方が無難と私は考えている。</p>
+
+<h1 id="new-deleteと比べるとどうか">new/deleteと比べるとどうか</h1>
+
+<p><code>new/delete</code>は、動的にメモリを確保/解放するC++の機能である。
+きちんと使用すれば<code>vector</code>よりも高速（なはず！）だが、具体的な理由が無い限り<code>vector</code>を使う方が無難と私は考えている（二度目）。
+理由として、<code>new</code>で確保されたメモリは、変数のスコープが切れても<code>delete</code>しない限りは解放されないことが挙げられる。</p>
+
+<h1 id="私の考えるvectorの利点">私の考えるvectorの利点</h1>
+
+<ol>
+<li><code>v.size()</code>で要素数を確認できるため、関数に渡す時に要素数を別で送らなくてよい</li>
+<li><code>v.size()</code>でfor文を扱う事で配列外参照を起こしづらい</li>
+<li><code>algorithm</code>ライブラリを利用可能</li>
+<li><a href="#範囲for文の活用">範囲for文（range-based-for）</a>を利用可能</li>
+<li><code>v.push_back(value)</code>で要素を追加できる</li>
+<li><code>=</code>演算子で普通の代入のようにコピーできる</li>
+<li>値渡しのように関数の引数にできる（参照渡しも可）</li>
+<li>関数の戻り値にできる</li>
+<li><code>erase</code>で指定した要素を削除できる</li>
+</ol>
+
+<h1 id="私の考えるvectorの欠点">私の考えるvectorの欠点</h1>
+
+<p><code>vector</code>は非常に便利な反面、使い方を誤ると利点を欠点にしてしまう事があるので、注意が必要である。
+欠点というよりも注意点と行った方が語弊がないかもしれない。</p>
+
+<ol>
+<li><code>v.push_back(value)</code>で要素を追加できてしまう</li>
+<li><code>=</code>演算子でコピーできてしまう</li>
+<li>値渡しのように関数の引数にできてしまう</li>
+<li>関数の戻り値にできてしまう</li>
+<li><code>erase</code>で指定した要素を削除できてしまう</li>
+</ol>
+
+<h1 id="欠点の理由について">欠点の理由について</h1>
+
+<p>欠点に挙げた内容は、何故なのかはだんだんとわかってくるものである。
+わからない間は思い思いに書くのも手かなと考えることもある（ただし、念頭に置くことは大切）。</p>
+
+<p>また、これらは使い方次第で毒にも薬にもなるため、一概に利点とも欠点とも明言することは困難だと考えている。</p>
+
+<p>実際に困った問題が発生するまでは深く気にしなくても良いかもしれませんが、気づいた時からは改めるべきである。</p>
+
+<h1 id="使用方法">使用方法</h1>
+
+<h2 id="インクルード">インクルード</h2>
+
+<p><code>vector</code>使用のために必要なライブラリは以下でインクルード可能。
+また、簡単のためコードサンプルには以下の変数を用いるものとする。
+本記事内では、配列の要素は<code>int</code>型で例をあげるが、実際に使う場合は<code>int</code>を好きな型・クラスを置き換える事ができる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>; <span style="color:#75715e">// 配列の要素数を指す変数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>; <span style="color:#75715e">// 配列の要素数を指す変数2
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">int</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 配列の初期値を指す変数
+</span></code></pre></div>
+<h2 id="宣言-初期化">宣言・初期化</h2>
+
+<h3 id="1次元配列">1次元配列</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v; <span style="color:#75715e">// 空の配列
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(); <span style="color:#75715e">// 空の配列
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(n); <span style="color:#75715e">// n要素配列を値の代入なしで宣言（intだと0, boolだとfalseのように初期化される)
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(n, value); <span style="color:#75715e">// n要素配列を値`value`で宣言
+</span><span style="color:#75715e"></span>
+vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> vd; <span style="color:#75715e">// doubleの場合
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> vs; <span style="color:#75715e">// doubleの場合
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>myClass<span style="color:#f92672">&gt;</span> vMyClass; <span style="color:#75715e">// 自分で定義したクラスmyClassの場合
+</span></code></pre></div>
+<h3 id="2次元配列">2次元配列</h3>
+
+<p>行列のような表現をする方法。言葉で表すとすると「vectorを要素にもつvector」と言える。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vv; <span style="color:#75715e">// 空の配列を0個持つ配列を宣言
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vv(); <span style="color:#75715e">// 空の配列を0個持つ配列を宣言
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vv(n); <span style="color:#75715e">// 空の配列をn個持つ配列を宣言
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vv(n, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(m)); <span style="color:#75715e">// m個の要素を持つ配列をn個持つ配列
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> vv(n, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(m, value)); <span style="color:#75715e">// 値がvalueの要素をm個持つ配列をn個持つ配列
+</span></code></pre></div>
+<p>本来であれば<code>vector</code>による多次元配列はお勧めではない。しかし、これに関しても気づいた時に修正していけば良いだろう。</p>
+
+<h3 id="3次元以上の配列">3次元以上の配列</h3>
+
+<p>ほとんど使わないであろうが、「配列を持つ配列を持つ配列」を表現する事で使用可能。
+ここまでくると、工夫する事で次元を削減するなど、他の実装を考えた方が良いであろう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&gt;</span> vvv;
+vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;&gt;&gt;</span> vvv;
+</code></pre></div>
+<h2 id="要素へのアクセス">要素へのアクセス</h2>
+
+<p><code>vector</code>では、通常の配列と同様の書き方で要素へアクセスする事ができる。
+初期化については省略する。
+また、<code>vector</code>には、<code>at()</code>関数という要素アクセサも準備されており、これは配列外参照を検知して例外を投げてくれる。安全性は増すが、「確実に配列内に存在するインデックスが配列内であるか確認する」というのはなんとも無駄な事であるため、使用するか否かは開発者が責任を持って判断する必要があるといえよう。
+<code>at()</code>関数によるプログラム実行時の挙動は、<a href="#at-関数の挙動の検証">後述</a>する。</p>
+
+<h3 id="1次元配列-1">1次元配列</h3>
+
+<p>配列のインデックス番号<code>i</code>に<code>value</code>を代入してそれを出力する例。</p>
+
+<h4 id="シンプル">シンプル</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v[i] <span style="color:#f92672">=</span> value; <span style="color:#75715e">// 代入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;&lt;</span> v[i] <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 出力
+</span><span style="color:#75715e"></span>
+v.at(i) <span style="color:#f92672">=</span> value; <span style="color:#75715e">// 配列外参照を検知して代入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;&lt;</span> v.at(i) <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 配列外参照を検知して出力
+</span></code></pre></div>
+<h3 id="2次元配列-1">2次元配列</h3>
+
+<p>2次元配列のインデックス番号<code>i, j</code>に<code>value</code>を代入してそれを出力する例。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v[i][j] <span style="color:#f92672">=</span> value; <span style="color:#75715e">// 代入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;&lt;</span> v[i][j] <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 出力
+</span><span style="color:#75715e"></span>
+v.at(i).at(j) <span style="color:#f92672">=</span> value; <span style="color:#75715e">// 配列外参照を検知して代入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;&lt;</span> v.at(i).at(j) <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 配列外参照を検知して出力
+</span></code></pre></div>
+<h2 id="要素数の確認">要素数の確認</h2>
+
+<p>配列の要素数（配列長）を確認する事ができる。</p>
+
+<h3 id="1次元配列-2">1次元配列</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">cout <span style="color:#f92672">&lt;&lt;</span> v.size() <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 要素数nを出力
+</span></code></pre></div>
+<h3 id="2次元配列-2">2次元配列</h3>
+
+<h4 id="2次元配列の一部分">2次元配列の一部分</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">cout <span style="color:#f92672">&lt;&lt;</span> vv.size() <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 「配列をn個持つ配列」のnを出力
+</span><span style="color:#75715e"></span>
+cout <span style="color:#f92672">&lt;&lt;</span> vv[i].size() <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 「2次元配列のインデックス番号iのn個の配列」のnを出力
+</span></code></pre></div>
+<h2 id="要素数の変更">要素数の変更</h2>
+
+<p>動的配列のシーケンスコンテナという名の通り、配列長を動的に（プログラム実行時に）変更する事ができる。</p>
+
+<h3 id="1次元配列-3">1次元配列</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v.resize(n); <span style="color:#75715e">// 要素数nの配列
+</span><span style="color:#75715e"></span>v.resize(n, value); <span style="color:#75715e">// 要素数n、値valueの配列
+</span></code></pre></div>
+<h3 id="2次元配列-3">2次元配列</h3>
+
+<h4 id="2次元配列の一部分-1">2次元配列の一部分</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vv.resize(n); <span style="color:#75715e">// 2次元、「配列をn個持つ配列」
+</span><span style="color:#75715e"></span>
+vv[i].resize(n); <span style="color:#75715e">// 2次元、「2次元配列のインデックス番号iはn個の配列」
+</span></code></pre></div>
+<h4 id="2次元配列の全体">2次元配列の全体</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vv.resize(n);
+<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>vv.size(); <span style="color:#f92672">++</span>i){
+	vv[i].resize(n);
+} <span style="color:#75715e">// このforループによって、「n個の配列をn個持つ配列」
+</span></code></pre></div>
+<h2 id="末尾に要素を追加">末尾に要素を追加</h2>
+
+<p>配列<code>v</code>の末尾に「要素数を1つ増やしつつ値を追加」するためには、<code>push_back(value)</code>を用いる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v.push_back(value);
+</code></pre></div>
+<p><code>int, bool, double</code>等の基礎的なデータ型を用いる場合は、<code>5, false, 0.5</code>のようにプログラム内に値を書き込む事ができるのだが、自身で作成したクラスを要素とする配列を<code>vector&lt;myClass&gt;</code>のように扱っている場合は、<code>emplace_back(value1, value2)</code>を用いる。</p>
+
+<p>この時、<code>myClass</code>はコンストラクタ<code>myClass(int value1, int value2)</code>を持っている必要がある。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span>myClass<span style="color:#f92672">&gt;</span> vMyClass; <span style="color:#75715e">// ここでは、myClassはint型を２つ持つクラスとする。
+</span><span style="color:#75715e"></span>vMyClass.push_back(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// このようにする事で、そのまま末尾に値を追加できる。
+</span></code></pre></div>
+<h2 id="配列のコピー">配列のコピー</h2>
+
+<p>体感的に一番わかりやすいのが<code>=</code>演算子による代入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v1(n, value);
+vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v2;
+v2 <span style="color:#f92672">=</span> v1;
+</code></pre></div>
+<p>宣言直後にコピーする場合は、コピーコンストラクタを用いるのが可読性が高い。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v1(n, value);
+vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v2(v1);
+</code></pre></div>
+<h2 id="関数の引数にする">関数の引数にする</h2>
+
+<p><a href="#私の考えるvectorの利点">利点</a>として、（簡単に）関数の引数にできる点がある。この時、関数側からも要素数を参照する事ができるので、配列の要素数等を別途引数にしなくても良い。</p>
+
+<h3 id="値渡し-参照渡しについて">値渡し・参照渡しについて</h3>
+
+<p>ここが、<a href="#私の考えるvectorの欠点">欠点</a>として挙げた、関数の引数にできてしまう点に関係する。
+値渡しは変数を丸ごとコピーしてしまうらしく、理由なしに値渡しを用いると、徒らに処理時間がかかってしまう。「関数でvectorを使ってるんだけど処理がめちゃくちゃ遅い！！」という方は見直してみて欲しい。</p>
+
+<h3 id="関数の例">関数の例</h3>
+
+<h4 id="配列の要素の総和を求める関数">配列の要素の総和を求める関数</h4>
+
+<h5 id="値渡し-非推奨">値渡し（非推奨）</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumVector</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v){
+	<span style="color:#66d9ef">int</span> sumValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>v.size(); i<span style="color:#f92672">++</span>){
+		sumValue <span style="color:#f92672">+=</span> v[i];
+	}
+	<span style="color:#66d9ef">return</span> sumValue;
+}
+</code></pre></div>
+<h5 id="参照渡し">参照渡し</h5>
+
+<p>具体的な理由がない限りは、<code>const&amp;</code>を用いるの無難であると考える。</p>
+
+<p><code>const</code>: 関数内で配列の要素の変更を許さない
+=&gt; （開発者が）望まない値の変更を抑制する
+=&gt; 関数内における変更を反映させたい場合はつけない</p>
+
+<p><code>&amp;</code>: 参照渡し関数へ渡す時にコピーしない
+=&gt; 引数をコピーせずに扱うのでボトルネック（速度低下の原因）になりづらい
+=&gt; 関数内で配列を変更する事が可能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sumVector</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">const</span><span style="color:#f92672">&amp;</span> v){
+	<span style="color:#66d9ef">int</span> sumValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>v.size(); i<span style="color:#f92672">++</span>){
+		sumValue <span style="color:#f92672">+=</span> v[i];
+	}
+	<span style="color:#66d9ef">return</span> sumValue;
+}
+</code></pre></div>
+<h3 id="配列の要素を標準出力する関数-参照渡しのみ">配列の要素を標準出力する関数（参照渡しのみ）</h3>
+
+<p>値渡しに関しては省略する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">view</span>(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> cosnt<span style="color:#f92672">&amp;</span> v){
+	<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>v.size(); i<span style="color:#f92672">++</span>){
+		cout <span style="color:#f92672">&lt;&lt;</span> v[i] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+	}
+	cout <span style="color:#f92672">&lt;&lt;</span> endl;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">view</span>(vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> cosnt<span style="color:#f92672">&amp;</span> vv){
+	<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>vv.size(); i<span style="color:#f92672">++</span>){
+		<span style="color:#66d9ef">for</span>(size_t j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>vv[i].size(); j<span style="color:#f92672">++</span>){
+			cout <span style="color:#f92672">&lt;&lt;</span> vv[i][j] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+		}
+		cout <span style="color:#f92672">&lt;&lt;</span> endl;
+	}
+}
+</code></pre></div>
+<h3 id="関数の戻り値にする">関数の戻り値にする</h3>
+
+<h4 id="ベクトルとスカラーの積">ベクトルとスカラーの積</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> scalarMultiplication(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">const</span><span style="color:#f92672">&amp;</span> v, <span style="color:#66d9ef">int</span> s){
+	vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mul(v.size());
+	<span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>mul.size(); i<span style="color:#f92672">++</span>){
+		mul[i] <span style="color:#f92672">=</span> v[i]<span style="color:#f92672">*</span>s;
+	}
+	<span style="color:#66d9ef">return</span> mul;
+}
+</code></pre></div>
+<h3 id="algorithmライブラリを用いたソート">algorithmライブラリを用いたソート</h3>
+
+<p><a href="#私の考えるvectorの利点">利点</a>として挙げた<code>algorithm</code>ライブラリの活用について最もわかりやすい恩恵が、１行でソートができる事だと考えられる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">sort(v.begin(), v.end()); <span style="color:#75715e">//昇順ソート
+</span><span style="color:#75715e"></span>sort(v.begin(), v.end(), greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>()); <span style="color:#75715e">//降順ソート
+</span></code></pre></div>
+<h3 id="指定要素の削除">指定要素の削除</h3>
+
+<p><code>erase()</code>によって任意の要素を削除する事ができる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">v.erase(v.begin()); <span style="color:#75715e">//先頭を削除
+</span><span style="color:#75715e"></span>v.erase(v.end()); <span style="color:#75715e">//末尾を削除
+</span><span style="color:#75715e"></span>v.erase(v.begin()<span style="color:#f92672">+</span>i); <span style="color:#75715e">// インデックス番号iを削除
+</span></code></pre></div>
+<h2 id="おまけ">おまけ</h2>
+
+<h3 id="at-関数の挙動の検証">at()関数の挙動の検証</h3>
+
+<p>これは<code>[]</code>による配列外参照。プログラミングを学ぶ人が一度は引き起こすであろうエラー。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+	vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>); <span style="color:#75715e">// 10は要素数(インデックス番号は0~9)、5は値
+</span><span style="color:#75715e"></span>	cout <span style="color:#f92672">&lt;&lt;</span> v[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">&lt;&lt;</span> endl;
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+<p>これを実行するとエラーは起こさない(配列外参照は未定義動作)。</p>
+
+<pre><code>0
+</code></pre>
+
+<p><code>at()</code>関数による配列外参照。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+	vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>);
+	cout <span style="color:#f92672">&lt;&lt;</span> v.at(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">&lt;&lt;</span> endl;
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+<p>出力結果が以下で、vectorが配列外参照を起こしているという事が実行時にコードを見る事なく判明する。</p>
+
+<pre><code>libc++abi.dylib: terminating with uncaught exception of type std::out_of_range: vector
+</code></pre>
+
+<p>実際に、プログラムが通常終了しているにもかかわらず挙動がおかしい状況や何故かわからないがプログラムが想定通りの挙動をするというのは、開発中に多くの思考時間を奪われる原因となる。
+そのため、不安があれば<code>at()</code>関数を用いて開発してみるのも良いかなと感じる。</p>
+
+<h3 id="コマンドライン引数をvector-string-に格納">コマンドライン引数をvector&lt;string&gt;に格納</h3>
+
+<p><code>char</code>型は使い慣れていないため、<code>string</code>にしたい。ここで以下の１行が非常に便利。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+main(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv){
+	vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span> args(argv, argv<span style="color:#f92672">+</span>argc);
+	<span style="color:#75715e">// args[0]は実行ファイル名
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// args[1]は第一コマンドライン引数
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// args[2]は第一コマンドライン引数
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+<p>この方法は、コマンドライン引数を活用するための応急処置としての印象である。
+C++慣れている人はBoostとか使った方が良い。</p>
+
+<h3 id="範囲for文の活用">範囲for文の活用</h3>
+
+<p>訳がわからない場合は使う必要がないのではと感じるが、慣れてくると重宝する。
+先ほどの値渡しの例としてあげた<code>view()</code>関数のforループを範囲for文に書き換えてみる。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">view</span>(<span style="color:#66d9ef">const</span> vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> cosnt<span style="color:#f92672">&amp;</span> v){
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> e : v){
+		cout <span style="color:#f92672">&lt;&lt;</span> e <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+	}
+	cout <span style="color:#f92672">&lt;&lt;</span> endl;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">view</span>(<span style="color:#66d9ef">const</span> vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> cosnt<span style="color:#f92672">&amp;</span> vv){
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> v : vv){
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> e : v){
+			cout <span style="color:#f92672">&lt;&lt;</span> e <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span>;
+		}
+		cout <span style="color:#f92672">&lt;&lt;</span> endl;
+	}
+}
+</code></pre></div>
+<p>range-based-forは、イテレータを元にループする。<code>v.begin()</code>からイテレータ<code>itr</code>を動かしていき、「<code>itr</code>が<code>v.end()</code>ではない間」ループする。
+イテレータについては割愛する。また機会があれば実装を織り交ぜながら説明していけたらなと考えている。</p>
+</div>
+				
+				<footer class="entry__footer">
+					
+					
+<div class="entry__share share">
+	<a class="share__link btn" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Facebook" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&amp;text=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&amp;title=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&amp;title=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Telegram" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&title=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&amp;title=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fvector-memo%2f&description=C%2b%2b%e3%81%aevector%e3%83%a1%e3%83%a2" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=800,height=720,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pinterest" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="m265 65c-104 0-157 75-157 138 0 37 14 71 45 83 5 2 10 0 12-5l3-18c2-6 1-7-2-12-9-11-15-24-15-43 0-56 41-106 108-106 60 0 92 37 92 85 0 64-28 116-70 116-23 0-40-18-34-42 6-27 19-57 19-77 0-18-9-34-30-34-24 0-42 25-42 58 0 20 7 34 7 34l-29 120a249 249 0 0 0 2 86l3-1c2-3 31-37 40-72l16-61c7 15 29 28 53 28 71 0 119-64 119-151 0-66-56-126-140-126z"/></svg>
+	</a>
+</div>
+				</footer>
+				
+			</article>
+		</div>
+	</main>
+	
+<div class="authorbox block">
+	<div class="author">
+		<div class="author__body">
+			<div class="author__name">
+				ysuzuki
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+	
+
+	</div>
+	<footer class="footer">
+<div class="footer__social social">
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/ysuzuki19">
+			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/numberid">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+</div>
+	<div class="footer__copyright">© 2020 ysuzuki. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+<script src="/js/custom.js"></script>
+</body>
+</html>
