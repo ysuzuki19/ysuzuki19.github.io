@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 27 Apr 2020 17:41:42 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2020 20:25:39 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linuxお気に入りコマンド集</title>
+      <link>https://ysuzuki19.github.io/post/favorite-linux-commands/</link>
+      <pubDate>Mon, 27 Apr 2020 20:25:39 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/favorite-linux-commands/</guid>
+      <description>はじめに そろそろ、Linuxを使い始めて１年半ほど、Macを使い始めて１年ほど経過する（2020/05現在）。 そして、ターミナルをできるだけ</description>
+    </item>
     
     <item>
       <title>Mac入力ショートカットメモ</title>
@@ -32,7 +41,7 @@
     </item>
     
     <item>
-      <title>Hugo備忘録</title>
+      <title>Hugoのサイト運営上のTips</title>
       <link>https://ysuzuki19.github.io/post/hugo-memorandum/</link>
       <pubDate>Thu, 23 Apr 2020 13:29:58 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
