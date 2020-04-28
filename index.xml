@@ -60,38 +60,20 @@
     
     <item>
       <title>Github Pages x HUGOをセットアップする</title>
-      <link>https://ysuzuki19.github.io/post/hugosetupmemo/</link>
+      <link>https://ysuzuki19.github.io/post/hugo-setup/</link>
       <pubDate>Fri, 19 Apr 2019 14:26:27 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/post/hugosetupmemo/</guid>
+      <guid>https://ysuzuki19.github.io/post/hugo-setup/</guid>
       <description>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて， 「自分のサイトが欲しいなあ・・・」 と思うようになってき</description>
     </item>
     
     <item>
-      <title>プログラミング初心者が解いたAtCoderの過去問</title>
-      <link>https://ysuzuki19.github.io/post/atcoderpastquestions10/</link>
-      <pubDate>Fri, 19 Apr 2019 01:03:32 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/post/atcoderpastquestions10/</guid>
-      <description>はじめに 最近競技プログラミングに興味を持ち，AtCoderのABC123に参加してみました．しかし，思うように解けなかったため，AtCode</description>
-    </item>
-    
-    <item>
       <title>HUGOの簡単な使い方</title>
-      <link>https://ysuzuki19.github.io/post/hugotutorial/</link>
+      <link>https://ysuzuki19.github.io/post/hugo-tutorial/</link>
       <pubDate>Thu, 18 Apr 2019 23:28:02 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/post/hugotutorial/</guid>
+      <guid>https://ysuzuki19.github.io/post/hugo-tutorial/</guid>
       <description>HUGOとは HUGOとはSSG(Static Site Generator)の一つで，GO言語で開発されている． SSGとは：日本語では静的サイトジェネ</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu18.04のログインループへの対処</title>
-      <link>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</link>
-      <pubDate>Wed, 17 Apr 2019 22:33:12 +0900</pubDate>
-      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
-      <guid>https://ysuzuki19.github.io/post/ubuntu1804loginloop/</guid>
-      <description>最初に ubuntuのログインループへの対処は調べるといろんな方が紹介されいましたが、Ubuntu18.04LTSでの例は少なかったので今回解</description>
     </item>
     
   </channel>
