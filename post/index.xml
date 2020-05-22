@@ -8,10 +8,28 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Fri, 01 May 2020 02:08:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2020 18:02:15 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode 1 Two Sum</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-1-two-sum/</link>
+      <pubDate>Thu, 21 May 2020 18:02:15 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-1-two-sum/</guid>
+      <description>与えられたvector&amp;lt;int&amp;gt;&amp;amp; numsの２つの要素の和がint targetになるか答える問題。 map&amp;lt;int,</description>
+    </item>
+    
+    <item>
+      <title>My Leetcode Problems</title>
+      <link>https://ysuzuki19.github.io/post/my-leetcode-problems/</link>
+      <pubDate>Thu, 21 May 2020 15:36:43 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/my-leetcode-problems/</guid>
+      <description>コロナによる自粛期間中、私にはこんな願いがあった。 英語を使えるようになりたい！ アルゴリズム詳しくなりたい！ データ構造詳しくなりたい！ そこで、</description>
+    </item>
     
     <item>
       <title>C&#43;&#43;やらかし集[随時更新]</title>
