@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 21 May 2020 18:02:15 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 23:25:53 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 2 Add Two Numbers</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-2-add-two-numbers/</link>
+      <pubDate>Sat, 23 May 2020 23:25:53 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-2-add-two-numbers/</guid>
+      <description>与えられた２つの連結リストそれぞれを１つの数値と考えた時の、２数の和を求める問題。 問題 ListNode* l1、ListNode* l2のそれぞれを１つの数値と</description>
+    </item>
     
     <item>
       <title>LeetCode 1 Two Sum</title>
