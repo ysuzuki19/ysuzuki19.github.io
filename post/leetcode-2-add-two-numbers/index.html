@@ -69,12 +69,9 @@ if (!doNotTrack) {
 	<summary class="toc__title">Table of Contents</summary>
 	<nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#問題-https-leetcode-com-problems-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/">問題</a></a></li>
 <li><a href="#コード全体">コード全体</a></li>
 <li><a href="#解説">解説</a></li>
-</ul></li>
 </ul>
 </nav>
 </details>
@@ -82,7 +79,7 @@ if (!doNotTrack) {
 
 <p>与えられた２つの連結リストそれぞれを１つの数値と考えた時の、２数の和を求める問題。</p>
 
-<h2 id="問題-https-leetcode-com-problems-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/">問題</a></h2>
+<h1 id="問題-https-leetcode-com-problems-add-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/">問題</a></h1>
 
 <p><code>ListNode* l1</code>、<code>ListNode* l2</code>のそれぞれを１つの数値として考え、それらの和を求める。
 この時、リストの値は反転したものと考える。</p>
@@ -94,7 +91,7 @@ Result : 7 -&gt; 0 -&gt; 8
 Note : 342 + 465 = 807
 </code></pre>
 
-<h2 id="コード全体">コード全体</h2>
+<h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">addTwoNumbers</span>(ListNode<span style="color:#f92672">*</span> l1, ListNode<span style="color:#f92672">*</span> l2) {
   ListNode<span style="color:#f92672">*</span> createdListNode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ListNode;
   ListNode<span style="color:#f92672">*</span> createdListHead <span style="color:#f92672">=</span> createdListNode;
@@ -126,7 +123,7 @@ Note : 342 + 465 = 807
   <span style="color:#66d9ef">return</span> createdListHead;
 }
 </code></pre></div>
-<h2 id="解説">解説</h2>
+<h1 id="解説">解説</h1>
 
 <p><code>createdListNode</code>は、加算された数値を格納する連結リスト。
 <code>createdListHead</code>は、戻り値のために記憶したヘッド。</p>
