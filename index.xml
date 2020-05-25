@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 25 May 2020 17:43:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 23:21:15 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 7 Reverse Integer</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-7-reverse-integer/</link>
+      <pubDate>Mon, 25 May 2020 23:21:15 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-7-reverse-integer/</guid>
+      <description>整数の全ての桁を反転させる問題。 問題 整数xの桁全てを反転した数値を求める問題。 int型の範囲内に収まらない場合は0を返す。 &amp;lt;例&amp;gt;</description>
+    </item>
     
     <item>
       <title>Leetcode 5 Longest Palindromic Substring</title>

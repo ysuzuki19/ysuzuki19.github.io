@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ysuzuki19.github.io/post/leetcode-5-longest-palindromic-substring/</loc>
-    <lastmod>2020-05-25T17:43:49+09:00</lastmod>
+    <loc>https://ysuzuki19.github.io/post/leetcode-7-reverse-integer/</loc>
+    <lastmod>2020-05-25T23:21:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysuzuki19.github.io/post/</loc>
-    <lastmod>2020-05-25T17:43:49+09:00</lastmod>
+    <lastmod>2020-05-25T23:21:15+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysuzuki19.github.io/</loc>
+    <lastmod>2020-05-25T23:21:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysuzuki19.github.io/post/leetcode-5-longest-palindromic-substring/</loc>
     <lastmod>2020-05-25T17:43:49+09:00</lastmod>
   </url>
   
