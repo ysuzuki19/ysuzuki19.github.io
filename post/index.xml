@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 25 May 2020 23:21:15 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 16:00:41 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 8 String to Integer</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-8-string-to-integer/</link>
+      <pubDate>Tue, 26 May 2020 16:00:41 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-8-string-to-integer/</guid>
+      <description>文字列を整数に変換する問題 問題 入力string strを数値に変換する。 この時、スペースを除いた先頭の数字を数値に変換する。 先頭が数字でない場</description>
+    </item>
     
     <item>
       <title>Leetcode 7 Reverse Integer</title>
