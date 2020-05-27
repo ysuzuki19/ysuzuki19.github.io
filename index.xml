@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 27 May 2020 18:08:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 19:10:53 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 14 Longest Common Prefix</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-14-longest-common-prefix/</link>
+      <pubDate>Wed, 27 May 2020 19:10:53 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-14-longest-common-prefix/</guid>
+      <description>最も長い接頭詞を求める問題 問題 先頭から何文字まで共通かどうか求める問題 &amp;lt;例&amp;gt; [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;] -&amp;gt; &amp;quot;fl&amp;quot; [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;] -&amp;gt; &amp;quot;&amp;quot; コード全体 string longestCommonPrefix(vector&amp;lt;string&amp;gt;&amp;amp; strs) { if(strs.empty()) return &amp;#34;&amp;#34;; if(strs.size()==1) return strs[0]; size_t minLength = strs[0].length(); for(size_t</description>
+    </item>
     
     <item>
       <title>Leetcode 12 Integer to Roman</title>
