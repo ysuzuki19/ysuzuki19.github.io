@@ -8,10 +8,37 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Tue, 26 May 2020 16:00:41 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 18:08:57 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 12 Integer to Roman</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-12-integer-to-roman/</link>
+      <pubDate>Wed, 27 May 2020 18:08:57 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-12-integer-to-roman/</guid>
+      <description>数値をローマ数字に変換する問題 問題 与えられた整数int numをローマ数字を表す文字列に変換する。 &amp;lt;例&amp;gt; 3 -&amp;gt; &amp;quot;III&amp;quot; 4 -&amp;gt; &amp;quot;IV&amp;quot; 9 -&amp;gt; &amp;quot;IX&amp;quot; 58 -&amp;gt; &amp;quot;LVIII&amp;quot; 1994</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 11 Container With Most Water</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-11-container-with-most-water/</link>
+      <pubDate>Tue, 26 May 2020 17:55:20 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-11-container-with-most-water/</guid>
+      <description>高さ配列の最大面積を求める問題 問題 vector&amp;lt;int&amp;gt; heightが与えられ、インデックスの差を横幅、heightを高さと考えた時の、水が入る最大量を求める問</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 9 Palindrome Number</title>
+      <link>https://ysuzuki19.github.io/post/leetcode-9-palindrome-number/</link>
+      <pubDate>Tue, 26 May 2020 17:08:31 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/leetcode-9-palindrome-number/</guid>
+      <description>整数が回文（左右対称形）になっているか確認する問題 文字列に変換して各文字を比較した。 問題 入力整数xが回文になっているか答える問題。 &amp;lt;例</description>
+    </item>
     
     <item>
       <title>Leetcode 8 String to Integer</title>
