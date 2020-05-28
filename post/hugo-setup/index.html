@@ -61,9 +61,6 @@ if (!doNotTrack) {
 </nav>
 		<div class="single block">
 			<article class="entry">
-	<div class="entry__meta meta mb">
-	<time class="entry__meta-published meta-published" datetime="2019-04-19T14:26:27&#43;09:00">April 40, 19190</time>
-	</div>
 				<h1 class="entry__title">Github Pages x HUGOをセットアップする</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
@@ -125,13 +122,13 @@ SSGはHUGOを使っているのだが，HUGOはGO言語で開発されており�
 <li>サイト確認</li>
 </ol>
 
-<p>以上が手順であるが，環境構築中はほとんど<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/">chanmitsu55さんのこちらの記事</a>を参考にさせてもらったので，こちらを見てもらうとわかりやすいと思う．</p>
+<p>以上が手順であるが，環境構築中はほとんど<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/" target="_blank">chanmitsu55さんのこちらの記事</a>を参考にさせてもらったので，こちらを見てもらうとわかりやすいと思う．</p>
 
 <p>Githubは知っている人が多いと思うが，Github PagesとはGithubでサイトを公開するサービスである．</p>
 
 <h2 id="githubのアカウント作成">Githubのアカウント作成</h2>
 
-<p>Githubのアカウントをすでに持っている場合はスルーして良いが，まだな方は<a href="https://github.com">Githubのホーム</a>からまずはアカウントを作る．また，作成したリポジトリをローカルにクローンする．</p>
+<p>Githubのアカウントをすでに持っている場合はスルーして良いが，まだな方は<a href="https://github.com" target="_blank">Githubのホーム</a>からまずはアカウントを作る．また，作成したリポジトリをローカルにクローンする．</p>
 
 <h2 id="github-pagesのためのリポジトリ作成">Github Pagesのためのリポジトリ作成</h2>
 
@@ -145,13 +142,13 @@ $ git clone https://github.com/username/username.github.io</code></pre></div>
 $ git clone https://github.com/username/blog</code></pre></div>
 <h2 id="hugoサイト作成">HUGOサイト作成</h2>
 
-<p>HUGOコマンドを用いてHUGOサイトを作成する．ここで，サイトのテーマは<a href="https://themes.gohugo.io">こちら</a>から選択することができ，好みのテーマがあればgithubリポジトリなどが記載されている．</p>
+<p>HUGOコマンドを用いてHUGOサイトを作成する．ここで，サイトのテーマは<a href="https://themes.gohugo.io" target="_blank">こちら</a>から選択することができ，好みのテーマがあればgithubリポジトリなどが記載されている．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash:~/Github" data-lang="bash:~/Github">$ cd ~/Gibhub
 $ hugo new site temp
 $ cd temp/theme
 $ git clone https://github.com/appernetic/hugo-bootstrap-premium
 $ cd ..</code></pre></div>
-<p>ここまでで，HUGOサイトと使用するテーマは準備された．次は，<code>~Github/temp/config.toml</code>を書き換える必要がある．<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml">公式のリポジトリ</a>に記載されている．以下の<code>config.toml</code>は先ほど言及した<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/">chanmitsu55さんのこちらの記事</a>を参考にした．</p>
+<p>ここまでで，HUGOサイトと使用するテーマは準備された．次は，<code>~Github/temp/config.toml</code>を書き換える必要がある．<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml" target="_blank">公式のリポジトリ</a>に記載されている．以下の<code>config.toml</code>は先ほど言及した<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/" target="_blank">chanmitsu55さんのこちらの記事</a>を参考にした．</p>
 
 <p>自分の<code>config.toml</code>にする際は<code>username</code>などを自分に合うように変更すると良い．</p>
 
@@ -209,11 +206,15 @@ paginatePath = &quot;page&quot;
 
 </code></pre>
 
-<p>こちらも<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml">公式リポジトリ</a>にサンプルがあるので，少しづつ自分用に変更していこうと思う．</p>
+<p>こちらも
+<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml" target="_blank">公式リポジトリ</a>
+にサンプルがあるので，少しづつ自分用に変更していこうと思う．</p>
 
 <h2 id="サブモジュール化">サブモジュール化</h2>
 
-<p>サブモジュール化するためには，一度<code>~/Github/blog</code>内の<code>public</code>を消去する必要がある．この方法は<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions">公式ドキュメント</a>に記載されている．</p>
+<p>サブモジュール化するためには，一度<code>~/Github/blog</code>内の<code>public</code>を消去する必要がある．この方法は
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions" target="_blank">公式ドキュメント</a>
+に記載されている．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-~/Github/blog" data-lang="~/Github/blog">$ cd ~/Github/blog
 $ rm -rf public
 $ git summodule add -b master https://github.com/username/username.github.io public</code></pre></div>
@@ -239,7 +240,9 @@ $ hugo new post/articlename.md
 
 <h2 id="デプロイ">デプロイ</h2>
 
-<p><code>~/Gibhub/blog</code>内に記事を書いてもデプロイしなければGithub Pagesで公開されない．デプロイする処理のスクリプトが<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script">公式</a>で紹介されている．以下のファイルは<code>~/Github/blog/deploy.sh</code>とする．</p>
+<p><code>~/Gibhub/blog</code>内に記事を書いてもデプロイしなければGithub Pagesで公開されない．デプロイする処理のスクリプトが
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script" target="_blank">公式</a>
+で紹介されている．以下のファイルは<code>~/Github/blog/deploy.sh</code>とする．</p>
 
 <pre><code>#!/bin/bash
 
@@ -300,7 +303,8 @@ cd ..
 <p><code>localhost:1313</code></p>
 
 <p>と入力することで逐次記事の状態を確認しながら作業できる．
-これは<a href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">こちら</a>にも方法を記載した．</p>
+これは
+<a href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">こちら</a>にも方法を記載した．</p>
 </div>
 				
 				<footer class="entry__footer">
