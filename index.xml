@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 27 May 2020 21:04:55 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2020 16:17:28 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu初期設定メモ</title>
+      <link>https://ysuzuki19.github.io/post/my-ubuntu-setup/</link>
+      <pubDate>Fri, 29 May 2020 16:17:28 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/my-ubuntu-setup/</guid>
+      <description>Ubuntu20.04LTSをインストールしました。 私の場合、今後何度も再インストールすると思われる（よく壊す）ので、自分用の設定の流れを一</description>
+    </item>
     
     <item>
       <title>Leetcode 15 3sum</title>
@@ -19,7 +28,7 @@
       <pubDate>Wed, 27 May 2020 21:04:55 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-15-3sum/</guid>
-      <description>配列の要素から、和が0になる3つの要素の組を求める問題 std::mapを用いて、O(N*N*logN)の速度の解答を作った。 問題 vector&amp;lt;int&amp;gt; numsが</description>
+      <description>配列の要素から、和が0になる3つの要素の組を求める問題。std::mapを用いて、O(N*N*logN)の速度の解答を作った。&amp;mdash;</description>
     </item>
     
     <item>
@@ -37,7 +46,7 @@
       <pubDate>Wed, 27 May 2020 18:08:57 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-12-integer-to-roman/</guid>
-      <description>数値をローマ数字に変換する問題 問題 与えられた整数int numをローマ数字を表す文字列に変換する。 &amp;lt;例&amp;gt; 3 -&amp;gt; &amp;quot;III&amp;quot; 4 -&amp;gt; &amp;quot;IV&amp;quot; 9 -&amp;gt; &amp;quot;IX&amp;quot; 58 -&amp;gt; &amp;quot;LVIII&amp;quot; 1994</description>
+      <description>数値をローマ数字に変換する。&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
@@ -46,7 +55,7 @@
       <pubDate>Tue, 26 May 2020 17:55:20 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-11-container-with-most-water/</guid>
-      <description>高さ配列の最大面積を求める問題 問題 vector&amp;lt;int&amp;gt; heightが与えられ、インデックスの差を横幅、heightを高さと考えた時の、水が入る最大量を求める問</description>
+      <description>配列の最大面積を求める問題。&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
@@ -55,7 +64,7 @@
       <pubDate>Tue, 26 May 2020 17:08:31 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-9-palindrome-number/</guid>
-      <description>整数が回文（左右対称形）になっているか確認する問題 文字列に変換して各文字を比較した。 問題 入力整数xが回文になっているか答える問題。 &amp;lt;例</description>
+      <description>整数が回文（左右対称形）になっているか確認する問題&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- - -</description>
     </item>
     
     <item>
@@ -64,7 +73,7 @@
       <pubDate>Tue, 26 May 2020 16:00:41 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-8-string-to-integer/</guid>
-      <description>文字列を整数に変換する問題 問題 入力string strを数値に変換する。 この時、スペースを除いた先頭の数字を数値に変換する。 先頭が数字でない場</description>
+      <description>文字列を整数に変換する問題&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-</description>
     </item>
     
     <item>
@@ -73,7 +82,7 @@
       <pubDate>Mon, 25 May 2020 23:21:15 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-7-reverse-integer/</guid>
-      <description>整数の全ての桁を反転させる問題。 問題 整数xの桁全てを反転した数値を求める問題。 int型の範囲内に収まらない場合は0を返す。 &amp;lt;例&amp;gt;</description>
+      <description>整数の全ての桁を反転する問題&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;</description>
     </item>
     
     <item>
@@ -82,7 +91,7 @@
       <pubDate>Mon, 25 May 2020 17:43:49 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-5-longest-palindromic-substring/</guid>
-      <description>長さ最大の回文となる部分文字列を探す問題。 問題 string sが与えられ、その中に存在する長さ最大の回文を見つける。 コード全体 string longestPalindrome(string s) { int subLeft = 0; int subRight = 0; int</description>
+      <description>長さ最大の回文となる部分文字列を探す問題。&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
@@ -91,7 +100,7 @@
       <pubDate>Mon, 25 May 2020 00:56:08 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-4-median-of-two-sorted-arrays/</guid>
-      <description>２つのソート済み配列の全要素の中央値を求める問題。 マージソートの要領で配列を結合し、その後要素数から中央値を求めた。 問題 vector&amp;lt;int&amp;gt;&amp;amp; nums1・vec</description>
+      <description>２つのソート済み配列の全要素の中央値を求める問題。&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- - -</description>
     </item>
     
     <item>
@@ -100,7 +109,7 @@
       <pubDate>Sun, 24 May 2020 00:39:41 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-3-longest-substring-without-repeating-characters/</guid>
-      <description>文字列の中で重複文字が含まれない最大の長さを求める問題。 スライディングウィンドウとハッシュテーブルを活用して解いた。 問題 与えられたsの内部で</description>
+      <description>文字列の中で重複文字が含まれない最大の長さを求める問題。&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
@@ -109,7 +118,7 @@
       <pubDate>Sat, 23 May 2020 23:25:53 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-2-add-two-numbers/</guid>
-      <description>与えられた２つの連結リストそれぞれを１つの数値と考えた時の、２数の和を求める問題。 問題 ListNode* l1、ListNode* l2のそれぞれを１つの数値と</description>
+      <description>連結リストを１つの数値と考えた時の、２数の和を求める問題&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
@@ -118,7 +127,7 @@
       <pubDate>Thu, 21 May 2020 18:02:15 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/leetcode-1-two-sum/</guid>
-      <description>与えられたvector&amp;lt;int&amp;gt;&amp;amp; numsの２つの要素の和がint targetになるか答える問題。 map&amp;lt;int,</description>
+      <description>配列の要素から和が特定の数値の組を探す問題&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
     </item>
     
     <item>
