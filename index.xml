@@ -8,13 +8,31 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 22 Jun 2020 16:37:29 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2020 21:17:39 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Visual Studio Memorundom</title>
+      <title>Anacondaのエラー対処集</title>
+      <link>https://ysuzuki19.github.io/post/conda-error-handling/</link>
+      <pubDate>Wed, 15 Jul 2020 21:17:39 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/conda-error-handling/</guid>
+      <description>Anacondaを使い始めたので、今後のために備忘録的に書いておく。 Pythonが実行できなくなる問題 何も悪いことしていないつもりだったが、</description>
+    </item>
+    
+    <item>
+      <title>Progateの感想</title>
+      <link>https://ysuzuki19.github.io/post/progate-impression/</link>
+      <pubDate>Sun, 12 Jul 2020 00:55:11 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/progate-impression/</guid>
+      <description>プログラミング学習サービスであるProgateの有料会員になった感想を記す。 ただの主観なので、鵜呑みにはしないでほしい。 TL;DR 初心者目線では、非</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio の備忘録</title>
       <link>https://ysuzuki19.github.io/post/visual-studio-memorundom/</link>
       <pubDate>Mon, 22 Jun 2020 16:37:29 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
