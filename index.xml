@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 29 Jul 2020 13:14:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 17:50:23 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git備忘録</title>
+      <link>https://ysuzuki19.github.io/post/git-memorandom/</link>
+      <pubDate>Sat, 29 Aug 2020 17:50:23 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/git-memorandom/</guid>
+      <description>Gitの使い方をメモる。 基本 個人で開発するなら、これだけで大体いける。 $ git clone https://github.com/&amp;lt;username&amp;gt;/&amp;lt;repositoryname&amp;gt; $ git pull $ git add &amp;lt;filename&amp;gt; $ git commit -m &amp;#34;message&amp;#34; $ git push 初期化 Githubにプッシュした</description>
+    </item>
     
     <item>
       <title>Web開発の備忘録＆Tips</title>
