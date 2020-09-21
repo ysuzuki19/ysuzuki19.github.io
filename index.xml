@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 21 Sep 2020 17:15:57 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 17:38:17 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;プロジェクトでpthread関係のリンクエラーへの対処</title>
+      <link>https://ysuzuki19.github.io/post/cpp-cmake-pthread/</link>
+      <pubDate>Mon, 21 Sep 2020 17:38:17 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/cpp-cmake-pthread/</guid>
+      <description>cmakeでpthreadリンクエラーを解消する方法 /usr/bin/ld: CMakeFiles/project.dir/main.cpp.o: undefined reference to symbol &amp;#39;pthread_join@@GLIBC_2.2.5&amp;#39; //lib/x86_64-linux-gnu/libpthread.so.0: error adding symbols: DSO missing from command line collect2: error: ld returned 1 exit status g++を使っている場合,コンパイルオプショ</description>
+    </item>
     
     <item>
       <title>Conda Errors</title>
