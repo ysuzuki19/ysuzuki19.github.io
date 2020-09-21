@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sat, 29 Aug 2020 17:50:23 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 17:15:57 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Conda Errors</title>
+      <link>https://ysuzuki19.github.io/post/conda-errors/</link>
+      <pubDate>Mon, 21 Sep 2020 17:15:57 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/conda-errors/</guid>
+      <description>バージョン指定してインストールしてもパッケージが更新されない！？ condaを使ってバージョン指定してインストールしたパッケージのバージョンが</description>
+    </item>
     
     <item>
       <title>Git備忘録</title>
