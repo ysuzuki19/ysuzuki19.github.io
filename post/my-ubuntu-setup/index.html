@@ -64,94 +64,55 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Ubuntu初期設定メモ</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#grubメニューの設定">GRUBメニューの設定</a></li>
-<li><a href="#capslockをctrlに変更">CapsLockをCtrlに変更</a></li>
-<li><a href="#ホームディレクトリを英語にする">ホームディレクトリを英語にする</a></li>
-<li><a href="#ターミナルを英語環境にする">ターミナルを英語環境にする</a></li>
-<li><a href="#パッケージのインストール">パッケージのインストール</a></li>
-<li><a href="#ターミナル設定">ターミナル設定</a></li>
-<li><a href="#ドットファイルをダウンロード">ドットファイルをダウンロード</a></li>
-<li><a href="#キーボード入力をemacs風にする">キーボード入力をEmacs風にする</a></li>
-<li><a href="#nvidiaドライバのインストール">NVIDIAドライバのインストール</a></li>
-<li><a href="#vivaldiのインストール">Vivaldiのインストール</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>Ubuntu20.04LTSをインストールしました。
+				<div class="entry__content"><p>Ubuntu20.04LTSをインストールしました。
 私の場合、今後何度も再インストールすると思われる（よく壊す）ので、自分用の設定の流れを一つのページにまとめることにしました。</p>
-
 <h1 id="grubメニューの設定">GRUBメニューの設定</h1>
-
 <p>GPUを積んでいるので、GRUBメニューに<code>nomodeset</code>が必要である。起動時に毎回編集するのは骨が折れるので、書き換えておく。</p>
-
 <pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 ↓
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;nomodeset&quot;
-</code></pre>
-
-<p>その後、以下のコマンドを実行する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo update-grub</code></pre></div>
-<h1 id="capslockをctrlに変更">CapsLockをCtrlに変更</h1>
-
+</code></pre><p>その後、以下のコマンドを実行する。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo update-grub
+</code></pre></div><h1 id="capslockをctrlに変更">CapsLockをCtrlに変更</h1>
 <p><code>/etc/default/keyboard</code>を書き換える。</p>
-
 <pre><code>XKBOPTIONS=&quot;&quot;
 ↓
 XKBOPTIONS=&quot;ctrl:nocaps&quot;
-</code></pre>
-
-<p>その後、再起動か以下のコマンドを実行する</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl restart console-setup</code></pre></div>
-<h1 id="ホームディレクトリを英語にする">ホームディレクトリを英語にする</h1>
-
+</code></pre><p>その後、再起動か以下のコマンドを実行する</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl restart console-setup
+</code></pre></div><h1 id="ホームディレクトリを英語にする">ホームディレクトリを英語にする</h1>
 <p>日本語の言語設定をするのが面倒な私は、日本語Remixをインストールするようにしている。その時、ホームディレクトリも日本語になっているのがターミナル使用上嬉しくないので、英語に戻す。</p>
-
 <p>以下のコマンドを実行する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">LANG<span style="color:#f92672">=</span>C xdg-user-dirs-gtk-update</code></pre></div>
-<h1 id="ターミナルを英語環境にする">ターミナルを英語環境にする</h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">LANG<span style="color:#f92672">=</span>C xdg-user-dirs-gtk-update
+</code></pre></div><h1 id="ターミナルを英語環境にする">ターミナルを英語環境にする</h1>
 <p><code>/etc/default/locale</code>を以下に変更し、再起動する。</p>
-
 <pre><code>LANG=&quot;en_US.UTF-8&quot;
 LANGUAGE=&quot;en_US:en&quot;
-</code></pre>
-
-<h1 id="パッケージのインストール">パッケージのインストール</h1>
-
+</code></pre><h1 id="パッケージのインストール">パッケージのインストール</h1>
 <p>よく使うパッケージをインストール（vimは、viという名前で使用できるが一応）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt update
 sudo apt upgrade
-sudo apt install tmux git vim</code></pre></div>
-<h1 id="ターミナル設定">ターミナル設定</h1>
-
+sudo apt install tmux git vim
+</code></pre></div><h1 id="ターミナル設定">ターミナル設定</h1>
 <p><code>Ctrl+Alt+t</code>でターミナルを開く。
 ターミナル上で右クリック</p>
-
 <pre><code>Text &gt; Cursor shape: I-Beam
 Text &gt; Terminal bell: チェック外す
 Colors &gt; Use transparency from system theme: チェック外す
 Colors &gt; Use transparent background: チェック入れて、好みの透過度にする
 Colors &gt; Palette: 好きなカラー設定にする
-</code></pre>
-
-<h1 id="ドットファイルをダウンロード">ドットファイルをダウンロード</h1>
-
+</code></pre><h1 id="ドットファイルをダウンロード">ドットファイルをダウンロード</h1>
 <p>自分のターミナル設定をGithubで管理している。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://.......</code></pre></div>
-<h1 id="キーボード入力をemacs風にする">キーボード入力をEmacs風にする</h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://.......
+</code></pre></div><h1 id="キーボード入力をemacs風にする">キーボード入力をEmacs風にする</h1>
 <p>エディタとしてはVimが好きだが、通常の入力（ブラウザの検索窓など）ではEmacs風だと便利であるため、以下のコマンドで設定を変更する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gsettings set org.gnome.desktop.interface gtk-key-theme Emacs</code></pre></div>
-<h1 id="nvidiaドライバのインストール">NVIDIAドライバのインストール</h1>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
+</code></pre></div><h1 id="nvidiaドライバのインストール">NVIDIAドライバのインストール</h1>
 <p>NVIDIAドライバを一番簡単にインストールできる方法を記載した
-<a href="https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/" target="_blank">（参考）</a>
+<!-- raw HTML omitted -->（参考）<!-- raw HTML omitted -->
 。</p>
-
 <pre><code>Software Updaterを開く
 Software Updater &gt; Settingをクリック
 Software Updater &gt; Additional Driversを選択
@@ -159,14 +120,10 @@ Software Updater &gt; Additional Drivers &gt; Using NVIDIA ...の一番上を選
 ターミナルで`$ sudo ubuntu-drivers autoinstall`を実行
 再起動
 `nvidia-smi`でGPU負荷が表示されるか確認
-</code></pre>
-
-<h1 id="vivaldiのインストール">Vivaldiのインストール</h1>
-
+</code></pre><h1 id="vivaldiのインストール">Vivaldiのインストール</h1>
 <p>お気に入りのブラウザであるVivaldiを
-<a href="https://vivaldi.com/ja/download/" target="_blank">公式ページ</a>
+<!-- raw HTML omitted -->公式ページ<!-- raw HTML omitted -->
 からダウンロードし、</p>
-
 <p>マウスジェスチャー等の設定をする。</p>
 </div>
 				

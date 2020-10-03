@@ -64,22 +64,11 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 5 Longest Palindromic Substring</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-longest-palindromic-substring-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>長さ最大の回文となる部分文字列を探す問題。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-longest-palindromic-substring-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>長さ最大の回文となる部分文字列を探す問題。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblemslongest-palindromic-substring-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p><code>string s</code>が与えられ、その中に存在する長さ最大の回文を見つける。</p>
-
 <h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">longestPalindrome</span>(string s) {
   <span style="color:#66d9ef">int</span> subLeft <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
@@ -116,17 +105,14 @@ if (!doNotTrack) {
   }
   <span style="color:#66d9ef">return</span> s.substr(subLeft, subSize);
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>subLeft</code>は部分文字列の左端を、<code>subRight</code>は右端を、<code>subSize</code>はその文字数を指す。
 これらの変数を更新することで、最大長となる部分文字列を求める。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">longestPalindrome</span>(string s) {
   <span style="color:#66d9ef">int</span> subLeft <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">int</span> subRight <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">int</span> subSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</code></pre></div>
-<p><code>update()</code>は、上述した三つの変数を更新するラムダ式。
+</code></pre></div><p><code>update()</code>は、上述した三つの変数を更新するラムダ式。
 引数の<code>left</code>と<code>right</code>から、長さが現在の値より長い場合は更新する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">auto</span> update <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>](<span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> right){
     <span style="color:#66d9ef">int</span> nowSize <span style="color:#f92672">=</span> right <span style="color:#f92672">-</span> left <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
@@ -136,8 +122,7 @@ if (!doNotTrack) {
       subSize <span style="color:#f92672">=</span> nowSize;
     }
   };
-</code></pre></div>
-<p><code>s</code>の各要素に対し、要素を中心に回文を維持する限り左右に範囲を広げてその<code>left</code>・<code>right</code>を引数として<code>update()</code>する。
+</code></pre></div><p><code>s</code>の各要素に対し、要素を中心に回文を維持する限り左右に範囲を広げてその<code>left</code>・<code>right</code>を引数として<code>update()</code>する。
 まずは部分文字列が偶数長の場合を行う。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">for</span>(size_t center<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; center<span style="color:#f92672">&lt;</span>s.length(); <span style="color:#f92672">++</span>center){
     <span style="color:#66d9ef">if</span>(s[center] <span style="color:#f92672">!=</span> s[center<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">continue</span>;
@@ -150,8 +135,7 @@ if (!doNotTrack) {
     }
     update(left, right);
   }
-</code></pre></div>
-<p>部分文字列が奇数長の場合も同様に行う。</p>
+</code></pre></div><p>部分文字列が奇数長の場合も同様に行う。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">for</span>(size_t center<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; center<span style="color:#f92672">&lt;</span>s.length(); <span style="color:#f92672">++</span>center){
     size_t left <span style="color:#f92672">=</span> center;
     size_t right <span style="color:#f92672">=</span> center;
@@ -162,8 +146,7 @@ if (!doNotTrack) {
     }
     update(left, right);
   }
-</code></pre></div>
-<p>最大長の回文を返す。</p>
+</code></pre></div><p>最大長の回文を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">return</span> s.substr(subLeft, subSize);
 }
 </code></pre></div></div>

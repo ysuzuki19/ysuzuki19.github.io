@@ -65,40 +65,24 @@ if (!doNotTrack) {
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
 	<nav id="TableOfContents">
-<ul>
-<li><a href="#hugoとは">HUGOとは</a>
-<ul>
-<li><a href="#プレビュー方法">プレビュー方法</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#プレビュー方法">プレビュー方法</a></li>
+  </ul>
 </nav>
 </details>
-				<div class="entry__content">
-
-<h1 id="hugoとは">HUGOとは</h1>
-
+				<div class="entry__content"><h1 id="hugoとは">HUGOとは</h1>
 <p>HUGOとはSSG(Static Site Generator)の一つで，GO言語で開発されている．</p>
-
 <p>SSGとは：日本語では静的サイトジェネレータと呼ばれ，その名の通り静的なサイトを生成するツールである．</p>
-
 <p>HUGOでは，サイトを生成する以外にも，htmlを生成する前のmarkdownで記述された記事をローカルホストを立てることでプレビューすることができる．</p>
-
 <p>他のSSGでも言えることだが，静的サイトを使うためGithub Pagesと組み合わせることができ，とても便利である．このページもGithub Pages x HUGOで作成している．Github x HUGOの環境の構築手順は<a href="https://ysuzuki19.github.io/2019/04/19/hugosetupmemo/">こちら</a>で紹介した．</p>
-
 <h2 id="プレビュー方法">プレビュー方法</h2>
-
 <p>ターミナルを開いて，</p>
-
 <pre><code>$ hugo server
 </code></pre>
-
 <p>というコマンドを実行し，好きなブラウザを起動してURL欄に<code>localhost:1313</code>と入力するとページのプレビューが見られる．</p>
-
 <p>テーマを指定してプレビューしたい場合は，</p>
-
 <pre><code>$ hugo server -D -t [theme name]
 </code></pre>
-
 <p>とするとよい．</p>
 </div>
 				

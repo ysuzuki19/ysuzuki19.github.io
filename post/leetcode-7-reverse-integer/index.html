@@ -64,29 +64,16 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 7 Reverse Integer</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-reverse-integer-target-blank-問題-a"><a href="https://leetcode.com/problems/reverse-integer/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>整数の全ての桁を反転する問題&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-reverse-integer-target-blank-問題-a"><a href="https://leetcode.com/problems/reverse-integer/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>整数の全ての桁を反転する問題&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblemsreverse-integer-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p>整数<code>x</code>の桁全てを反転した数値を求める問題。
 int型の範囲内に収まらない場合は0を返す。</p>
-
 <pre><code>&lt;例&gt;
 123 -&gt; 321
 -123 -&gt; -321
-</code></pre>
-
-<h1 id="コード全体">コード全体</h1>
+</code></pre><h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">reverse</span>(<span style="color:#66d9ef">int</span> x) {
   <span style="color:#66d9ef">long</span> xRev <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">while</span>(true){
@@ -98,14 +85,11 @@ int型の範囲内に収まらない場合は0を返す。</p>
   <span style="color:#66d9ef">if</span>(xRev <span style="color:#f92672">&lt;</span> INT_MIN <span style="color:#f92672">||</span> xRev <span style="color:#f92672">&gt;</span> INT_MAX) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">return</span> xRev;
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>xRev</code>は、反転した数値を指す変数。int型に収まらないことを考慮してlong型にした。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">reverse</span>(<span style="color:#66d9ef">int</span> x) {
   <span style="color:#66d9ef">long</span> xRev <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</code></pre></div>
-<p>「<code>x</code>を10で割ったあまり」は、<code>x</code>の一の位を表す。
+</code></pre></div><p>「<code>x</code>を10で割ったあまり」は、<code>x</code>の一の位を表す。
 繰り返し<code>x</code>を10で割り続け、低い桁から順に数を抜き出し、<code>xRev</code>に加えていく。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">while</span>(true){
     xRev <span style="color:#f92672">+=</span> x<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>;
@@ -113,8 +97,7 @@ int型の範囲内に収まらない場合は0を返す。</p>
     <span style="color:#66d9ef">if</span>( x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">else</span> xRev <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>;
   }
-</code></pre></div>
-<p>問題で指定された範囲に答えが収まっていない場合は0を、収まっている場合は<code>xRev</code>を返す。</p>
+</code></pre></div><p>問題で指定された範囲に答えが収まっていない場合は0を、収まっている場合は<code>xRev</code>を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">if</span>(xRev <span style="color:#f92672">&lt;</span> INT_MIN <span style="color:#f92672">||</span> xRev <span style="color:#f92672">&gt;</span> INT_MAX) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">return</span> xRev;
 }

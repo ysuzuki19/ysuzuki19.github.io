@@ -64,49 +64,36 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 12 Integer to Roman</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-integer-to-roman-target-blank-問題-a"><a href="https://leetcode.com/problems/integer-to-roman/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>数値をローマ数字に変換する。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-integer-to-roman-target-blank-問題-a"><a href="https://leetcode.com/problems/integer-to-roman/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>数値をローマ数字に変換する。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblemsinteger-to-roman-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p>与えられた整数<code>int num</code>をローマ数字を表す文字列に変換する。</p>
-
 <pre><code>&lt;例&gt;
 3 -&gt; &quot;III&quot;
 4 -&gt; &quot;IV&quot;
 9 -&gt; &quot;IX&quot;
 58 -&gt; &quot;LVIII&quot;
 1994 -&gt; &quot;MCMXCIV&quot;
-</code></pre>
-
-<h1 id="コード全体">コード全体</h1>
+</code></pre><h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">intToRoman</span>(<span style="color:#66d9ef">int</span> num) {
   <span style="color:#66d9ef">auto</span> digitConverter <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">char</span> c1, <span style="color:#66d9ef">char</span> c5, <span style="color:#66d9ef">char</span> c10, <span style="color:#66d9ef">int</span> num){
     string part;
     <span style="color:#66d9ef">switch</span>(num){
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
         <span style="color:#66d9ef">return</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c5;
         <span style="color:#66d9ef">return</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
         <span style="color:#66d9ef">return</span> c5 <span style="color:#f92672">+</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
@@ -124,9 +111,7 @@ if (!doNotTrack) {
   roman <span style="color:#f92672">+=</span> digitConverter(<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#e6db74">&#39;V&#39;</span>,<span style="color:#e6db74">&#39;X&#39;</span>,num<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>);
   <span style="color:#66d9ef">return</span> roman;
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>digitConverter()</code>は、桁をローマ数字に変換するラムダ式。引数には、各桁を表すローマ字が必要。
 <code>[[fallthough]]</code>を活用しながら、<code>switch-case</code>を用いて条件分岐をした。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">intToRoman</span>(<span style="color:#66d9ef">int</span> num) {
@@ -134,19 +119,19 @@ if (!doNotTrack) {
     string part;
     <span style="color:#66d9ef">switch</span>(num){
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
         <span style="color:#66d9ef">return</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c5;
         <span style="color:#66d9ef">return</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
-        [[fallthough]]
+        <span style="color:#a6e22e">[[fallthough]]</span>
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> part <span style="color:#f92672">+=</span> c1;
         <span style="color:#66d9ef">return</span> c5 <span style="color:#f92672">+</span> part;
       <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
@@ -157,8 +142,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">return</span> part;
     }
   };
-</code></pre></div>
-<p>高い桁から順にローマ数字に変換していく。
+</code></pre></div><p>高い桁から順にローマ数字に変換していく。
 <code>num/1000%10</code>は1000の位の数字を抜き出す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  string roman;
   roman <span style="color:#f92672">+=</span> digitConverter(<span style="color:#e6db74">&#39;M&#39;</span>,<span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39; &#39;</span>,num<span style="color:#f92672">/</span><span style="color:#ae81ff">1000</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>);

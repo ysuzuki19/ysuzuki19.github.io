@@ -64,23 +64,12 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 15 3sum</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-3sum-target-blank-問題-a"><a href="https://leetcode.com/problems/3sum/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>配列の要素から、和が0になる3つの要素の組を求める問題。<code>std::map</code>を用いて、<code>O(N*N*logN)</code>の速度の解答を作った。&mdash;&mdash;&mdash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-3sum-target-blank-問題-a"><a href="https://leetcode.com/problems/3sum/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>配列の要素から、和が0になる3つの要素の組を求める問題。<code>std::map</code>を用いて、<code>O(N*N*logN)</code>の速度の解答を作った。&mdash;&mdash;&mdash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblems3sum-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p><code>vector&lt;int&gt; nums</code>が与えられ、その内3つの要素の和が0になる組を求める問題
 <code>nums</code>の要素は重複することがあるが、同じ組み合わせは解に含めない。</p>
-
 <h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> threeSum(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums) {
   <span style="color:#66d9ef">if</span>(nums.size() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">return</span> {};
@@ -106,60 +95,48 @@ if (!doNotTrack) {
   }
   <span style="color:#66d9ef">return</span> threes;
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>nums</code>の要素数が3未満であれば組み合わせを作ることができないので空の配列を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> threeSum(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums) {
   <span style="color:#66d9ef">if</span>(nums.size() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">return</span> {};
-</code></pre></div>
-<p><code>std::map</code>に、数値の個数をカウントしていく。</p>
+</code></pre></div><p><code>std::map</code>に、数値の個数をカウントしていく。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mp;
   <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> num : nums) mp[num]<span style="color:#f92672">++</span>;
-</code></pre></div>
-<p>ここからが組み合わせの探索。
+</code></pre></div><p>ここからが組み合わせの探索。
 3つの数を<code>{a, b, c}</code>とした時、
 $$a \leq b \leq c$$
 を満たすものとする。この順番を維持することで、組み合わせの重複を防ぐことができる。</p>
-
 <p><code>std::map</code>のイテレータはキーの小さい方から順に走査してくれる。
 そのキーの値を、「選択中」という意味で一つマイナスしておく（同値が含まれる組み合わせのため）。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  vector<span style="color:#f92672">&lt;</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> threes;
   <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> itr_i<span style="color:#f92672">=</span>mp.begin(); itr_i<span style="color:#f92672">!=</span>mp.end(); <span style="color:#f92672">++</span>itr_i){
     itr_i<span style="color:#f92672">-&gt;</span>second<span style="color:#f92672">--</span>;
-</code></pre></div>
-<p><code>b</code>は、<code>a</code>と同じ値になる可能性もあるので、<code>itr_j</code>は<code>itr_i</code>から走査する。
+</code></pre></div><p><code>b</code>は、<code>a</code>と同じ値になる可能性もあるので、<code>itr_j</code>は<code>itr_i</code>から走査する。
 ここでも、「選択中」という意味で一つマイナスしておく。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> itr_j<span style="color:#f92672">=</span>itr_i; itr_j<span style="color:#f92672">!=</span>mp.end(); <span style="color:#f92672">++</span>itr_j){
       <span style="color:#66d9ef">if</span>( itr_j<span style="color:#f92672">-&gt;</span>second <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> ) <span style="color:#66d9ef">continue</span>;
       itr_j<span style="color:#f92672">-&gt;</span>second<span style="color:#f92672">--</span>;
-</code></pre></div>
-<p>選択中の<code>a</code>と<code>b</code>に対して和が0となる<code>c</code>を計算する（普通の引き算<code>0-a-b</code>）。
+</code></pre></div><p>選択中の<code>a</code>と<code>b</code>に対して和が0となる<code>c</code>を計算する（普通の引き算<code>0-a-b</code>）。
 ここで、</p>
-
 <p>$$
 a \leq b \leq c
 $$</p>
-
 <p>の関係が崩れた場合は、それ以上<code>b</code>を走査しても意味がないので<code>break</code>して次の<code>a</code>に対して走査する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">      <span style="color:#66d9ef">int</span> nums_k <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> itr_i<span style="color:#f92672">-&gt;</span>first <span style="color:#f92672">-</span> itr_j<span style="color:#f92672">-&gt;</span>first;
       <span style="color:#66d9ef">if</span>( nums_k <span style="color:#f92672">&lt;</span> itr_j<span style="color:#f92672">-&gt;</span>first ){
         itr_j<span style="color:#f92672">-&gt;</span>second<span style="color:#f92672">++</span>;
         <span style="color:#66d9ef">break</span>;
       }
-</code></pre></div>
-<p><code>a</code>・<code>b</code>・<code>c</code>の関係が成り立った時、その<code>c</code>が元の配列に存在している場合は、その組み合わせを<code>threes</code>に追加する。</p>
+</code></pre></div><p><code>a</code>・<code>b</code>・<code>c</code>の関係が成り立った時、その<code>c</code>が元の配列に存在している場合は、その組み合わせを<code>threes</code>に追加する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">      <span style="color:#66d9ef">if</span>( mp[nums_k] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> ){
         threes.push_back({itr_i<span style="color:#f92672">-&gt;</span>first, itr_j<span style="color:#f92672">-&gt;</span>first, nums_k});
       }
-</code></pre></div>
-<p><code>itr_i</code>と<code>itr_j</code>を次の値にする。</p>
+</code></pre></div><p><code>itr_i</code>と<code>itr_j</code>を次の値にする。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">      itr_j<span style="color:#f92672">-&gt;</span>second<span style="color:#f92672">++</span>;
     }
     itr_i<span style="color:#f92672">-&gt;</span>second<span style="color:#f92672">++</span>;
   }
-</code></pre></div>
-<p>全ての組み合わせ<code>threes</code>を返す。</p>
+</code></pre></div><p>全ての組み合わせ<code>threes</code>を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">return</span> threes;
 }
 </code></pre></div></div>

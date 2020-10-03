@@ -64,28 +64,15 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 14 Longest Common Prefix</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-longest-common-prefix-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>最も長い接頭詞を求める問題。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-longest-common-prefix-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>最も長い接頭詞を求める問題。&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblemslongest-common-prefix-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p>先頭から何文字まで共通かどうか求める問題</p>
-
 <pre><code>&lt;例&gt;
 [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;] -&gt; &quot;fl&quot;
 [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;] -&gt; &quot;&quot;
-</code></pre>
-
-<h1 id="コード全体">コード全体</h1>
+</code></pre><h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">longestCommonPrefix</span>(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&amp;</span> strs) {
   <span style="color:#66d9ef">if</span>(strs.empty()) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
   <span style="color:#66d9ef">if</span>(strs.size()<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> strs[<span style="color:#ae81ff">0</span>];
@@ -98,26 +85,21 @@ if (!doNotTrack) {
   }
   <span style="color:#66d9ef">return</span> strs[<span style="color:#ae81ff">0</span>].substr(<span style="color:#ae81ff">0</span>,minLength);
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p>文字列が一つもない場合は<code>&quot;&quot;</code>（からの文字列）を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">string <span style="color:#a6e22e">longestCommonPrefix</span>(vector<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;&amp;</span> strs) {
   <span style="color:#66d9ef">if</span>(strs.empty()) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</code></pre></div>
-<p><code>minLength</code>は、一番短い文字列の長さを表す。そのため、<code>for-loop</code>で更新して最短長を求める。</p>
+</code></pre></div><p><code>minLength</code>は、一番短い文字列の長さを表す。そのため、<code>for-loop</code>で更新して最短長を求める。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  size_t minLength <span style="color:#f92672">=</span> strs[<span style="color:#ae81ff">0</span>].length();
   <span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; i<span style="color:#f92672">&lt;</span>strs.size(); <span style="color:#f92672">++</span>i) minLength <span style="color:#f92672">=</span> min(minLength, strs[i].length());
-</code></pre></div>
-<p>インデックス番号が0から<code>minLength</code>まで全ての文字列の文字が一致するか確認する。
+</code></pre></div><p>インデックス番号が0から<code>minLength</code>まで全ての文字列の文字が一致するか確認する。
 一致しなかった段階で、その長さの部分文字列を<code>std::substr()</code>によって返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">for</span>(size_t i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>minLength; <span style="color:#f92672">++</span>i){
     <span style="color:#66d9ef">for</span>(size_t strIdx<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>; strIdx<span style="color:#f92672">&lt;</span>strs.size(); <span style="color:#f92672">++</span>strIdx){
       <span style="color:#66d9ef">if</span>(strs[<span style="color:#ae81ff">0</span>][i] <span style="color:#f92672">!=</span> strs[strIdx][i]) <span style="color:#66d9ef">return</span> strs[<span style="color:#ae81ff">0</span>].substr(<span style="color:#ae81ff">0</span>,i);
     }
   }
-</code></pre></div>
-<p>この時点でプログラムが継続されているということは、<code>minLength</code>まで全て一致したという事なので、<code>0~minLength</code>の部分文字列を返す。</p>
+</code></pre></div><p>この時点でプログラムが継続されているということは、<code>minLength</code>まで全て一致したという事なので、<code>0~minLength</code>の部分文字列を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">return</span> strs[<span style="color:#ae81ff">0</span>].substr(<span style="color:#ae81ff">0</span>,minLength);
 }
 </code></pre></div></div>

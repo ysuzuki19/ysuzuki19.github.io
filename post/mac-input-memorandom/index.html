@@ -64,53 +64,30 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Mac入力ショートカットメモ</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#何が嬉しいのか">何が嬉しいのか？</a></li>
-<li><a href="#どこで使えるのか">どこで使えるのか？</a></li>
-<li><a href="#キーバインド一覧">キーバインド一覧</a></li>
-<li><a href="#ubuntuの人は">Ubuntuの人は</a></li>
-<li><a href="#おわりに">おわりに</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<h1 id="はじめに">はじめに</h1>
-
+				<div class="entry__content"><h1 id="はじめに">はじめに</h1>
 <p>また、プログラミング用のエディタにはVimを用いており、Vim以外の環境でのテキスト編集ではストレスが溜まる。
 しかし幸いにも、普段使いのラップトップにはMacである。
 Macの入力ショートカットには、Emacs風のキーバインドが用意されている。今後自分で見返すためのキーバインドメモを残しておこうと思う。</p>
-
 <p>Ubuntuの人でこれと似たような入力ショートカットを使いたい人向けに、<a href="http://localhost:1313/post/mac-input-memorandom/#ubuntu%E3%81%AE%E4%BA%BA%E3%81%AF">本記事下部</a>に設定コマンドを記した。</p>
-
 <h1 id="何が嬉しいのか">何が嬉しいのか？</h1>
-
 <p>VimやEmacsのメリットと被る点が多いだろうが、ホームポジションから指を離さずに移動・削除ができる。
 特に、Delキーが存在しない（Fn+backspaceが用意されている）Macにおいては、カーソル後削除が非常に打ち辛く、以下で紹介するControlとの組み合わせを覚えておくと入力中のストレスを低減する助けとなる。</p>
-
 <ul>
 <li>矢印キーを押さなくて済む</li>
 <li>backspace, delete(on Mac, <code>fn+backspace</code>)を押さなくて済む</li>
 <li>行の先頭・末尾へ一発移動できる</li>
 </ul>
-
 <h1 id="どこで使えるのか">どこで使えるのか？</h1>
-
 <p>Macでの入力では基本的にどこでも使える。</p>
-
 <ul>
 <li>ブラウザ（GoogleDocsではぜひ使いたい）</li>
 <li>Bash（他、シェル）</li>
 </ul>
-
 <p>しかし、入力している環境で他のキーバインドが割り当てられている場合、競合して使えない可能性がある。</p>
-
 <h1 id="キーバインド一覧">キーバインド一覧</h1>
-
-<p>C-<key>というのは、Controlと<key>の同時押しを意味する。</p>
-
+<p>C-<!-- raw HTML omitted -->というのは、Controlと<!-- raw HTML omitted -->の同時押しを意味する。</p>
 <table>
 <thead>
 <tr>
@@ -118,89 +95,72 @@ Macの入力ショートカットには、Emacs風のキーバインドが用意
 <th>機能</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>C-f</code></td>
 <td>右移動(→)</td>
 </tr>
-
 <tr>
 <td><code>C-b</code></td>
 <td>左移動(←)</td>
 </tr>
-
 <tr>
 <td><code>C-p</code></td>
 <td>上移動（ターミナル：履歴戻）(↑)</td>
 </tr>
-
 <tr>
 <td><code>C-n</code></td>
 <td>下移動（ターミナル：履歴進）(↓)</td>
 </tr>
-
 <tr>
 <td><code>C-a</code></td>
 <td>行頭へ移動</td>
 </tr>
-
 <tr>
 <td><code>C-e</code></td>
 <td>行末へ移動</td>
 </tr>
-
 <tr>
 <td><code>C-h</code></td>
 <td>カーソル前を削除(backspace)</td>
 </tr>
-
 <tr>
 <td><code>C-d</code></td>
 <td>カーソル後を削除(fn+backspace</td>
 </tr>
-
 <tr>
 <td><code>C-o</code></td>
 <td>カーソル位置に改行を挿入</td>
 </tr>
-
 <tr>
 <td><code>C-t</code></td>
 <td>カーソル前後を入れ替え</td>
 </tr>
-
 <tr>
 <td><code>C-k</code></td>
 <td>行中のカーソル右を削除（ヤンク）</td>
 </tr>
-
 <tr>
 <td><code>C-k</code>（範囲選択中に）</td>
 <td>選択範囲を削除（ヤンク）</td>
 </tr>
-
 <tr>
 <td><code>C-y</code></td>
 <td>C-kのヤンク内容をペースト</td>
 </tr>
 </tbody>
 </table>
-
 <p><code>C-k</code>からの<code>C-y</code>について、<code>Command+c</code>からの<code>Command+v</code>のコピペとは別枠である点に注意が必要である。また、<code>C-f,b,p,n</code>は、<code>Shift</code>キーでの範囲選択にも対応しているので、<code>Shift+Control+n</code>で複数行選択して<code>C-k</code>,<code>C-y</code>をする事で、複数のコピペも可能。</p>
-
 <h1 id="ubuntuの人は">Ubuntuの人は</h1>
-
-<p><code>gnome-tweak-tools</code>をインストールしてGUIで設定しても良いが、コマンド一発でできる以下の方が楽であろう。以下コマンドは、<a href="https://askubuntu.com/questions/124815/how-do-i-enable-emacs-keybindings-in-apps-such-as-google-chrome/233539" target="_blank">ask ubuntuのこのページ</a>に載っていた。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Emacs風にするコマンド</span>
+<p><code>gnome-tweak-tools</code>をインストールしてGUIで設定しても良いが、コマンド一発でできる以下の方が楽であろう。以下コマンドは、<!-- raw HTML omitted -->ask ubuntuのこのページ<!-- raw HTML omitted -->に載っていた。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#75715e"># Emacs風にするコマンド</span>
 $ gsettings set org.gnome.desktop.interface gtk-key-theme <span style="color:#e6db74">&#34;Emacs&#34;</span>
 <span style="color:#75715e"># Defaultに戻すコマンド</span>
-$ gsettings set org.gnome.desktop.interface gtk-key-theme <span style="color:#e6db74">&#34;Default&#34;</span></code></pre></div>
-<h1 id="おわりに">おわりに</h1>
-
+$ gsettings set org.gnome.desktop.interface gtk-key-theme <span style="color:#e6db74">&#34;Default&#34;</span>
+</code></pre></div><h1 id="おわりに">おわりに</h1>
 <p>私の知る限りのControl系のショートカットは以上だが、他にも発見次第追加していこうと思う。
 これらを知らない状態よりは圧倒的に文書編集が捗るようになったが、モードの概念があるVimよりは圧倒的に不便だが、日本語入力する場合はMac標準の方が優れていると感じた。</p>
-
 <p>個人的に、電車で作業する際に矢印キーを押さなくて済むのはありがたい。</p>
 </div>
 				

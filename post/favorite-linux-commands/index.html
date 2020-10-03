@@ -65,58 +65,49 @@ if (!doNotTrack) {
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
 	<nav id="TableOfContents">
-<ul>
-<li><a href="#はじめに">はじめに</a></li>
-<li><a href="#シンプル">シンプル</a>
-<ul>
-<li>
-<ul>
-<li><a href="#cd">cd</a></li>
-<li><a href="#ls">ls</a></li>
-<li><a href="#touch">touch</a></li>
-<li><a href="#mkdir">mkdir</a></li>
-<li><a href="#rm">rm</a></li>
-<li><a href="#cat">cat</a></li>
-<li><a href="#cp">cp</a></li>
-<li><a href="#mv">mv</a></li>
-<li><a href="#curl">curl</a></li>
-<li><a href="#wget">wget</a></li>
-<li><a href="#alias">alias</a></li>
-<li><a href="#unalias">unalias</a></li>
-<li><a href="#unzip">unzip</a></li>
-<li><a href="#history">history</a></li>
-<li><a href="#exit">exit</a></li>
-<li><a href="#vim">vim</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#よく使うコマンドのセット">よく使うコマンドのセット</a>
-<ul>
-<li>
-<ul>
-<li><a href="#特定の名前を持つファイルをpc内部から探す">特定の名前を持つファイルをPC内部から探す</a></li>
-<li><a href="#コマンド履歴を遡りながら表示">コマンド履歴を遡りながら表示</a></li>
-<li><a href="#コマンド履歴から特定のコマンドを表示">コマンド履歴から特定のコマンドを表示</a></li>
-<li><a href="#ファイル内から特定のキーワードを持つ行を表示">ファイル内から特定のキーワードを持つ行を表示</a></li>
-<li><a href="#c-でmakeする際に-errorと表示された行のみ表示">C++でmakeする際に、errorと表示された行のみ表示</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cd">cd</a></li>
+        <li><a href="#ls">ls</a></li>
+        <li><a href="#touch">touch</a></li>
+        <li><a href="#mkdir">mkdir</a></li>
+        <li><a href="#rm">rm</a></li>
+        <li><a href="#cat">cat</a></li>
+        <li><a href="#cp">cp</a></li>
+        <li><a href="#mv">mv</a></li>
+        <li><a href="#curl">curl</a></li>
+        <li><a href="#wget">wget</a></li>
+        <li><a href="#alias">alias</a></li>
+        <li><a href="#unalias">unalias</a></li>
+        <li><a href="#unzip">unzip</a></li>
+        <li><a href="#history">history</a></li>
+        <li><a href="#exit">exit</a></li>
+        <li><a href="#vim">vim</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#特定の名前を持つファイルをpc内部から探す">特定の名前を持つファイルをPC内部から探す</a></li>
+        <li><a href="#コマンド履歴を遡りながら表示">コマンド履歴を遡りながら表示</a></li>
+        <li><a href="#コマンド履歴から特定のコマンドを表示">コマンド履歴から特定のコマンドを表示</a></li>
+        <li><a href="#ファイル内から特定のキーワードを持つ行を表示">ファイル内から特定のキーワードを持つ行を表示</a></li>
+        <li><a href="#cでmakeする際にerrorと表示された行のみ表示">C++でmakeする際に、errorと表示された行のみ表示</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 </details>
-				<div class="entry__content">
-
-<h1 id="はじめに">はじめに</h1>
-
+				<div class="entry__content"><h1 id="はじめに">はじめに</h1>
 <p>そろそろ、Linuxを使い始めて１年半ほど、Macを使い始めて１年ほど経過する（2020/05現在）。
 そして、ターミナルをできるだけ触るように心がけているため、当初よりはコマンドを扱えるようになってきた。
 ターミナルの始めたては色々戸惑う事も多いと思うので、自分のよく使うコマンドを記しておこうと思う。</p>
-
 <p>ただし、全コマンドを網羅してあるわけでもないし、一覧内のコマンドも、自分が使う範囲でしか記していないため、ある程度慣れてきたら他のサイトで情報収集することを勧める。</p>
-
 <h1 id="シンプル">シンプル</h1>
-
 <h3 id="cd">cd</h3>
-
 <p>ディレクトリを移動。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd ./dir     <span style="color:#75715e"># カレントディレクトリ内のdirというディレクトリ内へ移動</span>
 $ cd dir       <span style="color:#75715e"># カレントディレクトリ内のdirというディレクトリ内へ移動</span>
@@ -124,9 +115,8 @@ $ cd ..        <span style="color:#75715e"># 親ディレクトリに移動</spa
 $ cd           <span style="color:#75715e"># ホームへ移動</span>
 $ cd ~/        <span style="color:#75715e"># ホームへ移動</span>
 $ cd $HOME     <span style="color:#75715e"># ホームへ移動</span>
-$ cd /dir/dir  <span style="color:#75715e"># ルート内のdir内のdirへ移動</span></code></pre></div>
-<h3 id="ls">ls</h3>
-
+$ cd /dir/dir  <span style="color:#75715e"># ルート内のdir内のdirへ移動</span>
+</code></pre></div><h3 id="ls">ls</h3>
 <p>ファイル・ディレクトリを表示。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ls           <span style="color:#75715e"># カレント内を表示</span>
 $ ls dir       <span style="color:#75715e"># カレント内のdir内を表示</span>
@@ -135,101 +125,83 @@ $ ls ~/dir     <span style="color:#75715e"># ホーム内のdir内を表示</spa
 $ ls /dir/dir  <span style="color:#75715e"># ルート内のdir内のdir内を表示</span>
 $ ls -a        <span style="color:#75715e"># 隠しファイル(.から始まる名前）も表示</span>
 $ ls -l        <span style="color:#75715e"># ファイル情報も表示</span>
-$ ls -al       <span style="color:#75715e"># 隠しファイルもファイル情報も表示</span></code></pre></div>
-<h3 id="touch">touch</h3>
-
+$ ls -al       <span style="color:#75715e"># 隠しファイルもファイル情報も表示</span>
+</code></pre></div><h3 id="touch">touch</h3>
 <p>ファイルを生成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ touch file   <span style="color:#75715e"># fileという名前のファイルを生成</span></code></pre></div>
-<h3 id="mkdir">mkdir</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ touch file   <span style="color:#75715e"># fileという名前のファイルを生成</span>
+</code></pre></div><h3 id="mkdir">mkdir</h3>
 <p>ディレクトリを生成。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir dir   <span style="color:#75715e"># dirという名前のディレクトリを生成</span></code></pre></div>
-<h3 id="rm">rm</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir dir   <span style="color:#75715e"># dirという名前のディレクトリを生成</span>
+</code></pre></div><h3 id="rm">rm</h3>
 <p>ファイル・ディレクトリを削除
 （注）GUIによる削除とは違い、元に戻すのが難しいので注意が必要である。ターミナルに慣れていない場合は、使わない方が無難。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ rm file    <span style="color:#75715e"># fileを削除</span>
 $ rm -d dir  <span style="color:#75715e"># 空ディレクトリdirを削除</span>
-$ rm -r dir  <span style="color:#75715e"># ディレクトリdirを再帰的に（中身ごと）削除</span></code></pre></div>
-<h3 id="cat">cat</h3>
-
+$ rm -r dir  <span style="color:#75715e"># ディレクトリdirを再帰的に（中身ごと）削除</span>
+</code></pre></div><h3 id="cat">cat</h3>
 <p>ファイルの中身を表示。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat file   <span style="color:#75715e"># fileの中身を表示</span></code></pre></div>
-<h3 id="cp">cp</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat file   <span style="color:#75715e"># fileの中身を表示</span>
+</code></pre></div><h3 id="cp">cp</h3>
 <p>ファイル・ディレクトリをコピー</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cp file file2     <span style="color:#75715e"># fileをfile2という名前でコピー</span>
 $ cp file dir/file2 <span style="color:#75715e"># fileをdir内にfile2という名前でコピー</span>
-$ cp -r dir dir2    <span style="color:#75715e"># dirを内部ごとdir2という名前でコピー (-rは再帰の意）</span></code></pre></div>
-<h3 id="mv">mv</h3>
-
+$ cp -r dir dir2    <span style="color:#75715e"># dirを内部ごとdir2という名前でコピー (-rは再帰の意）</span>
+</code></pre></div><h3 id="mv">mv</h3>
 <p>ファイル・ディレクトリを置き換える（移動・名前変更）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mv file file2    <span style="color:#75715e"># fileをfile2に名前変更</span>
 $ mv file ./dir/   <span style="color:#75715e"># fileをdir内に移動</span>
-$ mv dir ./dir2/   <span style="color:#75715e"># dirをdir2内に移動</span></code></pre></div>
-<h3 id="curl">curl</h3>
-
+$ mv dir ./dir2/   <span style="color:#75715e"># dirをdir2内に移動</span>
+</code></pre></div><h3 id="curl">curl</h3>
 <p>HTTPアクセス
 他にももっと色々できる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ curl https://...
-$ curl https://... &gt; file.html  <span style="color:#75715e"># 出力結果を`file.html`に保存</span></code></pre></div>
-<h3 id="wget">wget</h3>
-
+$ curl https://... &gt; file.html  <span style="color:#75715e"># 出力結果を`file.html`に保存</span>
+</code></pre></div><h3 id="wget">wget</h3>
 <p>インターネット上のファイルをダウンロード。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget https://...</code></pre></div>
-<h3 id="alias">alias</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wget https://...
+</code></pre></div><h3 id="alias">alias</h3>
 <p>aliasの設定の表示、aliasの設定（現在のログインシェルのみで）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ alias                      <span style="color:#75715e"># 全エイリアス表示</span>
 $ alias setted-alias         <span style="color:#75715e"># `setted-alias`という名前のエイリアスの内容を表示</span>
-$ alias new-alias<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;command&#34;</span>  <span style="color:#75715e"># `new-alias`という名前の`command`という内容のエイリアスを設定</span></code></pre></div>
-<h3 id="unalias">unalias</h3>
-
+$ alias new-alias<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;command&#34;</span>  <span style="color:#75715e"># `new-alias`という名前の`command`という内容のエイリアスを設定</span>
+</code></pre></div><h3 id="unalias">unalias</h3>
 <p>aliasを削除（現在のログインシェルのみで）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ unalias setted-alias  <span style="color:#75715e"># `setted-alias`という名前のエイリアスを削除</span></code></pre></div>
-<h3 id="unzip">unzip</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ unalias setted-alias  <span style="color:#75715e"># `setted-alias`という名前のエイリアスを削除</span>
+</code></pre></div><h3 id="unzip">unzip</h3>
 <p>Zipファイルを解凍。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ unzip file.zip</code></pre></div>
-<h3 id="history">history</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ unzip file.zip
+</code></pre></div><h3 id="history">history</h3>
 <p>コマンド履歴を出力</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ history</code></pre></div>
-<h3 id="exit">exit</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ history
+</code></pre></div><h3 id="exit">exit</h3>
 <p>ターミナルを終了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ exit</code></pre></div>
-<h3 id="vim">vim</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ exit
+</code></pre></div><h3 id="vim">vim</h3>
 <p>テキストを編集。vimはクセが強いので、使いながらキーバインドを覚えていくと良いだろう。
 間違えて開いてしまった人は、<code>Esc</code>を押して<code>:q!</code>と入力する事でコマンドラインに戻る事ができる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ vim file              <span style="color:#75715e"># fileを編集</span>
-$ vimdiff file1 file2   <span style="color:#75715e"># file1,file2を比較</span></code></pre></div>
-<h1 id="よく使うコマンドのセット">よく使うコマンドのセット</h1>
-
+$ vimdiff file1 file2   <span style="color:#75715e"># file1,file2を比較</span>
+</code></pre></div><h1 id="よく使うコマンドのセット">よく使うコマンドのセット</h1>
 <h3 id="特定の名前を持つファイルをpc内部から探す">特定の名前を持つファイルをPC内部から探す</h3>
-
 <p><code>find</code>コマンドでは、アクセス権限のエラーである<code>Permission denied</code>が延々と表示され、目的のファイルやフォルダを見つける時に苦労する事がある。そんな時は、標準エラーを表示しなければ良い。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ find . -name &lt;filename&gt; <span style="color:#ae81ff">2</span>&gt;/dev/null</code></pre></div>
-<h3 id="コマンド履歴を遡りながら表示">コマンド履歴を遡りながら表示</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ find . -name &lt;filename&gt; 2&gt;/dev/null
+</code></pre></div><h3 id="コマンド履歴を遡りながら表示">コマンド履歴を遡りながら表示</h3>
 <p><code>history</code>で出力した履歴を、スクロールせずに遡る事が可能。<code>less</code>にパイプすると良い。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ history | less</code></pre></div>
-<h3 id="コマンド履歴から特定のコマンドを表示">コマンド履歴から特定のコマンドを表示</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ history | less
+</code></pre></div><h3 id="コマンド履歴から特定のコマンドを表示">コマンド履歴から特定のコマンドを表示</h3>
 <p><code>history</code>コマンドの結果を<code>grep</code>コマンドにパイプすると良い。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ history | grep keyword                   <span style="color:#75715e"># 単一のキーワード</span>
 $ history | grep -e keyword1 -e keyword2   <span style="color:#75715e"># OR検索（どちらかを含むものを表示）</span>
-$ history | grep keyword1 | grep keyword2  <span style="color:#75715e"># AND検索（どちらも含むものを表示）</span></code></pre></div>
-<h3 id="ファイル内から特定のキーワードを持つ行を表示">ファイル内から特定のキーワードを持つ行を表示</h3>
+$ history | grep keyword1 | grep keyword2  <span style="color:#75715e"># AND検索（どちらも含むものを表示）</span>
+</code></pre></div><h3 id="ファイル内から特定のキーワードを持つ行を表示">ファイル内から特定のキーワードを持つ行を表示</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cat file | grep keyword                   <span style="color:#75715e"># 単一のキーワード</span>
 $ cat file | grep -e keyword1 -e keyword2   <span style="color:#75715e"># OR検索（どちらかを含むものを表示）</span>
-$ cat file | grep keyword1 | grep keyword2  <span style="color:#75715e"># AND検索（どちらも含むものを表示）</span></code></pre></div>
-<h3 id="c-でmakeする際に-errorと表示された行のみ表示">C++でmakeする際に、errorと表示された行のみ表示</h3>
-
+$ cat file | grep keyword1 | grep keyword2  <span style="color:#75715e"># AND検索（どちらも含むものを表示）</span>
+</code></pre></div><h3 id="cでmakeする際にerrorと表示された行のみ表示">C++でmakeする際に、errorと表示された行のみ表示</h3>
 <p>コンパイルメッセージとして余計なものが表示されてしまう場合、すっきりとしたエラー表示にする事ができる。ただし、必要なメッセージが排除されてしまう場合があるので、注意が必要。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ make | grep error                  <span style="color:#75715e"># &#39;error&#39;と含まれた行のみ表示</span>
-$ make | grep -e error -e warning    <span style="color:#75715e"># &#39;error&#39;または&#39;warning&#39;と含まれた行のみ表示</span></code></pre></div></div>
+$ make | grep -e error -e warning    <span style="color:#75715e"># &#39;error&#39;または&#39;warning&#39;と含まれた行のみ表示</span>
+</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					

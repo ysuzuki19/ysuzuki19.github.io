@@ -64,24 +64,12 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 3 Longest Substring Without Repeating Characters</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-longest-substring-without-repeating-characters-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>文字列の中で重複文字が含まれない最大の長さを求める問題。&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
+				<div class="entry__content"><p>文字列の中で重複文字が含まれない最大の長さを求める問題。&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
 <p>スライディングウィンドウとハッシュテーブルを活用して解いた。</p>
-
-<h1 id="a-href-https-leetcode-com-problems-longest-substring-without-repeating-characters-target-blank-問題-a"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">問題</a></h1>
-
+<h1 id="a-hrefhttpsleetcodecomproblemslongest-substring-without-repeating-characters-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p>与えられた<code>s</code>の内部で、文字が重複しない最大のsubstringを探し、その長さを求める。</p>
-
 <h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lengthOfLongestSubstring</span>(string s) {
   <span style="color:#66d9ef">int</span> maxLength <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
@@ -93,28 +81,22 @@ if (!doNotTrack) {
   }
   <span style="color:#66d9ef">return</span> maxLength;
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>maxLength</code>は、最大長を格納して更新していく。
 <code>chars</code>は、各文字がsubstringに何個含まれているかを記憶する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lengthOfLongestSubstring</span>(string s) {
   <span style="color:#66d9ef">int</span> maxLength <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> chars;
-</code></pre></div>
-<p><code>left</code>はsubstringの左端を、<code>right</code>は、substringの右端のインデックス番号を指す。
+</code></pre></div><p><code>left</code>はsubstringの左端を、<code>right</code>は、substringの右端のインデックス番号を指す。
 <code>right</code>を更新するごとに<code>chars</code>に含有文字数を足していく。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">for</span>(size_t left<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, right<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; right<span style="color:#f92672">&lt;</span>s.length(); right<span style="color:#f92672">++</span>){
     chars[s[right]]<span style="color:#f92672">++</span>;
-</code></pre></div>
-<p><code>right</code>の文字が重複している場合、重複が解消されるまで<code>left</code>を動かす。</p>
+</code></pre></div><p><code>right</code>の文字が重複している場合、重複が解消されるまで<code>left</code>を動かす。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">while</span>(left<span style="color:#f92672">&lt;</span>right <span style="color:#f92672">&amp;&amp;</span> chars[s[right]]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>) chars[s[left<span style="color:#f92672">++</span>]]<span style="color:#f92672">--</span>;
-</code></pre></div>
-<p><code>left</code>・<code>right</code>に対するsubstringの長さは<code>right-left+1</code>であり、<code>maxLength</code>を更新する。</p>
+</code></pre></div><p><code>left</code>・<code>right</code>に対するsubstringの長さは<code>right-left+1</code>であり、<code>maxLength</code>を更新する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">if</span>( maxLength <span style="color:#f92672">&lt;</span> right<span style="color:#f92672">-</span>left<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> ) maxLength <span style="color:#f92672">=</span> right<span style="color:#f92672">-</span>left<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
   }
-</code></pre></div>
-<p><code>maxLength</code>を返す。</p>
+</code></pre></div><p><code>maxLength</code>を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">return</span> maxLength;
 }
 </code></pre></div></div>

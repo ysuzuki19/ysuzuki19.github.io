@@ -64,30 +64,17 @@ if (!doNotTrack) {
 				<h1 class="entry__title">LeetCode 1 Two Sum</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-two-sum-target-blank-問題-a"><a href="https://leetcode.com/problems/two-sum/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>配列の要素から和が特定の数値の組を探す問題&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
+				<div class="entry__content"><p>配列の要素から和が特定の数値の組を探す問題&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
 <p>与えられた<code>vector&lt;int&gt;&amp; nums</code>の２つの要素の和が<code>int target</code>になるか答える問題。
 <code>map&lt;int,int&gt;</code>に<code>{値,インデックス番号}</code>を格納することで、<code>O(NlogN)</code>で計算可能。</p>
-
 <p>全探索による解法もあり、初期の段階で解いた際はこちらで解いが、そちらは<code>O(N^2)</code>となるため推奨しない</p>
-
-<h1 id="a-href-https-leetcode-com-problems-two-sum-target-blank-問題-a"><a href="https://leetcode.com/problems/two-sum/" target="_blank">問題</a></h1>
-
+<h1 id="a-hrefhttpsleetcodecomproblemstwo-sum-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p><code>nums[i] + nums[j] == target</code>を満たす<code>{i,j}</code>を<code>vector&lt;int&gt;</code>で返す。
 入力配列<code>nums</code>には、値の重複が存在しないという制約がある。</p>
-
 <h1 id="コード全体">コード全体</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Solution</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
   <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> twoSum(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> target) {
     map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mp;
@@ -101,27 +88,21 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">return</span> vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
   }
 };
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p>配列の要素の値を<code>map&lt;int,int&gt;</code>に格納する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Solution</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
   <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> twoSum(vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> nums, <span style="color:#66d9ef">int</span> target) {
     map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mp;
     <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>nums.size(); <span style="color:#f92672">++</span>i) mp[nums[i]] <span style="color:#f92672">=</span> i;
-</code></pre></div>
-<p>配列の各要素に対し、<code>target</code>との差が存在するか確認する。</p>
+</code></pre></div><p>配列の各要素に対し、<code>target</code>との差が存在するか確認する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>nums.size(); <span style="color:#f92672">++</span>i){
       <span style="color:#66d9ef">if</span>( mp.find(target<span style="color:#f92672">-</span>nums[i]) <span style="color:#f92672">!=</span> mp.end() ){
-</code></pre></div>
-<p>この時、自身が条件を満たしている場合は無視する（値の重複が無いという前提より）。</p>
+</code></pre></div><p>この時、自身が条件を満たしている場合は無視する（値の重複が無いという前提より）。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">        <span style="color:#66d9ef">if</span>( mp[target<span style="color:#f92672">-</span>nums[i]] <span style="color:#f92672">==</span> i ) <span style="color:#66d9ef">continue</span>;
-</code></pre></div>
-<p>存在する場合：その時のインデックスと対となるインデックスを返す。</p>
+</code></pre></div><p>存在する場合：その時のインデックスと対となるインデックスを返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">        <span style="color:#66d9ef">return</span> {i, mp[target<span style="color:#f92672">-</span>nums[i]]};
-</code></pre></div>
-<p>全ての要素に対して条件を満たす組が存在しない場合、<code>{-1,-1}</code>を返す。</p>
+</code></pre></div><p>全ての要素に対して条件を満たす組が存在しない場合、<code>{-1,-1}</code>を返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">return</span> vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>(<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
   }
 };

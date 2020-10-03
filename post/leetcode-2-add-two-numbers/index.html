@@ -64,31 +64,18 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Leetcode 2 Add Two Numbers</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#a-href-https-leetcode-com-problems-add-two-numbers-target-blank-問題-a"><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">問題</a></a></li>
-<li><a href="#コード全体">コード全体</a></li>
-<li><a href="#解説">解説</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>連結リストを１つの数値と考えた時の、２数の和を求める問題&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-
-<h1 id="a-href-https-leetcode-com-problems-add-two-numbers-target-blank-問題-a"><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank">問題</a></h1>
-
+				<div class="entry__content"><p>連結リストを１つの数値と考えた時の、２数の和を求める問題&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<h1 id="a-hrefhttpsleetcodecomproblemsadd-two-numbers-target_blank問題a"><!-- raw HTML omitted -->問題<!-- raw HTML omitted --></h1>
 <p><code>ListNode* l1</code>、<code>ListNode* l2</code>のそれぞれを１つの数値として考え、それらの和を求める。
 この時、リストの値は反転したものと考える。</p>
-
 <pre><code>&lt;例&gt;
 L1 : 2 -&gt; 4 -&gt; 3
 L2 : 5 -&gt; 6 -&gt; 4
 Result : 7 -&gt; 0 -&gt; 8
 Note : 342 + 465 = 807
-</code></pre>
-
-<h1 id="コード全体">コード全体</h1>
+</code></pre><h1 id="コード全体">コード全体</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">addTwoNumbers</span>(ListNode<span style="color:#f92672">*</span> l1, ListNode<span style="color:#f92672">*</span> l2) {
   ListNode<span style="color:#f92672">*</span> createdListNode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ListNode;
   ListNode<span style="color:#f92672">*</span> createdListHead <span style="color:#f92672">=</span> createdListNode;
@@ -119,58 +106,47 @@ Note : 342 + 465 = 807
   }
   <span style="color:#66d9ef">return</span> createdListHead;
 }
-</code></pre></div>
-<h1 id="解説">解説</h1>
-
+</code></pre></div><h1 id="解説">解説</h1>
 <p><code>createdListNode</code>は、加算された数値を格納する連結リスト。
 <code>createdListHead</code>は、戻り値のために記憶したヘッド。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ListNode<span style="color:#f92672">*</span> <span style="color:#a6e22e">addTwoNumbers</span>(ListNode<span style="color:#f92672">*</span> l1, ListNode<span style="color:#f92672">*</span> l2) {
   ListNode<span style="color:#f92672">*</span> createdListNode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ListNode;
   ListNode<span style="color:#f92672">*</span> createdListHead <span style="color:#f92672">=</span> createdListNode;
-</code></pre></div>
-<p><code>hasNext()</code>は、「Nodeが次のNodeを持っているか？」を返すラムダ式。</p>
+</code></pre></div><p><code>hasNext()</code>は、「Nodeが次のNodeを持っているか？」を返すラムダ式。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">auto</span> hasNext <span style="color:#f92672">=</span> [](ListNode<span style="color:#f92672">*</span> node){
     <span style="color:#66d9ef">return</span> node <span style="color:#f92672">&amp;&amp;</span> node<span style="color:#f92672">-&gt;</span>next;
   };
-</code></pre></div>
-<p><code>pushBack()</code>は、<code>createdListNode</code>に次のNodeを追加するラムダ式。</p>
+</code></pre></div><p><code>pushBack()</code>は、<code>createdListNode</code>に次のNodeを追加するラムダ式。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">auto</span> pushBack <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>createdListNode](){
     ListNode<span style="color:#f92672">*</span> newNode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ListNode;
     createdListNode<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> newNode;
   };
-</code></pre></div>
-<p><code>moveUp()</code>は、<code>createdListNode</code>の桁上げをするラムダ式。
+</code></pre></div><p><code>moveUp()</code>は、<code>createdListNode</code>の桁上げをするラムダ式。
 この時、<code>pushBack()</code>により次のNodeを追加しつつ桁上げする。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">auto</span> moveUp <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>createdListNode, <span style="color:#f92672">&amp;</span>pushBack](){
     pushBack();
     createdListNode<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">-=</span> <span style="color:#ae81ff">10</span>;
     createdListNode<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
   };
-</code></pre></div>
-<p><code>l1</code>、<code>l2</code>のどちらかでも値が存在する間ループし続ける。</p>
+</code></pre></div><p><code>l1</code>、<code>l2</code>のどちらかでも値が存在する間ループし続ける。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">while</span>(l1<span style="color:#f92672">||</span>l2){
-</code></pre></div>
-<p><code>l1</code>および<code>l2</code>に値が存在する場合は、<code>createdListNode</code>に値を加算する。この時、桁上げは考慮しない。</p>
+</code></pre></div><p><code>l1</code>および<code>l2</code>に値が存在する場合は、<code>createdListNode</code>に値を加算する。この時、桁上げは考慮しない。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">if</span>(l1) createdListNode<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+=</span> l1<span style="color:#f92672">-&gt;</span>val;
     <span style="color:#66d9ef">if</span>(l2) createdListNode<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">+=</span> l2<span style="color:#f92672">-&gt;</span>val;
-</code></pre></div>
-<p><code>createdListNode</code>の値が10以上である時、桁上げ処理を行う。</p>
+</code></pre></div><p><code>createdListNode</code>の値が10以上である時、桁上げ処理を行う。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">if</span>( createdListNode<span style="color:#f92672">-&gt;</span>val <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>){
       moveUp();
-</code></pre></div>
-<p>桁上げを必要としない場合は、<code>createdListNode</code>に次のNodeを追加する。その時、<code>l1</code>・<code>l2</code>ともに次のNodeが存在しない場合はループ終了。</p>
+</code></pre></div><p>桁上げを必要としない場合は、<code>createdListNode</code>に次のNodeを追加する。その時、<code>l1</code>・<code>l2</code>ともに次のNodeが存在しない場合はループ終了。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    }<span style="color:#66d9ef">else</span>{
       <span style="color:#66d9ef">if</span>( <span style="color:#f92672">!</span>hasNext(l1) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>hasNext(l2) ) <span style="color:#66d9ef">break</span>;
       pushBack();
     }
-</code></pre></div>
-<p>連結リストを次へ進める。</p>
+</code></pre></div><p>連結リストを次へ進める。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    createdListNode <span style="color:#f92672">=</span> createdListNode<span style="color:#f92672">-&gt;</span>next;
     <span style="color:#66d9ef">if</span>(l1) l1 <span style="color:#f92672">=</span> l1<span style="color:#f92672">-&gt;</span>next;
     <span style="color:#66d9ef">if</span>(l2) l2 <span style="color:#f92672">=</span> l2<span style="color:#f92672">-&gt;</span>next;
   }
-</code></pre></div>
-<p>作成した加算済み連結リストを返す。</p>
+</code></pre></div><p>作成した加算済み連結リストを返す。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#66d9ef">return</span> createdListHead;
 }
 </code></pre></div></div>

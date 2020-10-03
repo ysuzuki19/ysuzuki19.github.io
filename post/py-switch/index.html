@@ -64,20 +64,12 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Pythonで大体Switchの代替になる関数</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#基本文-文字列を条件にする">基本文（文字列を条件にする）</a></li>
-<li><a href="#おまけ-数値も条件にする">おまけ（数値も条件にする）</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>Pythonは書きやすくて便利ですよね！ですが，Switch-case文が欲しいなと思う事があると思うんです．
+				<div class="entry__content"><p>Pythonは書きやすくて便利ですよね！ですが，Switch-case文が欲しいなと思う事があると思うんです．
 そんな時のために，ほぼSwitch文として扱う事ができる関数（というほどのものでもないもの）を作成したので，備忘録として記します．
 ご自由にお使いください．</p>
-
-<h1 id="基本文-文字列を条件にする">基本文（文字列を条件にする）</h1>
+<h1 id="基本文文字列を条件にする">基本文（文字列を条件にする）</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">py_switch</span>(val, branch):
 	<span style="color:#66d9ef">for</span> condition, bound_func <span style="color:#f92672">in</span> branch<span style="color:#f92672">.</span>items():
@@ -101,18 +93,14 @@ result <span style="color:#f92672">=</span> py_switch(
 		<span style="color:#e6db74">&#34;condition_1&#34;</span>: partial(process_1, <span style="color:#e6db74">&#39;コンニチハ&#39;</span>),
 		<span style="color:#e6db74">&#34;condition_2&#34;</span>: partial(process_2)
 	}
-)</code></pre></div>
-<p>こんな感じ．条件となる変数を第一引数とし，第二引数はmap形式の<code>(条件, 処理)</code>として与える．
+)
+</code></pre></div><p>こんな感じ．条件となる変数を第一引数とし，第二引数はmap形式の<code>(条件, 処理)</code>として与える．
 条件は，数値型でもよい．
 ここで，<code>partial()</code>にしないとJSONの引数生成時に関数の値の評価（？）がされてしまうので，注意が必要．</p>
-
 <p><code>partial()</code>にしないと・・・
 戻り値だけを必要とする場合なら結果的な不都合はなかなか起こらないだろうが，この例のように関数中でprintしている場合は思い通りの挙動をしてくれなくなる．また，全ての処理を行ってしまうので，各処理が大きければ実行時間へ悪影響を及ぼす懸念がある．</p>
-
-<h1 id="おまけ-数値も条件にする">おまけ（数値も条件にする）</h1>
-
+<h1 id="おまけ数値も条件にする">おまけ（数値も条件にする）</h1>
 <p>上の例だけではわかりづらいかもしれないので、数値を条件式にする例およびテストコードを残す。</p>
-
 <p>まずは<code>py_switch</code>の準備</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/local/env python3</span>
 
@@ -137,8 +125,8 @@ result <span style="color:#f92672">=</span> py_switch(
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_4</span>(msg):
 	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;条件値は数値の2だね！&#39;</span>, msg)
-	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span></code></pre></div>
-<p>テスト１</p>
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>
+</code></pre></div><p>テスト１</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">condition <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;condition_1&#39;</span>
 result <span style="color:#f92672">=</span> py_switch(
 	condition,
@@ -150,11 +138,11 @@ result <span style="color:#f92672">=</span> py_switch(
 	}
 )
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pyswitchの戻り値はresult&#39;</span>)</code></pre></div>
-<p>結果が以下</p>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pyswitchの戻り値はresult&#39;</span>)
+</code></pre></div><p>結果が以下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">process1: コンニチハ
-pyswitchの戻り値は <span style="color:#ae81ff">1</span></code></pre></div>
-<p>テスト２</p>
+pyswitchの戻り値は <span style="color:#ae81ff">1</span>
+</code></pre></div><p>テスト２</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">condition <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
 result <span style="color:#f92672">=</span> py_switch(
 	condition,
@@ -166,10 +154,11 @@ result <span style="color:#f92672">=</span> py_switch(
 	}
 )
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pyswitchの戻り値は&#39;</span>, result)</code></pre></div>
-<p>結果が以下</p>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pyswitchの戻り値は&#39;</span>, result)
+</code></pre></div><p>結果が以下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">条件値は数値の2だね！ コンバンハ
-pyswitchの戻り値は <span style="color:#ae81ff">2</span></code></pre></div></div>
+pyswitchの戻り値は <span style="color:#ae81ff">2</span>
+</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					

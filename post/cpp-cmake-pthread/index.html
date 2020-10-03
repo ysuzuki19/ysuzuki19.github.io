@@ -64,26 +64,18 @@ if (!doNotTrack) {
 				<h1 class="entry__title">C&#43;&#43;プロジェクトでpthread関係のリンクエラーへの対処</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#参考">参考</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p><code>cmake</code>で<code>pthread</code>リンクエラーを解消する方法</p>
+				<div class="entry__content"><p><code>cmake</code>で<code>pthread</code>リンクエラーを解消する方法</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/usr/bin/ld: CMakeFiles/project.dir/main.cpp.o: undefined reference to symbol <span style="color:#e6db74">&#39;pthread_join@@GLIBC_2.2.5&#39;</span>
 //lib/x86_64-linux-gnu/libpthread.so.0: error adding symbols: DSO missing from command line
-collect2: error: ld returned <span style="color:#ae81ff">1</span> exit status</code></pre></div>
-<p>g++を使っている場合,コンパイルオプションに<code>-pthread</code>を追加すれば直るはず。</p>
-
+collect2: error: ld returned <span style="color:#ae81ff">1</span> exit status
+</code></pre></div><p>g++を使っている場合,コンパイルオプションに<code>-pthread</code>を追加すれば直るはず。</p>
 <p><code>CMakeLists.txt</code>を使っている場合は、以下を追記する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">set(THREADS_PREFER_PTHREAD_FLAG ON)              
 find_package(Threads REQUIRED)                   
-target_link_libraries(project PUBLIC &#34;-pthread&#34;) </code></pre></div>
-<h1 id="参考">参考</h1>
-
+target_link_libraries(project PUBLIC &#34;-pthread&#34;) 
+</code></pre></div><h1 id="参考">参考</h1>
 <p><a href="https://stackoverflow.com/questions/1620918/cmake-and-libpthread">https://stackoverflow.com/questions/1620918/cmake-and-libpthread</a></p>
 </div>
 				

@@ -64,34 +64,25 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Git備忘録</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#基本">基本</a></li>
-<li><a href="#初期化">初期化</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>Gitの使い方をメモる。</p>
-
+				<div class="entry__content"><p>Gitの使い方をメモる。</p>
 <h1 id="基本">基本</h1>
-
 <p>個人で開発するなら、これだけで大体いける。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/&lt;username&gt;/&lt;repositoryname&gt;
 $ git pull
 $ git add &lt;filename&gt;
 $ git commit -m <span style="color:#e6db74">&#34;message&#34;</span>
-$ git push</code></pre></div>
-<h1 id="初期化">初期化</h1>
-
+$ git push
+</code></pre></div><h1 id="初期化">初期化</h1>
 <p>Githubにプッシュしたい時。
 あらかじめ、空のリポジトリを作っておく。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git init
 $ git add --all
 $ git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
 $ git remote add origin https://github.com/&lt;username&gt;/&lt;repositoryname&gt;
-$ git push --set-upstream origin master</code></pre></div></div>
+$ git push --set-upstream origin master
+</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					

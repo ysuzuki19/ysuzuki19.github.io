@@ -65,53 +65,25 @@ if (!doNotTrack) {
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
 	<nav id="TableOfContents">
-<ul>
-<li><a href="#setstate-の順番が変">setState()の順番が変</a></li>
-<li><a href="#typescript-もしくはjavascript-でリストのコピーができない">TypeScript（もしくはJavaScript）でリストのコピーができない。</a></li>
-<li><a href="#長い横線">長い横線</a></li>
-<li><a href="#リスト表示">リスト表示</a>
-<ul>
-<li><a href="#ulやliの中央寄せがうまくいかない">ulやliの中央寄せがうまくいかない</a></li>
-<li><a href="#横並びを中央揃え">横並びを中央揃え</a></li>
-</ul></li>
-<li><a href="#クリックできる画像を配置">クリックできる画像を配置</a></li>
-<li><a href="#hoverなどのアクションを遅延させる">hoverなどのアクションを遅延させる</a></li>
-<li><a href="#モバイルにのみ適用させるcss">モバイルにのみ適用させるCSS</a></li>
-<li><a href="#モバイルでhoverを無効">モバイルでhoverを無効</a></li>
-<li><a href="#オブジェクトのキー一覧を取得">オブジェクトのキー一覧を取得</a></li>
-<li><a href="#多言語対応">多言語対応</a></li>
-<li><a href="#iosのダブルクリックズーム無効化">iOSのダブルクリックズーム無効化</a></li>
-<li><a href="#モバイルのアドレスバーを考慮した縦サイズ">モバイルのアドレスバーを考慮した縦サイズ</a></li>
-<li><a href="#idのセレクタ">idのセレクタ</a></li>
-<li><a href="#アプリが計算資源を喰らい尽くす">アプリが計算資源を喰らい尽くす</a></li>
-<li><a href="#stateをローカルストレージに保存し-ページを再度開いた時にロードする">stateをローカルストレージに保存し、ページを再度開いた時にロードする</a></li>
-<li><a href="#firebaseとanalyticsとの連携がうまくいってない">firebaseとAnalyticsとの連携がうまくいってない</a></li>
-<li><a href="#npm-audit-fixの意味がわからない">npm audit fixの意味がわからない</a></li>
-</ul>
+  <ul>
+    <li><a href="#ulやliの中央寄せがうまくいかない">ulやliの中央寄せがうまくいかない</a></li>
+    <li><a href="#横並びを中央揃え">横並びを中央揃え</a></li>
+  </ul>
 </nav>
 </details>
-				<div class="entry__content">
-
-<p>Web開発初心者なので、HTML・CSSなどを再検索しなくて済むように備忘録を残す。</p>
-
+				<div class="entry__content"><p>Web開発初心者なので、HTML・CSSなどを再検索しなくて済むように備忘録を残す。</p>
 <pre><code>本サイトのコードは自由にお使いいただけますが、それによって生じた不利益に対して責任を負いません。
 自分でコードを確認・他のページとの比較をしながらお使いいただけたら幸いです。
-</code></pre>
-
-<p>例として記述するのは以下の環境とする。</p>
-
+</code></pre><p>例として記述するのは以下の環境とする。</p>
 <ul>
 <li>React</li>
 <li>JSX(TypeScript)</li>
 <li>SCSS</li>
 </ul>
-
-<h1 id="setstate-の順番が変">setState()の順番が変</h1>
-
+<h1 id="setstateの順番が変">setState()の順番が変</h1>
 <p>setState()が定義した順に動作してくれていなくて調べてみると、setState()は非同期で動作するらしい。
 つまり、順番に動作して欲しい場合は、一気にsetState()でやりたいことを定義する必要がある。
 ちなみに、setState()後に任意の動作を行いたい場合も、並べて描くだけでは順番がおかしくなる。</p>
-
 <p>以下のようにすることで、好みの順番で処理を定義することが可能。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>( (<span style="color:#a6e22e">state</span><span style="color:#f92672">:</span><span style="color:#a6e22e">any</span>) =&gt; {
 	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">st1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
@@ -120,41 +92,34 @@ if (!doNotTrack) {
 	}, () =&gt; {
 	<span style="color:#75715e">// ここには、setState()後の動作を記述できる。
 </span><span style="color:#75715e"></span>});
-</code></pre></div>
-<h1 id="typescript-もしくはjavascript-でリストのコピーができない">TypeScript（もしくはJavaScript）でリストのコピーができない。</h1>
-
+</code></pre></div><h1 id="typescriptもしくはjavascriptでリストのコピーができない">TypeScript（もしくはJavaScript）でリストのコピーができない。</h1>
 <p>通常の考えでいくと、以下の書き方でコピーできるように感じる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascripts" data-lang="javascripts">const a = [1, 2, 3, 4];
-const b = a;</code></pre></div>
-<p>しかし、これでは参照をコピーしているような挙動をしてしまう。</p>
+<pre><code class="language-javascripts" data-lang="javascripts">const a = [1, 2, 3, 4];
+const b = a;
+</code></pre><p>しかし、これでは参照をコピーしているような挙動をしてしまう。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">a</span>];
-</code></pre></div>
-<h1 id="長い横線">長い横線</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">hr</span> /&gt;</code></pre></div>
-<h1 id="リスト表示">リスト表示</h1>
-
+</code></pre></div><h1 id="長い横線">長い横線</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">hr</span> /&gt;
+</code></pre></div><h1 id="リスト表示">リスト表示</h1>
 <h2 id="ulやliの中央寄せがうまくいかない">ulやliの中央寄せがうまくいかない</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#f92672">ul</span> {
-	<span style="color:#f92672">list-style</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span><span style="color:#f92672">;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">リストの前の点を無効化</span>
-	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">inline</span><span style="color:#f92672">;</span>
-}</code></pre></div>
-<h2 id="横並びを中央揃え">横並びを中央揃え</h2>
+	<span style="color:#f92672">list-style</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">none</span>; <span style="color:#75715e">// リストの前の点を無効化
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">inline</span>;
+}
+</code></pre></div><h2 id="横並びを中央揃え">横並びを中央揃え</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#f92672">li</span> {
-	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">inline-block</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">display</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">inline-block</span>;
 	<span style="color:#f92672">div</span> {
-		<span style="color:#f92672">align</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">center</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">float</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">left</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">align</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">center</span>;
+		<span style="color:#f92672">float</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">left</span>;
 	}
-}</code></pre></div>
-<h1 id="クリックできる画像を配置">クリックできる画像を配置</h1>
-
+}
+</code></pre></div><h1 id="クリックできる画像を配置">クリックできる画像を配置</h1>
 <p>inputタグにはimageタイプがあり、<code>onClick()</code>も定義できるので、クリックできる画像を配置することができる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">national_flags</span>.<span style="color:#a6e22e">jp</span>} <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{()=&gt;{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({<span style="color:#a6e22e">locale</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;jp&#39;</span>})}} <span style="color:#f92672">/&gt;</span>
-</code></pre></div>
-<h1 id="hoverなどのアクションを遅延させる">hoverなどのアクションを遅延させる</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">	<span style="color:#f92672">transition-delay</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2s</span><span style="color:#f92672">;</span></code></pre></div>
-<h1 id="モバイルにのみ適用させるcss">モバイルにのみ適用させるCSS</h1>
-
+</code></pre></div><h1 id="hoverなどのアクションを遅延させる">hoverなどのアクションを遅延させる</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">	<span style="color:#f92672">transition-delay</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">2s</span>;
+</code></pre></div><h1 id="モバイルにのみ適用させるcss">モバイルにのみ適用させるCSS</h1>
 <p><code>@media ... () {}</code>は、条件文を記述することができ、画面サイズで指定することで、（たぶん）モバイルのみに適用されるCSSを書くことができる。
 画面サイズは、これでいいか分からないので、適宜調べてもらえるとありがたい。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">414px</span><span style="color:#f92672">)</span> {
@@ -162,19 +127,17 @@ const b = a;</code></pre></div>
 		<span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#00bbf0</span>;
 		<span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
 	}
-}</code></pre></div>
-<h1 id="モバイルでhoverを無効">モバイルでhoverを無効</h1>
-
+}
+</code></pre></div><h1 id="モバイルでhoverを無効">モバイルでhoverを無効</h1>
 <p>iPhone7で確認する限りだと、hoverの動作がおかしい。
 応急処置としては、<code>hover</code>の前にメディアクエリ(?)を追加して、モバイルのディスプレイサイズでは動作しないようにした。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#66d9ef">@media</span> only screen <span style="color:#f92672">and</span> (<span style="color:#66d9ef">min-width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">414</span><span style="color:#66d9ef">px</span>) {
 	<span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:hover</span> {
-		<span style="color:#f92672">background-color</span><span style="color:#a6e22e">:</span> #00bbf0<span style="color:#f92672">;</span>
-		<span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">white</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">background-color</span><span style="color:#a6e22e">:</span> #00bbf0;
+		<span style="color:#f92672">color</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">white</span>;
 	}
-}</code></pre></div>
-<h1 id="オブジェクトのキー一覧を取得">オブジェクトのキー一覧を取得</h1>
-
+}
+</code></pre></div><h1 id="オブジェクトのキー一覧を取得">オブジェクトのキー一覧を取得</h1>
 <p><code>Object</code>は、変数名ではなくそのまま記述する点に注意</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
 	<span style="color:#e6db74">&#39;key1&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;val1&#39;</span>,
@@ -183,13 +146,11 @@ const b = a;</code></pre></div>
 
 Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data</span>);
 <span style="color:#75715e">//NG: data.key();
-</span></code></pre></div>
-<h1 id="多言語対応">多言語対応</h1>
-
+</span><span style="color:#75715e"></span>
+</code></pre></div><h1 id="多言語対応">多言語対応</h1>
 <p>サイト内の文字を多言語に対応する。
 何も考えずにページを作成すると、ページ内の文字はそのまま書き込むことになるはずである。
 しかし、それだと多言語対応が難しい（と思う）。</p>
-
 <p>対策としては、文字を一つのオブジェクトにして、<code>'jp'</code>や<code>'en'</code>などの言語にあたるキーを途中に挟むことで、後から多言語対応しやすくなるだろう。
 文字をこのように配置するのは、サイトが大きくなればなるほどコストが上がる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">messages</span> <span style="color:#f92672">=</span> {
@@ -202,15 +163,12 @@ Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data<
 		<span style="color:#e6db74">&#39;en&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;see you!&#39;</span>,
 	}
 }
-</code></pre></div>
-<h1 id="iosのダブルクリックズーム無効化">iOSのダブルクリックズーム無効化</h1>
-
+</code></pre></div><h1 id="iosのダブルクリックズーム無効化">iOSのダブルクリックズーム無効化</h1>
 <p>応急処置として以下を使用した。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#f92672">*</span> {
-	<span style="color:#f92672">touch-action</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">manipulation</span><span style="color:#f92672">;</span>
-}</code></pre></div>
-<h1 id="モバイルのアドレスバーを考慮した縦サイズ">モバイルのアドレスバーを考慮した縦サイズ</h1>
-
+	<span style="color:#f92672">touch-action</span><span style="color:#a6e22e">:</span> <span style="color:#f92672">manipulation</span>;
+}
+</code></pre></div><h1 id="モバイルのアドレスバーを考慮した縦サイズ">モバイルのアドレスバーを考慮した縦サイズ</h1>
 <p>シンプルなSPAにおいて、スクロールしない縦サイズにしたい。
 <code>100vh</code>にすると、アドレスバーを含めない（消えた状態の）長さを取得するため適切でない。
 以下のCSSを親エレメント（？）に与えると、アドレスバーも考慮した縦サイズを取得してくれる。
@@ -218,24 +176,19 @@ Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data<
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">.<span style="color:#a6e22e">App</span> {
 	<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;
 }
-</code></pre></div>
-<h1 id="idのセレクタ">idのセレクタ</h1>
-
+</code></pre></div><h1 id="idのセレクタ">idのセレクタ</h1>
 <p><code>id=&quot;...&quot;</code>のCSSを設定するときは以下のようにする。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss">#name {
 	<span style="color:#75715e">// css
-</span><span style="color:#75715e"></span>}</code></pre></div>
-<h1 id="アプリが計算資源を喰らい尽くす">アプリが計算資源を喰らい尽くす</h1>
-
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h1 id="アプリが計算資源を喰らい尽くす">アプリが計算資源を喰らい尽くす</h1>
 <p>よほど膨大なアプリか、よほど貧弱なマシンでもない限り、求める動作とは違った挙動をしているだろう。
 <code>componentDitUpdate()</code>の中で<code>setState()</code>を用いると、無限再帰（？）のような現象が起こる。
 おそらく、<code>componentDidUpdate()</code>の中の<code>setState()</code>をトリガーとして<code>componentDidUpdate()</code>が呼ばれていると考えられる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">componentDidUpdate</span> <span style="color:#f92672">=</span> () =&gt; {
 	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ ... }); <span style="color:#75715e">//NG:無限再帰
 </span><span style="color:#75715e"></span>}
-</code></pre></div>
-<h1 id="stateをローカルストレージに保存し-ページを再度開いた時にロードする">stateをローカルストレージに保存し、ページを再度開いた時にロードする</h1>
-
+</code></pre></div><h1 id="stateをローカルストレージに保存しページを再度開いた時にロードする">stateをローカルストレージに保存し、ページを再度開いた時にロードする</h1>
 <p><code>componentDidMount()</code>で、ローカルストレージからJSONをstringに変換したものを読み取って<code>setState()</code>する。
 <code>componentDidUpdate()</code>で、コンポーネントが更新された時にローカルストレージに保存する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">componentDidMount</span> <span style="color:#f92672">=</span> () =&gt;  {
@@ -244,21 +197,17 @@ Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">data<
 <span style="color:#a6e22e">componentDidUpdate</span> <span style="color:#f92672">=</span> () =&gt; {
 	<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#a6e22e">APPKEY</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>));
 }
-</code></pre></div>
-<h1 id="firebaseとanalyticsとの連携がうまくいってない">firebaseとAnalyticsとの連携がうまくいってない</h1>
-
+</code></pre></div><h1 id="firebaseとanalyticsとの連携がうまくいってない">firebaseとAnalyticsとの連携がうまくいってない</h1>
 <p>デプロイしてAnalyticsとの連携を確認しても、何も表示されなかった。
 チュートリアルに沿って作業を進めた場合は、問題なく動作するはずなので、とりあえず時間が解決してくれるのを待った方が良いだろう。
 私の場合は、ラグがあったようで、寝て起きたら無事動作していた。</p>
-
 <h1 id="npm-audit-fixの意味がわからない">npm audit fixの意味がわからない</h1>
-
 <p><code>$ npm install</code>を実行した時に、うまく動作せず、末尾に<code>run npm audit fix</code>と出力されている。
 言われた通り、<code>npm audit fix</code>を実行しても、<code>WARN: &lt;package-name&gt;@x.x.x requires a peer of &lt;other-package-name&gt;@^x.x.x but none is installed.</code>と出てきてしまう。</p>
-
 <p>この警告が出ないようにするためには、依存関係を満たす必要がある。
 他のやり方もあるかもしれないが、手動でパッケージをインストールすれば警告がなくなった。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm install &lt;other-package-name&gt;</code></pre></div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm install &lt;other-package-name&gt;
+</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					

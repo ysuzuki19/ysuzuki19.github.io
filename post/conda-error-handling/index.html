@@ -64,40 +64,33 @@ if (!doNotTrack) {
 				<h1 class="entry__title">Anacondaのエラー対処集</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-<ul>
-<li><a href="#pythonが実行できなくなる問題">Pythonが実行できなくなる問題</a></li>
-</ul>
-</nav>
+	<nav id="TableOfContents"></nav>
 </details>
-				<div class="entry__content">
-
-<p>Anacondaを使い始めたので、今後のために備忘録的に書いておく。</p>
-
+				<div class="entry__content"><p>Anacondaを使い始めたので、今後のために備忘録的に書いておく。</p>
 <h1 id="pythonが実行できなくなる問題">Pythonが実行できなくなる問題</h1>
-
 <p>何も悪いことしていないつもりだったが、Python実行時に以下のエラーが出るようになった。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Failed to import the site module
 Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line <span style="color:#ae81ff">541</span>, in &lt;module&gt;
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line 541, in &lt;module&gt;
     main<span style="color:#f92672">()</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line <span style="color:#ae81ff">522</span>, in main
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line 522, in main
     known_paths <span style="color:#f92672">=</span> addusersitepackages<span style="color:#f92672">(</span>known_paths<span style="color:#f92672">)</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line <span style="color:#ae81ff">282</span>, in addusersitepackages
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line 282, in addusersitepackages
     user_site <span style="color:#f92672">=</span> getusersitepackages<span style="color:#f92672">()</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line <span style="color:#ae81ff">258</span>, in getusersitepackages
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line 258, in getusersitepackages
     user_base <span style="color:#f92672">=</span> getuserbase<span style="color:#f92672">()</span> <span style="color:#75715e"># this will also set USER_BASE</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line <span style="color:#ae81ff">248</span>, in getuserbase
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/site.py&#34;</span>, line 248, in getuserbase
     USER_BASE <span style="color:#f92672">=</span> get_config_var<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;userbase&#39;</span><span style="color:#f92672">)</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/sysconfig.py&#34;</span>, line <span style="color:#ae81ff">608</span>, in get_config_var
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/sysconfig.py&#34;</span>, line 608, in get_config_var
     <span style="color:#66d9ef">return</span> get_config_vars<span style="color:#f92672">()</span>.get<span style="color:#f92672">(</span>name<span style="color:#f92672">)</span>
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/sysconfig.py&#34;</span>, line <span style="color:#ae81ff">587</span>, in get_config_vars
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/sysconfig.py&#34;</span>, line 587, in get_config_vars
     import _osx_support
-  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/_osx_support.py&#34;</span>, line <span style="color:#ae81ff">4</span>, in &lt;module&gt;
+  File <span style="color:#e6db74">&#34;/Users/&lt;username&gt;/anaconda3/envs/&lt;envname&gt;/lib/python3.6/_osx_support.py&#34;</span>, line 4, in &lt;module&gt;
     import re
-ValueError: source code string cannot contain null bytes</code></pre></div>
-<p>どうしようもなかったので、以下を行ったところ、無事解決。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda install -y conda-build</code></pre></div></div>
+ValueError: source code string cannot contain null bytes
+</code></pre></div><p>どうしようもなかったので、以下を行ったところ、無事解決。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda install -y conda-build
+</code></pre></div></div>
 				
 				<footer class="entry__footer">
 					
