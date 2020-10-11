@@ -74,6 +74,10 @@ if (!doNotTrack) {
       </ul>
     </li>
   </ul>
+
+  <ul>
+    <li><a href="#func-was-not-declared-in-this-scope"><code>func</code> was not declared in this scope</a></li>
+  </ul>
 </nav>
 </details>
 				<div class="entry__content"><h1 id="はじめに">はじめに</h1>
@@ -96,6 +100,9 @@ if (!doNotTrack) {
 <h4 id="式定義の更新忘れ">式定義の更新忘れ</h4>
 <p><code>auto [](){};</code>の場合は心配する必要がないが、私の場合は（是非はともかくとして）ラムダを再帰するために予め<code>function&lt;void(int, int)&gt;</code>のように定義している。その際、式記述中に宣言行記述時よりも脳内が整理されて戻り値・引数を変更したくなる事がよくある。その場合、戻り値・引数を式内部では変更しているが式の定義の方を更新し忘れてしまう事がよくある。</p>
 <h1 id="エラーメッセージへの対処">エラーメッセージへの対処</h1>
+<h2 id="func-was-not-declared-in-this-scope"><code>func</code> was not declared in this scope</h2>
+<p>関数が宣言されていないと言われている。
+<code>std::</code>の関数であれば、<code>std::func</code>とする事で対応できる。</p>
 <h1 id="おわりに">おわりに</h1>
 <p>頻出順による掲載順変更を含めて、随時更新しようと思う。</p>
 </div>
