@@ -69,12 +69,12 @@ if (!doNotTrack) {
 				<div class="entry__content"><p>Ubuntu20.04LTSをインストールしました。
 私の場合、今後何度も再インストールすると思われる（よく壊す）ので、自分用の設定の流れを一つのページにまとめることにしました。</p>
 <h1 id="grubメニューの設定">GRUBメニューの設定</h1>
-<p>GPUを積んでいるので、GRUBメニューに<code>nomodeset</code>が必要である。起動時に毎回編集するのは骨が折れるので、書き換えておく。</p>
+<p>GPUを積んでいるので、GRUBメニューに<code>nomodeset</code>を追加している。起動時に毎回編集するのは骨が折れるので、書き換えておく。</p>
 <pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 ↓
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;nomodeset&quot;
-</code></pre><p>その後、以下のコマンドを実行する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo update-grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;
+</code></pre><p>その後、以下のコマンドを実行する（再起動では更新してくれない）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo update-grub2
 </code></pre></div><h1 id="capslockをctrlに変更">CapsLockをCtrlに変更</h1>
 <p><code>/etc/default/keyboard</code>を書き換える。</p>
 <pre><code>XKBOPTIONS=&quot;&quot;
@@ -110,21 +110,30 @@ Colors &gt; Palette: 好きなカラー設定にする
 <p>エディタとしてはVimが好きだが、通常の入力（ブラウザの検索窓など）ではEmacs風だと便利であるため、以下のコマンドで設定を変更する。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
 </code></pre></div><h1 id="nvidiaドライバのインストール">NVIDIAドライバのインストール</h1>
-<p>NVIDIAドライバを一番簡単にインストールできる方法を記載した
-<!-- raw HTML omitted -->（参考）<!-- raw HTML omitted -->
-。</p>
+<p>NVIDIAドライバを一番簡単にインストールできる方法を記載した <a href="https://linoxide.com/linux-how-to/how-to-install-nvidia-driver-on-ubuntu/%22">参考</a>。</p>
 <pre><code>Software Updaterを開く
 Software Updater &gt; Settingをクリック
 Software Updater &gt; Additional Driversを選択
-Software Updater &gt; Additional Drivers &gt; Using NVIDIA ...の一番上を選択
+Software Updater &gt; Additional Drivers &gt; Using NVIDIA driver metapackage from nvidia-driver... の一番上を選択
 ターミナルで`$ sudo ubuntu-drivers autoinstall`を実行
 再起動
 `nvidia-smi`でGPU負荷が表示されるか確認
+
+※表示されない場合、別のバージョンの「Using NVIDIA driver metapackage from nvidia-driver...」を試すと良い。
 </code></pre><h1 id="vivaldiのインストール">Vivaldiのインストール</h1>
 <p>お気に入りのブラウザであるVivaldiを
-<!-- raw HTML omitted -->公式ページ<!-- raw HTML omitted -->
-からダウンロードし、</p>
+<a href="https://vivaldi.com/ja/download/">公式ページ</a>
+からダウンロードし、インストール。</p>
 <p>マウスジェスチャー等の設定をする。</p>
+<h1 id="slackのインストール">Slackのインストール</h1>
+<p><a href="https://slack.com/intl/ja-jp/downloads/linux">公式ページ</a></p>
+<p>からDEBをダウンロードし、インストール。</p>
+<h1 id="zoomのインストール">Zoomのインストール</h1>
+<p><a href="https://zoom.us/download?os=linux">公式ページ</a></p>
+<p>からDEBをダウンロードしインストール。</p>
+<h1 id="google-chromeのインストール">Google-Chromeのインストール</h1>
+<p><a href="https://www.google.com/chrome/">公式ページ</a></p>
+<p>からDEBをダウンロードしインストール。</p>
 </div>
 				
 				<footer class="entry__footer">
