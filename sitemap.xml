@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ysuzuki19.github.io/post/gtest-memorandom/</loc>
-    <lastmod>2020-10-03T01:23:41+09:00</lastmod>
+    <loc>https://ysuzuki19.github.io/post/</loc>
+    <lastmod>2020-10-29T13:43:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ysuzuki19.github.io/post/</loc>
-    <lastmod>2020-10-03T01:23:41+09:00</lastmod>
+    <loc>https://ysuzuki19.github.io/post/ubuntu-setup-tensorflow-gpu/</loc>
+    <lastmod>2020-10-29T13:43:38+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysuzuki19.github.io/</loc>
+    <lastmod>2020-10-29T13:43:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysuzuki19.github.io/post/gtest-memorandom/</loc>
     <lastmod>2020-10-03T01:23:41+09:00</lastmod>
   </url>
   

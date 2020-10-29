@@ -8,7 +8,20 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sat, 03 Oct 2020 01:23:41 +0900</lastBuildDate><atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Oct 2020 13:43:38 +0900</lastBuildDate>
+    
+	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UbuntuにtensorflowのGPU環境をセットアップ</title>
+      <link>https://ysuzuki19.github.io/post/ubuntu-setup-tensorflow-gpu/</link>
+      <pubDate>Thu, 29 Oct 2020 13:43:38 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/ubuntu-setup-tensorflow-gpu/</guid>
+      <description>UBUNTU20.04LTSにTensorflowのGPU環境をセットアップしました。 備忘録として記します。 また、Ubuntu20.04では</description>
+    </item>
+    
     <item>
       <title>GoogleTestの備忘録</title>
       <link>https://ysuzuki19.github.io/post/gtest-memorandom/</link>

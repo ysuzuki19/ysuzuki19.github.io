@@ -397,9 +397,7 @@ pre {
 
 code {
 	padding: 1px 3px;
-	color: #dcd; /*add by ysuzuki*/
-	/*font-weight: bold;*/
-	background-color: #444;
+	background-color: #111;
 	border-radius: 2px;
 }
 
