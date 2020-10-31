@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 29 Oct 2020 13:43:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2020 21:38:54 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu20.04に簡単にNvidiaドライバをインストール</title>
+      <link>https://ysuzuki19.github.io/post/ubuntu-nvidia-driver/</link>
+      <pubDate>Sat, 31 Oct 2020 21:38:54 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/ubuntu-nvidia-driver/</guid>
+      <description>UbuntuにNvidiaドライバをインストールする一番簡単な方法。 おそらく、前のバージョンのUbuntuでもこの方法が使えると思うが、私は</description>
+    </item>
     
     <item>
       <title>UbuntuにtensorflowのGPU環境をセットアップ</title>

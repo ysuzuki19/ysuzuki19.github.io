@@ -4,16 +4,21 @@
   
   <url>
     <loc>https://ysuzuki19.github.io/post/</loc>
-    <lastmod>2020-10-29T13:43:38+09:00</lastmod>
+    <lastmod>2020-10-31T21:38:54+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ysuzuki19.github.io/post/ubuntu-setup-tensorflow-gpu/</loc>
-    <lastmod>2020-10-29T13:43:38+09:00</lastmod>
+    <loc>https://ysuzuki19.github.io/post/ubuntu-nvidia-driver/</loc>
+    <lastmod>2020-10-31T21:38:54+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysuzuki19.github.io/</loc>
+    <lastmod>2020-10-31T21:38:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysuzuki19.github.io/post/ubuntu-setup-tensorflow-gpu/</loc>
     <lastmod>2020-10-29T13:43:38+09:00</lastmod>
   </url>
   
