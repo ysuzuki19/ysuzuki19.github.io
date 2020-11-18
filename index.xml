@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 02 Nov 2020 19:08:30 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2020 20:45:19 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>シェルスクリプトでPythonが実行できない問題</title>
+      <link>https://ysuzuki19.github.io/post/python-command-not-found/</link>
+      <pubDate>Wed, 18 Nov 2020 20:45:19 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/python-command-not-found/</guid>
+      <description>Pythonがインストールされているにもかかわらずシェルスクリプト実行時にPythonが見つからないと出てくるときの対処方法 環境 Ubuntu</description>
+    </item>
     
     <item>
       <title>UbuntuへのUnrealEngineセットアップ</title>
