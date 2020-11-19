@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 18 Nov 2020 20:45:19 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2020 14:15:36 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;でGitRootを探す方法</title>
+      <link>https://ysuzuki19.github.io/post/cpp-find-git-root/</link>
+      <pubDate>Thu, 19 Nov 2020 14:15:36 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/cpp-find-git-root/</guid>
+      <description>Gitでプロジェクト管理している時、プログラム内でGitルートディレクトリを参照したいときがあると思う。 そんな時は再帰を活用すると楽にできる</description>
+    </item>
     
     <item>
       <title>シェルスクリプトでPythonが実行できない問題</title>
