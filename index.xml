@@ -8,10 +8,28 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 19 Nov 2020 14:15:36 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2020 22:25:50 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>epsをpngに変換するスクリプト</title>
+      <link>https://ysuzuki19.github.io/post/sh-eps-to-png/</link>
+      <pubDate>Wed, 02 Dec 2020 22:25:50 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/sh-eps-to-png/</guid>
+      <description>epsをpngに変換するコマンドをスクリプトにしておくことにした。 よく使うからね 完成したスクリプト まずは完成物。 eps2png.shという名</description>
+    </item>
+    
+    <item>
+      <title>コマンドでepsをpngに変換する</title>
+      <link>https://ysuzuki19.github.io/post/command-eps-to-png/</link>
+      <pubDate>Wed, 02 Dec 2020 22:11:56 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/command-eps-to-png/</guid>
+      <description>ありがたいことに、ベクター形式のフリー画像がインターネット上にたくさん公開されている。 しかしながら、eps形式をそのまま利用できない環境もあ</description>
+    </item>
     
     <item>
       <title>C&#43;&#43;でGitRootを探す方法</title>
