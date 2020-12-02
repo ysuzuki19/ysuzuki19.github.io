@@ -64,11 +64,33 @@ if (!doNotTrack) {
 				<h1 class="entry__title">epsをpngに変換するスクリプト</h1>
 <details class="entry__toc toc" open>
 	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents"></nav>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#完成したスクリプト">完成したスクリプト</a></li>
+    <li><a href="#解説">解説</a>
+      <ul>
+        <li><a href="#シバン">シバン</a></li>
+        <li><a href="#コマンドライン引数チェック">コマンドライン引数チェック</a></li>
+        <li><a href="#変換元ファイル名を変数に代入">変換元ファイル名を変数に代入</a></li>
+        <li><a href="#拡張子をpngに置換して変換先ファイル名とする">拡張子を<code>png</code>に置換して変換先ファイル名とする</a></li>
+        <li><a href="#変換先ファイル名指定時にはファイル名を更新">変換先ファイル名指定時にはファイル名を更新</a></li>
+        <li><a href="#eps2png変換">eps2png変換</a></li>
+        <li><a href="#終了のメッセージ">終了のメッセージ</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a>
+      <ul>
+        <li><a href="#epsをpngに変換するコマンド">epsをpngに変換するコマンド</a></li>
+        <li><a href="#文字列分割方法">文字列分割方法</a></li>
+        <li><a href="#引数のnullチェック方法">引数のNULLチェック方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </details>
 				<div class="entry__content"><p><a href="/post/command-eps-to-png/">epsをpngに変換するコマンド</a>をスクリプトにしておくことにした。</p>
 <p>よく使うからね</p>
-<h1 id="完成したスクリプト">完成したスクリプト</h1>
+<h2 id="完成したスクリプト">完成したスクリプト</h2>
 <p>まずは完成物。</p>
 <p><code>eps2png.sh</code>という名前で<code>~/Scripts</code>に保存することにした。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
@@ -95,33 +117,50 @@ gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE<span style="color:#f92672">=</span>png16m 
 </span><span style="color:#ae81ff"></span>   -sOutputFile<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>png_img<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>eps_img<span style="color:#e6db74">}</span>
 
 echo <span style="color:#e6db74">&#34;[OUTPUT]&#34;</span> $png_img
-</code></pre></div><h1 id="解説">解説</h1>
+</code></pre></div><h2 id="解説">解説</h2>
 <p>内容を詳しく知りたい方のために解説する。</p>
-<p>シバン</p>
+<h3 id="シバン">シバン</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
-</span></code></pre></div><p>コマンドライン引数が無い時はメッセージを残してコマンド終了</p>
+</span></code></pre></div><h3 id="コマンドライン引数チェック">コマンドライン引数チェック</h3>
+<p>引数が足りなければメッセージを残して終了</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
 <span style="color:#66d9ef">then</span>
   echo <span style="color:#e6db74">&#34;Please input filename&#34;</span>
   exit
 <span style="color:#66d9ef">fi</span>
-</code></pre></div><p>変換元ファイル名を変数に代入</p>
+</code></pre></div><h3 id="変換元ファイル名を変数に代入">変換元ファイル名を変数に代入</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eps_img<span style="color:#f92672">=</span>$1
 echo <span style="color:#e6db74">&#34;[INPUT] &#34;</span> $eps_img
-</code></pre></div><p>変換元ファイル名の拡張子を<code>png</code>に置換したものを変換先ファイル名として準備</p>
+</code></pre></div><h3 id="拡張子をpngに置換して変換先ファイル名とする">拡張子を<code>png</code>に置換して変換先ファイル名とする</h3>
+<p>epsファイル名を<code>.</code>で分割し、１つ目の区切りに<code>.png</code>をつけることで、ファイル名の拡張子部分が置換される。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">png_img<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>echo <span style="color:#e6db74">${</span>eps_img<span style="color:#e6db74">}</span> | cut -d<span style="color:#e6db74">&#34;.&#34;</span> -f1<span style="color:#e6db74">`</span>.png
-</code></pre></div><p>変換先ファイル名が指定されている場合は上で定義したファイル名を更新</p>
+</code></pre></div><h3 id="変換先ファイル名指定時にはファイル名を更新">変換先ファイル名指定時にはファイル名を更新</h3>
+<p>第三引数を出力ファイル名として指定できるようにしたかったので、第三引数がある場合は、ファイル名をそちらに変更する。</p>
+<p>特に指定がなければそのままである。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
 <span style="color:#66d9ef">then</span>
   png_img<span style="color:#f92672">=</span>$2
   echo $png_img
 <span style="color:#66d9ef">fi</span>
-</code></pre></div><p>変換コマンド</p>
+</code></pre></div><h3 id="eps2png変換">eps2png変換</h3>
+<p><a href="/post/command-eps-to-png/">epsをpngに変換するコマンド</a>で紹介したコマンドを用いる。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE<span style="color:#f92672">=</span>png16m -dGraphicsAlphaBits<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   -sOutputFile<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>png_img<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>eps_img<span style="color:#e6db74">}</span>
-</code></pre></div><p>終了のメッセージを残す</p>
+</code></pre></div><h3 id="終了のメッセージ">終了のメッセージ</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;[OUTPUT]&#34;</span> $png_img
-</code></pre></div><h1 id="参考">参考</h1>
+</code></pre></div><h2 id="参考">参考</h2>
+<h3 id="epsをpngに変換するコマンド">epsをpngに変換するコマンド</h3>
+<ul>
+<li><a href="https://www.ghostscript.com/doc/current/Use.htm#Invoking">https://www.ghostscript.com/doc/current/Use.htm#Invoking</a></li>
+</ul>
+<h3 id="文字列分割方法">文字列分割方法</h3>
+<ul>
+<li><a href="https://markhneedham.com/blog/2016/06/19/unix-split-string-using-separator/">https://markhneedham.com/blog/2016/06/19/unix-split-string-using-separator/</a></li>
+</ul>
+<h3 id="引数のnullチェック方法">引数のNULLチェック方法</h3>
+<ul>
+<li><a href="https://askubuntu.com/questions/444082/how-to-check-if-1-and-2-are-null">https://askubuntu.com/questions/444082/how-to-check-if-1-and-2-are-null</a></li>
+</ul>
 </div>
 				
 				<footer class="entry__footer">
