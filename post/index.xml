@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 03 Dec 2020 00:32:04 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Dec 2020 16:12:07 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Failed to import pydotへの対処</title>
+      <link>https://ysuzuki19.github.io/post/py-error-pydot/</link>
+      <pubDate>Sat, 05 Dec 2020 16:12:07 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/py-error-pydot/</guid>
+      <description>&amp;lsquo;Failed to import pydot &amp;hellip; &amp;lsquo;の対処方法を記す。 エラー文 (&amp;lsquo;Failed to import pydot. You must pip install pydot and install graphviz (https://graphviz.gitlab.io/download/), &amp;lsquo;, &amp;lsquo;for pydotprint to work.&#39;) 方法 私の環境の場合、以下のコマンドが上記のエラーを対処</description>
+    </item>
     
     <item>
       <title>UbuntuでgitのID/passwordを入力しなくて済む方法</title>
