@@ -19,7 +19,7 @@
       <pubDate>Sat, 05 Dec 2020 16:12:07 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
       <guid>https://ysuzuki19.github.io/post/py-error-pydot/</guid>
-      <description>&amp;lsquo;Failed to import pydot &amp;hellip; &amp;lsquo;の対処方法を記す。 エラー文 (&amp;lsquo;Failed to import pydot. You must pip install pydot and install graphviz (https://graphviz.gitlab.io/download/), &amp;lsquo;, &amp;lsquo;for pydotprint to work.&#39;) 方法 私の環境の場合、以下のコマンドが上記のエラーを対処</description>
+      <description>Python実行時に出力されたエラーである、&amp;lsquo;Failed to import pydot &amp;hellip; &amp;lsquo;の解消方法を記す。 エラー文 普段見るのとは違う、以</description>
     </item>
     
     <item>
