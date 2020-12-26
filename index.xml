@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sat, 05 Dec 2020 16:24:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 01:07:52 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>InternalError: Failed copying input tensor について</title>
+      <link>https://ysuzuki19.github.io/post/tf-error-failed-copying-input-tensor/</link>
+      <pubDate>Sun, 27 Dec 2020 01:07:52 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/tf-error-failed-copying-input-tensor/</guid>
+      <description>VSCodeの拡張機能(Jupyter)を使って*.ipynbで機械学習を扱っていたところ、表記のエラーが起こった。 エラー全文 InternalError: Failed copying input tensor from /job:localhost/replica:0/task:0/device:CPU:0</description>
+    </item>
     
     <item>
       <title>OpenCVのGstreamerエラーを解消する</title>
