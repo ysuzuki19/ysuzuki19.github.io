@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sun, 27 Dec 2020 01:07:52 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Feb 2021 17:19:50 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Electronインストールエラー対処</title>
+      <link>https://ysuzuki19.github.io/post/install-electron-error/</link>
+      <pubDate>Thu, 18 Feb 2021 17:19:50 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/install-electron-error/</guid>
+      <description>Electronを使いたいなと思い，インストールしたが，謎のエラーに悩まされた． その対処法を残す． TL;DR 自分の環境の場合，以下のコマンドでインス</description>
+    </item>
     
     <item>
       <title>InternalError: Failed copying input tensor について</title>
