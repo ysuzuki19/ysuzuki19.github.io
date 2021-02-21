@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Thu, 18 Feb 2021 17:19:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Feb 2021 23:14:51 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Githubのトークン設定メモ</title>
+      <link>https://ysuzuki19.github.io/post/github-setup-token/</link>
+      <pubDate>Sun, 21 Feb 2021 23:14:51 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/github-setup-token/</guid>
+      <description>Githubのclone,pullなどで，毎回ユーザ名とパスワードを入力するのは面倒である． そこで，認証情報をキャッシュする方法を使っていた</description>
+    </item>
     
     <item>
       <title>Electronインストールエラー対処</title>
