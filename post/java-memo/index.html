@@ -67,6 +67,8 @@ if (!doNotTrack) {
 	<nav id="TableOfContents">
   <ul>
     <li><a href="#変数の宣言初期化">変数の宣言・初期化</a></li>
+    <li><a href="#四則演算">四則演算</a></li>
+    <li><a href="#条件式">条件式</a></li>
     <li><a href="#配列の操作">配列の操作</a>
       <ul>
         <li><a href="#宣言初期化">宣言・初期化</a></li>
@@ -75,6 +77,11 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#コンソール出力">コンソール出力</a></li>
+    <li><a href="#関数メソッドについて">関数(メソッド？)について</a>
+      <ul>
+        <li><a href="#デフォルト値">デフォルト値</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </details>
@@ -83,12 +90,33 @@ if (!doNotTrack) {
 <h1 id="java">Java</h1>
 <h1 id="基本">基本</h1>
 <h2 id="変数の宣言初期化">変数の宣言・初期化</h2>
-<p>ベースはほとんど変わらない印象である．少なくとも<code>int</code>型はそのまま．</p>
+<p>ベースはほとんど変わらない印象である．少なくとも<code>int</code>型はそのまま．
+C++では<code>auto</code>を愛用していたが，Javaでは見当たらない．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
 <span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> z <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
 String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">;</span>
 <span style="color:#66d9ef">double</span> dx <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">;</span>
-</code></pre></div><h2 id="配列の操作">配列の操作</h2>
+<span style="color:#66d9ef">boolean</span> bl <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 注意！ boolじゃないんだね
+</span></code></pre></div><h2 id="四則演算">四則演算</h2>
+<p><code>int</code>と<code>boolean</code>は足せない．
+そのため，以下のような工夫が必要．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">boolean</span> b <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	x<span style="color:#f92672">++;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="条件式">条件式</h2>
+<p>こちらも，基本的には変わらない印象．</p>
+<p>しかし，空かどうかを条件にする際，<code>==null</code>や<code>!=null</code>が必要なようだ．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ListNode node
+
+<span style="color:#a6e22e">if</span> <span style="color:#f92672">(</span>node <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// これはダメ
+</span><span style="color:#75715e">//if (node) {
+</span><span style="color:#75715e">//}
+</span></code></pre></div><h2 id="配列の操作">配列の操作</h2>
 <p>驚いたのが，標準的な配列（？）にあたる<code>int[]</code>が<code>length</code>メンバを持っていて，C++における<code>vector&lt;int&gt;</code>と同じように扱える点である．</p>
 <p>おそらく，C++はCとの互換性を維持するために，<code>int[]</code>を残したまま<code>vector&lt;int&gt;</code>や<code>array&lt;int&gt;</code>のような配列クラスを準備したのでは無いかと思った．</p>
 <h3 id="宣言初期化">宣言・初期化</h3>
@@ -105,6 +133,20 @@ Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span
 </code></pre></div><h2 id="コンソール出力">コンソール出力</h2>
 <p>C++の<code>std::cout</code>と比較すると，個人的にはかなり面倒に感じた．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="関数メソッドについて">関数(メソッド？)について</h2>
+<p>こちらも基本的にはC++と変わらない印象．</p>
+<h3 id="デフォルト値">デフォルト値</h3>
+<p>困ったことに，引数のデフォルト値がなさそうである．</p>
+<p>そのため，C++やPythonにおけるデフォルト値のようなものを用いたい場合は，以下のようにオーバーロードを使った工夫が必要．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">baa</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> baa<span style="color:#f92672">(</span>x<span style="color:#f92672">,</span> y<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">baa</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> y<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> z<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">+</span> z<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></div></div>
 				
 				<footer class="entry__footer">
