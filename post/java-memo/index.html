@@ -82,6 +82,12 @@ if (!doNotTrack) {
         <li><a href="#デフォルト値">デフォルト値</a></li>
       </ul>
     </li>
+    <li><a href="#文字列型string">文字列型(String)</a></li>
+    <li><a href="#便利な関数">便利な関数</a>
+      <ul>
+        <li><a href="#max">max()</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </details>
@@ -147,7 +153,17 @@ Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span
 		<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">+</span> z<span style="color:#f92672">;</span>
 	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div></div>
+</code></pre></div><h2 id="文字列型string">文字列型(String)</h2>
+<p>Javaでは<code>String</code>型として文字列を扱うことができるようだ．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">;</span>
+
+str<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 文字数 -&gt; 4
+</span><span style="color:#75715e"></span>str<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span> <span style="color:#75715e">// 要素アクセス -&gt; &#39;t&#39;
+</span></code></pre></div><h2 id="便利な関数">便利な関数</h2>
+<h3 id="max">max()</h3>
+<p>引数の内大きい方を返す．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">longest <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>longest<span style="color:#f92672">,</span> length<span style="color:#f92672">);</span> <span style="color:#75715e">// 最大値の更新
+</span></code></pre></div></div>
 				
 				<footer class="entry__footer">
 					
