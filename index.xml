@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 22 Mar 2021 22:53:39 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Mar 2021 00:49:12 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ReactのClassからHook変換メモ</title>
+      <link>https://ysuzuki19.github.io/post/react-class-to-hook/</link>
+      <pubDate>Sun, 28 Mar 2021 00:49:12 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/react-class-to-hook/</guid>
+      <description>ReactのSPAを以前開発して寝かせておいた．その後再びReactを学習したところ，ReactHooksというものが推奨されていた． そのた</description>
+    </item>
     
     <item>
       <title>Javaの学習メモ</title>
