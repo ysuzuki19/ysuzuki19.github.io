@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sun, 28 Mar 2021 00:49:12 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Apr 2021 17:58:54 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reactのunique &#34;key&#34; prop警告の解消方法</title>
+      <link>https://ysuzuki19.github.io/post/react-warning-unique-key-prop/</link>
+      <pubDate>Sat, 03 Apr 2021 17:58:54 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/react-warning-unique-key-prop/</guid>
+      <description>Reactで開発をしていたら，ブラウザのconsoleに謎の警告が出た． 普段なら無視することが多いが，今回は気が乗っていたので原因と解消方法</description>
+    </item>
     
     <item>
       <title>ReactのClassからHook変換メモ</title>
