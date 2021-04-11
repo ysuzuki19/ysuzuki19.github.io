@@ -83,6 +83,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#文字列型string">文字列型(String)</a></li>
+    <li><a href="#キュー-queue">キュー (Queue)</a></li>
     <li><a href="#便利な関数">便利な関数</a>
       <ul>
         <li><a href="#max">max()</a></li>
@@ -159,7 +160,18 @@ Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span
 
 str<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 文字数 -&gt; 4
 </span><span style="color:#75715e"></span>str<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span> <span style="color:#75715e">// 要素アクセス -&gt; &#39;t&#39; (何故`[]`でアクセスできないんだ・・・)
-</span></code></pre></div><h2 id="便利な関数">便利な関数</h2>
+</span></code></pre></div><h2 id="キュー-queue">キュー (Queue)</h2>
+<p>Javaでは<code>Queue</code>型がある．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> queue <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;();</span>
+queue<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span> <span style="color:#75715e">// C++ std::queue のpush()に相当
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> n1 <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">element</span><span style="color:#f92672">();</span> <span style="color:#75715e">// C++ std::queueのfront()に相当
+</span><span style="color:#75715e"></span>queue<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">();</span> <span style="color:#75715e">// C++ std::queueのpop()に相当
+</span><span style="color:#75715e"></span>
+queue<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span> <span style="color:#75715e">// C++ std::queue のpush()に相当
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span> <span style="color:#75715e">// C++ std::queue のfront()とpop()を同時に行う
+</span></code></pre></div><p>個人的には，<code>Queue&lt;&gt;.poll()</code>が大好き．C++を使っていた時は<code>std::queue::front()</code>と<code>std::queue::pop()</code>の両方が必要だった処理が一発でできるのが魅力的だよね．</p>
+<h2 id="便利な関数">便利な関数</h2>
 <h3 id="max">max()</h3>
 <p>引数の内大きい方を返す．</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">longest <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>longest<span style="color:#f92672">,</span> length<span style="color:#f92672">);</span> <span style="color:#75715e">// 最大値の更新
