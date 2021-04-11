@@ -8,10 +8,28 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Sat, 03 Apr 2021 18:15:10 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Apr 2021 16:41:58 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ReactのWarning: Invalid DOM property `for`の対処</title>
+      <link>https://ysuzuki19.github.io/post/react-warn-invalid-dom-property-for/</link>
+      <pubDate>Sun, 11 Apr 2021 16:41:58 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/react-warn-invalid-dom-property-for/</guid>
+      <description>ReactでSPAを開発していたところ， Warning: Invalid DOM property &#39;for&#39;. Did you mean &#39;htmlFor&#39;?という警告が出力された． エラー抜粋 index.js:1 Warning: Invalid DOM property `for`. Did you mean `htmlFor`? at label at div ...</description>
+    </item>
+    
+    <item>
+      <title>ReactのWarning: validateDOMNesting解消</title>
+      <link>https://ysuzuki19.github.io/post/react-warn-appear-as-a-child-of/</link>
+      <pubDate>Sun, 11 Apr 2021 16:27:28 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/react-warn-appear-as-a-child-of/</guid>
+      <description>ReactでSPAを開発していたところ，Warning: validateDOMNesting(...): &amp;lt;input&amp;gt; cannot appear ...という警告が表示された． はじめは訳がわからなかったが，最終的には解決で</description>
+    </item>
     
     <item>
       <title>別のPCのElectronでPythonShellが動かない問題</title>
