@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>firebaseで本番環境とステージング環境を使い分ける設定</title>
+      <title>firebaseで本番環境とステージング環境を使い分けるnpm-scripts</title>
       <link>https://ysuzuki19.github.io/post/firebase-switch-prod-stage/</link>
       <pubDate>Mon, 10 May 2021 22:55:39 +0900</pubDate>
       <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
