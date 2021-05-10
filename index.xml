@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Wed, 14 Apr 2021 20:17:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 10 May 2021 22:07:04 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>firebaseデプロイを便利にしちゃった！</title>
+      <link>https://ysuzuki19.github.io/post/npm-firebase-deploy-with-build/</link>
+      <pubDate>Mon, 10 May 2021 22:07:04 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/npm-firebase-deploy-with-build/</guid>
+      <description>firebaseにデプロイのために，以下の３つの機能を設定した． 「deploy前に自動ビルド」 「deploy時に確認」 「deploy後に起動</description>
+    </item>
     
     <item>
       <title>React&#43;Electronのボイラープレート</title>
