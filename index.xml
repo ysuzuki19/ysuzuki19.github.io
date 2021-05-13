@@ -8,10 +8,19 @@
     <language>ja-jp</language>
     <managingEditor>ysuzuki.cpp@gmail.com (ysuzuki)</managingEditor>
     <webMaster>ysuzuki.cpp@gmail.com (ysuzuki)</webMaster>
-    <lastBuildDate>Mon, 10 May 2021 22:55:39 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 13 May 2021 20:28:41 +0900</lastBuildDate>
     
 	<atom:link href="https://ysuzuki19.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gatsbyの gsap.defaulttimeline is not a function</title>
+      <link>https://ysuzuki19.github.io/post/gatsby-gsap-erro/</link>
+      <pubDate>Thu, 13 May 2021 20:28:41 +0900</pubDate>
+      <author>ysuzuki.cpp@gmail.com (ysuzuki)</author>
+      <guid>https://ysuzuki19.github.io/post/gatsby-gsap-erro/</guid>
+      <description>Gatsbyやってみようと思った． 全く勝手がわからないので，取り敢えず https://www.gatsbyjs.com/starters/g</description>
+    </item>
     
     <item>
       <title>firebaseで本番環境とステージング環境を使い分けるnpm-scripts</title>
