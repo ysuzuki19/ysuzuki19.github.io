@@ -1,25 +1,131 @@
-<!DOCTYPE html><html lang="en"><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M22TSGCN18"></script><script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+<!DOCTYPE html>
+<html class="no-js" lang="ja-jp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1b1b1b">
+	<title>Github Pages x HUGOをセットアップする | ysuzuki blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Github Pages x HUGOをセットアップする" />
+<meta property="og:description" content="最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて， 「自分のサイトが欲しいなあ・・・」 と思うようになってき" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ysuzuki19.github.io/post/hugo-setup/" />
+<meta property="article:published_time" content="2019-04-19T14:26:27+09:00" />
+<meta property="article:modified_time" content="2019-04-19T14:26:27+09:00" />
 
-              gtag('config', 'G-M22TSGCN18');
-            </script><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><script>!function(){try{var d=document.documentElement.classList;d.remove('light','dark');var e=localStorage.getItem("theme");if(e){d.add(e)}else{d.add('dark');}}catch(t){}}();</script><title>Github Pages x HUGOをセットアップする - ys memos</title><meta content="便利なブログ作成！！" name="description"/><meta property="og:url" content="https://ysuzuki19.github.io/post/hugo-setup/"/><link rel="canonical" href="https://ysuzuki19.github.io/post/hugo-setup/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="Hunter Chang - Website"/><meta property="og:description" content="便利なブログ作成！！"/><meta property="og:title" content="Github Pages x HUGOをセットアップする - ys memos"/><meta property="og:image" content="https://ysuzuki19.github.ioundefined"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@huntarosan"/><meta name="twitter:title" content="Github Pages x HUGOをセットアップする - ys memos"/><meta name="twitter:description" content="便利なブログ作成！！"/><meta name="twitter:image" content="https://ysuzuki19.github.ioundefined"/><meta property="article:published_time" content="2019-04-19T14:26:27+09:00"/><meta name="next-head-count" content="18"/><link rel="preload" href="/_next/static/css/e90abd1aa5013b041726.css" as="style"/><link rel="stylesheet" href="/_next/static/css/e90abd1aa5013b041726.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework-92300432a1172ef1338b.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" as="script"/><link rel="preload" href="/_next/static/chunks/985-867e3d5e21e417a5de61.js" as="script"/><link rel="preload" href="/_next/static/chunks/522-2597210efd9529a81949.js" as="script"/><link rel="preload" href="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" as="script"/><link rel="preload" href="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" as="script"/></head><body><div id="__next"><header class="sticky top-0 left-0 right-0"><nav class="flex items-center flex-wrap py-2"><a class="text-gray-900 dark:text-white md:pr-6 md:py-4 ml-10 md:mr-12 font-bold text-2xl" href="/">ys memos</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/">Home</a><a class="text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/about/">About</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/features/">Features</a></nav></header><main><div class="max-w-5xl px-8 py-4 mx-auto"><h1 class="mb-3 text-gray-900 dark:text-white">Github Pages x HUGOをセットアップする</h1><div class="md:grid md:grid-cols-3 divide-x border-none"><article class="prose dark:prose-dark col-span-2"><p class="mb-10 text-sm text-gray-500 dark:text-gray-400">April 19, 2019</p><h2 class="flex" id="はじめに"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><span class="icon icon-link"></span></a>はじめに</h2><p>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて，</p><p>「自分のサイトが欲しいなあ・・・」</p><p>と思うようになってきた．しかし，調べてみると</p><pre><code>・　自宅サーバを立てる
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Github Pages x HUGOをセットアップする"/>
+<meta name="twitter:description" content="最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて， 「自分のサイトが欲しいなあ・・・」 と思うようになってき"/>
+
+	<link rel="stylesheet" href="/css/bundle.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/themes/dark-blue.css">
+	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="manifest" href="/manifest.json">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-162997770-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body kind-page">
+	<header class="header">
+	<a class="logo" href="/">ysuzuki blog</a>
+	
+</header>
+	<div class="primary">
+	
+	<main class="main">
+		
+<nav class="breadcrumb block" aria-label="breadcrumb">
+	<ol class="breadcrumb__list">
+		
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/">home</a>
+		</li>
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/post/">Posts</a>
+		</li>
+		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">Github Pages x HUGOをセットアップする</li>
+	</ol>
+</nav>
+		<div class="single block">
+			<article class="entry">
+				<h1 class="entry__title">Github Pages x HUGOをセットアップする</h1>
+<details class="entry__toc toc" open>
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#githubのアカウント作成">Githubのアカウント作成</a></li>
+    <li><a href="#github-pagesのためのリポジトリ作成">Github Pagesのためのリポジトリ作成</a></li>
+    <li><a href="#github-pagesのソースファイルを保存するリポジトリ作成">Github Pagesのソースファイルを保存するリポジトリ作成</a></li>
+    <li><a href="#hugoサイト作成">HUGOサイト作成</a></li>
+    <li><a href="#サブモジュール化">サブモジュール化</a></li>
+    <li><a href="#記事の作成">記事の作成</a></li>
+    <li><a href="#デプロイ">デプロイ</a></li>
+    <li><a href="#サイト確認">サイト確認</a></li>
+    <li><a href="#編集時のススメ">編集時のススメ</a></li>
+  </ul>
+</nav>
+</details>
+				<div class="entry__content"><p>最近，Qiitaに記事を少しづつ掲載していたのだが，少しづつ内容が増えていくにつれて，</p>
+<p>「自分のサイトが欲しいなあ・・・」</p>
+<p>と思うようになってきた．しかし，調べてみると</p>
+<pre><code>・　自宅サーバを立てる
 ・　レンタルサーバを借りる
 </code></pre><p>など，貧困学生には手の出しづらいものが次々と出てきた．
-その中で，簡単に始められて無料でできるものとして，</p><p>Github Pagesが出てきた．Github Pagesは以前，</p><p>「Github Pagesはページ公開は楽だけどhtmlとかよくわからないし・・・」</p><p>と思って，リポジトリを作ったまま何もできないまま停滞していた．</p><p>そこで見つけたのがSSG(Static Site Generator)である．SSGは日本語では静的サイトジェネレータと呼ばれ，その名の通り静的なサイトを生成することができる．
-SSGはHUGOを使っているのだが，HUGOはGO言語で開発されており，高速に動作すると言われている．（他を実際に使ったことがないので本当はわかりません．）</p><p>パソコンは苦手なので，環境構築には１日ほどかかってしまったが，手順としては簡単に導入することができた．他の方の手順紹介に，どこでコマンドを実行したら良いかを追加して紹介する．
+その中で，簡単に始められて無料でできるものとして，</p>
+<p>Github Pagesが出てきた．Github Pagesは以前，</p>
+<p>「Github Pagesはページ公開は楽だけどhtmlとかよくわからないし・・・」</p>
+<p>と思って，リポジトリを作ったまま何もできないまま停滞していた．</p>
+<p>そこで見つけたのがSSG(Static Site Generator)である．SSGは日本語では静的サイトジェネレータと呼ばれ，その名の通り静的なサイトを生成することができる．
+SSGはHUGOを使っているのだが，HUGOはGO言語で開発されており，高速に動作すると言われている．（他を実際に使ったことがないので本当はわかりません．）</p>
+<p>パソコンは苦手なので，環境構築には１日ほどかかってしまったが，手順としては簡単に導入することができた．他の方の手順紹介に，どこでコマンドを実行したら良いかを追加して紹介する．
 自分は，Githubで管理しているリポジトリはすべて<code>~/Github/</code>にあるので，その部分だけ自分似合わせてもらえばいいと思う．
-ここでは，環境構築の手順を紹介する．手順の概要は以下．</p><h2 class="flex" id="gihub-pages-x-hugo-導入手順"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#gihub-pages-x-hugo-%E5%B0%8E%E5%85%A5%E6%89%8B%E9%A0%86"><span class="icon icon-link"></span></a>Gihub Pages x HUGO 導入手順</h2><ol><li>Githubのアカウント作成</li><li>Github Pages のためのリポジトリ作成</li><li>Github Pages のソースファイルを保存するリポジトリ作成</li><li>サブモジュール化</li><li>HUGOサイト作成</li><li>記事の作成</li><li>デプロイ</li><li>サイト確認</li></ol><p>以上が手順であるが，環境構築中はほとんど<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo" target="_blank" rel="noopener noreferrer">chanmitsu55さんのこちらの記事<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>を参考にさせてもらったので，こちらを見てもらうとわかりやすいと思う．</p><p>Githubは知っている人が多いと思うが，Github PagesとはGithubでサイトを公開するサービスである．</p><h3 class="flex" id="githubのアカウント作成"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#github%E3%81%AE%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E4%BD%9C%E6%88%90"><span class="icon icon-link"></span></a>Githubのアカウント作成</h3><p>Githubのアカウントをすでに持っている場合はスルーして良いが，まだな方は<a href="https://github.com" target="_blank" rel="noopener noreferrer">Githubのホーム<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>からまずはアカウントを作る．また，作成したリポジトリをローカルにクローンする．</p><h3 class="flex" id="github-pagesのためのリポジトリ作成"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#github-pages%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E4%BD%9C%E6%88%90"><span class="icon icon-link"></span></a>Github Pagesのためのリポジトリ作成</h3><p>Githubでは，通常は好きなリポジトリ名をつけることができるのだが，リポジトリ名を<code>username.github.io</code>とするとネットに公開される．</p><div class="remark-code-title">~/Github</div><pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~/Github
-$ <span class="token function">git</span> clone https://github.com/username/username.github.io
-</code></pre><h3 class="flex" id="github-pagesのソースファイルを保存するリポジトリ作成"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#github-pages%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8B%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E4%BD%9C%E6%88%90"><span class="icon icon-link"></span></a>Github Pagesのソースファイルを保存するリポジトリ作成</h3><p>Github Pages x HUGOでブログの作成方法を紹介している方をみると，<code>username.github.io</code>リポジトリとソースファイルを保存するリポジトリは分けた方がいいようだ．今回は，<code>blog</code>という名前のリポジトリを作成した．</p><div class="remark-code-title">~/Github</div><pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~/Github
-$ <span class="token function">git</span> clone https://github.com/username/blog
-</code></pre><h3 class="flex" id="hugoサイト作成"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#hugo%E3%82%B5%E3%82%A4%E3%83%88%E4%BD%9C%E6%88%90"><span class="icon icon-link"></span></a>HUGOサイト作成</h3><p>HUGOコマンドを用いてHUGOサイトを作成する．ここで，サイトのテーマは<a href="https://themes.gohugo.io" target="_blank" rel="noopener noreferrer">こちら<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>から選択することができ，好みのテーマがあればgithubリポジトリなどが記載されている．</p><div class="remark-code-title">~/Github</div><pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~/Gibhub
+ここでは，環境構築の手順を紹介する．手順の概要は以下．</p>
+<h1 id="gihub-pages-x-hugo-導入手順">Gihub Pages x HUGO 導入手順</h1>
+<ol>
+<li>Githubのアカウント作成</li>
+<li>Github Pages のためのリポジトリ作成</li>
+<li>Github Pages のソースファイルを保存するリポジトリ作成</li>
+<li>サブモジュール化</li>
+<li>HUGOサイト作成</li>
+<li>記事の作成</li>
+<li>デプロイ</li>
+<li>サイト確認</li>
+</ol>
+<p>以上が手順であるが，環境構築中はほとんど<!-- raw HTML omitted -->chanmitsu55さんのこちらの記事<!-- raw HTML omitted -->を参考にさせてもらったので，こちらを見てもらうとわかりやすいと思う．</p>
+<p>Githubは知っている人が多いと思うが，Github PagesとはGithubでサイトを公開するサービスである．</p>
+<h2 id="githubのアカウント作成">Githubのアカウント作成</h2>
+<p>Githubのアカウントをすでに持っている場合はスルーして良いが，まだな方は<!-- raw HTML omitted -->Githubのホーム<!-- raw HTML omitted -->からまずはアカウントを作る．また，作成したリポジトリをローカルにクローンする．</p>
+<h2 id="github-pagesのためのリポジトリ作成">Github Pagesのためのリポジトリ作成</h2>
+<p>Githubでは，通常は好きなリポジトリ名をつけることができるのだが，リポジトリ名を<code>username.github.io</code>とするとネットに公開される．</p>
+<pre><code class="language-bash:~/Github" data-lang="bash:~/Github">$ cd ~/Github
+$ git clone https://github.com/username/username.github.io
+</code></pre><h2 id="github-pagesのソースファイルを保存するリポジトリ作成">Github Pagesのソースファイルを保存するリポジトリ作成</h2>
+<p>Github Pages x HUGOでブログの作成方法を紹介している方をみると，<code>username.github.io</code>リポジトリとソースファイルを保存するリポジトリは分けた方がいいようだ．今回は，<code>blog</code>という名前のリポジトリを作成した．</p>
+<pre><code class="language-bash:~/Github" data-lang="bash:~/Github">$ cd ~/Github
+$ git clone https://github.com/username/blog
+</code></pre><h2 id="hugoサイト作成">HUGOサイト作成</h2>
+<p>HUGOコマンドを用いてHUGOサイトを作成する．ここで，サイトのテーマは<!-- raw HTML omitted -->こちら<!-- raw HTML omitted -->から選択することができ，好みのテーマがあればgithubリポジトリなどが記載されている．</p>
+<pre><code class="language-bash:~/Github" data-lang="bash:~/Github">$ cd ~/Gibhub
 $ hugo new site temp
-$ <span class="token builtin class-name">cd</span> temp/theme
-$ <span class="token function">git</span> clone https://github.com/appernetic/hugo-bootstrap-premium
-$ <span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
-</code></pre><p>ここまでで，HUGOサイトと使用するテーマは準備された．次は，<code>~Github/temp/config.toml</code>を書き換える必要がある．<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml" target="_blank" rel="noopener noreferrer">公式のリポジトリ<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>に記載されている．以下の<code>config.toml</code>は先ほど言及した<a href="https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/" target="_blank" rel="noopener noreferrer">chanmitsu55さんのこちらの記事<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>を参考にした．</p><p>自分の<code>config.toml</code>にする際は<code>username</code>などを自分に合うように変更すると良い．</p><pre><code>baseURL = &quot;https://username.github.io/&quot;
+$ cd temp/theme
+$ git clone https://github.com/appernetic/hugo-bootstrap-premium
+$ cd ..
+</code></pre><p>ここまでで，HUGOサイトと使用するテーマは準備された．次は，<code>~Github/temp/config.toml</code>を書き換える必要がある．<!-- raw HTML omitted -->公式のリポジトリ<!-- raw HTML omitted -->に記載されている．以下の<code>config.toml</code>は先ほど言及した<!-- raw HTML omitted -->chanmitsu55さんのこちらの記事<!-- raw HTML omitted -->を参考にした．</p>
+<p>自分の<code>config.toml</code>にする際は<code>username</code>などを自分に合うように変更すると良い．</p>
+<pre><code>baseURL = &quot;https://username.github.io/&quot;
 languageCode = &quot;ja-jp&quot;
 weight = 1
 title = &quot;title&quot;
@@ -30,82 +136,186 @@ paginate = 10
 paginatePath = &quot;page&quot;
 
 [permalinks]
-    post = &quot;/:year/:month/:day/:filename/&quot;
-    code = &quot;/:filename/&quot;
+	post = &quot;/:year/:month/:day/:filename/&quot;
+	code = &quot;/:filename/&quot;
 
 [author]
-    name = &quot;author name&quot;
-    email = &quot;mailaddress@yahoo.co.jp&quot;
+	name = &quot;author name&quot;
+	email = &quot;mailaddress@yahoo.co.jp&quot;
 
 [params.theme]
-    name = &quot;yeti&quot;
+	name = &quot;yeti&quot;
 
 [params]
-    BrandImage = &quot;/logo.png&quot;
-    brand = &quot;brand name&quot;
-    topline = &quot;topline&quot;
-    footline = &quot;Copyright&amp;copy; &lt;a href=&#x27;/about/&#x27;&gt;name&lt;/a&gt;&quot;
-    showRightSidebar = true
-    highlight = &quot;default&quot;
-    twitter  = &quot;acount id&quot;
-    github   = &quot;acount id&quot;
+	BrandImage = &quot;/logo.png&quot;
+	brand = &quot;brand name&quot;
+	topline = &quot;topline&quot;
+	footline = &quot;Copyright&amp;copy; &lt;a href='/about/'&gt;name&lt;/a&gt;&quot;
+	showRightSidebar = true
+	highlight = &quot;default&quot;
+	twitter  = &quot;acount id&quot;
+	github   = &quot;acount id&quot;
 
 [[menu.main]]
-    name = &quot;Home&quot;
-    identifier = &quot;home&quot;
-    url = &quot;/&quot;
-    weight = -200
-    pre = &quot;&lt;i class=&#x27;fa fa-home&#x27;&gt;&lt;/i&gt;&quot;
+	name = &quot;Home&quot;
+	identifier = &quot;home&quot;
+	url = &quot;/&quot;
+	weight = -200
+	pre = &quot;&lt;i class='fa fa-home'&gt;&lt;/i&gt;&quot;
 
 [[menu.main]]
-    name = &quot;Archives&quot;
-    identifier = &quot;archives&quot;
-    url = &quot;/post/&quot;
-    weight = -180
-    pre = &quot;&lt;i class=&#x27;fa fa-archive&#x27;&gt;&lt;/i&gt;&quot;
+	name = &quot;Archives&quot;
+	identifier = &quot;archives&quot;
+	url = &quot;/post/&quot;
+	weight = -180
+	pre = &quot;&lt;i class='fa fa-archive'&gt;&lt;/i&gt;&quot;
 
 [[menu.main]]
-    name = &quot;About&quot;
-    identifier = &quot;&quot;
-    url = &quot;/about/&quot;
-    weight = -100
-    pre = &quot;&lt;i class=&#x27;fa fa-info-circle&#x27;&gt;&lt;/i&gt;&quot;
+	name = &quot;About&quot;
+	identifier = &quot;&quot;
+	url = &quot;/about/&quot;
+	weight = -100
+	pre = &quot;&lt;i class='fa fa-info-circle'&gt;&lt;/i&gt;&quot;
 
-</code></pre><p>こちらも<a href="https://github.com/gohugoio/hugo/blob/master/docs/config.toml" target="_blank" rel="noopener noreferrer">公式リポジトリ<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>にサンプルがあるので，少しづつ自分用に変更していこうと思う．</p><h3 class="flex" id="サブモジュール化"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E5%8C%96"><span class="icon icon-link"></span></a>サブモジュール化</h3><p>サブモジュール化するためには，一度<code>~/Github/blog</code>内の<code>public</code>を消去する必要がある．この方法は<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions" target="_blank" rel="noopener noreferrer">公式ドキュメント<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>に記載されている．</p><div class="remark-code-title">~/Github/blog</div><pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~/Github/blog
-$ <span class="token function">rm</span> -rf public
-$ <span class="token function">git</span> summodule <span class="token function">add</span> -b master https://github.com/username/username.github.io public
-</code></pre><h3 class="flex" id="記事の作成"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E8%A8%98%E4%BA%8B%E3%81%AE%E4%BD%9C%E6%88%90"><span class="icon icon-link"></span></a>記事の作成</h3><p>記事の作成は<code>hugo</code>コマンどを用いると簡単にできる．</p><pre><code>$ cd ~/Github/blog
+</code></pre><p>こちらも
+<!-- raw HTML omitted -->公式リポジトリ<!-- raw HTML omitted -->
+にサンプルがあるので，少しづつ自分用に変更していこうと思う．</p>
+<h2 id="サブモジュール化">サブモジュール化</h2>
+<p>サブモジュール化するためには，一度<code>~/Github/blog</code>内の<code>public</code>を消去する必要がある．この方法は
+<!-- raw HTML omitted -->公式ドキュメント<!-- raw HTML omitted -->
+に記載されている．</p>
+<pre><code class="language-~/Github/blog" data-lang="~/Github/blog">$ cd ~/Github/blog
+$ rm -rf public
+$ git summodule add -b master https://github.com/username/username.github.io public
+</code></pre><h2 id="記事の作成">記事の作成</h2>
+<p>記事の作成は<code>hugo</code>コマンどを用いると簡単にできる．</p>
+<pre><code>$ cd ~/Github/blog
 $ hugo new post/articlename.md
-</code></pre><p>ここで作成されたファイルを編集することで記事が完成する．生成ファイルの4行目に</p><pre><code>draft : true
-</code></pre><p>とあり，これは下書き中を意味する．ネットに載せるためには</p><pre><code>draft : false
-</code></pre><p>に変更すると良い．</p><h3 class="flex" id="デプロイ"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4"><span class="icon icon-link"></span></a>デプロイ</h3><p><code>~/Gibhub/blog</code>内に記事を書いてもデプロイしなければGithub Pagesで公開されない．デプロイする処理のスクリプトが<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script" target="_blank" rel="noopener noreferrer">公式<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>で紹介されている．以下のファイルは<code>~/Github/blog/deploy.sh</code>とする．</p><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+</code></pre><p>ここで作成されたファイルを編集することで記事が完成する．生成ファイルの4行目に</p>
+<pre><code>draft : true
+</code></pre>
+<p>とあり，これは下書き中を意味する．ネットに載せるためには</p>
+<pre><code>draft : false
+</code></pre>
+<p>に変更すると良い．</p>
+<h2 id="デプロイ">デプロイ</h2>
+<p><code>~/Gibhub/blog</code>内に記事を書いてもデプロイしなければGithub Pagesで公開されない．デプロイする処理のスクリプトが
+<!-- raw HTML omitted -->公式<!-- raw HTML omitted -->
+で紹介されている．以下のファイルは<code>~/Github/blog/deploy.sh</code>とする．</p>
+<pre><code>#!/bin/bash
 
-<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;<span class="token entity" title="\033">\033</span>[0;32mDeploying updates to GitHub...<span class="token entity" title="\033">\033</span>[0m&quot;</span>
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
 
-<span class="token comment"># Build the project.</span>
+# Build the project.
 hugo
 
-<span class="token comment"># Go To Public folder</span>
-<span class="token builtin class-name">cd</span> public
-<span class="token comment"># Add changes to git.</span>
-<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+# Go To Public folder
+cd public
+# Add changes to git.
+git add .
 
-<span class="token comment"># Commit changes.</span>
-<span class="token assign-left variable">msg</span><span class="token operator">=</span><span class="token string">&quot;rebuilding site <span class="token variable"><span class="token variable">`</span><span class="token function">date</span><span class="token variable">`</span></span>&quot;</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$#</span> -eq <span class="token number">1</span> <span class="token punctuation">]</span>
-  <span class="token keyword">then</span> <span class="token assign-left variable">msg</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$1</span>&quot;</span>
-<span class="token keyword">fi</span>
-<span class="token function">git</span> commit -m <span class="token string">&quot;<span class="token variable">$msg</span>&quot;</span>
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
 
-<span class="token comment"># Push source and build repos.</span>
-<span class="token function">git</span> push origin master
+# Push source and build repos.
+git push origin master
 
-<span class="token comment"># Come Back up to the Project Root</span>
-<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
-</code></pre><p><code>deploy.sh</code>を実行する際には</p><pre><code>$ ./deploy.sh
-</code></pre><p> とすると良いのだが，ファイル作成直後は実行権がなくて実行ができない．</p><pre><code>$ bash ./deploy.sh
-</code></pre><p>としたら実行できる．しかし，後のことも考えると</p><pre><code>$ chmod +x deploy.sh
-</code></pre><p>として実行権を与えておくとよい．</p><h3 class="flex" id="サイト確認"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E3%82%B5%E3%82%A4%E3%83%88%E7%A2%BA%E8%AA%8D"><span class="icon icon-link"></span></a>サイト確認</h3><p>ここまでで，ネットにサイトを公開することができる．実際にサイトを閲覧するためには，ブラウザを開き，URL欄に<code>https://username,github.io</code>とするとサイトのホームが表示される．</p><h3 class="flex" id="編集時のススメ"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/hugo-setup/#%E7%B7%A8%E9%9B%86%E6%99%82%E3%81%AE%E3%82%B9%E3%82%B9%E3%83%A1"><span class="icon icon-link"></span></a>編集時のススメ</h3><p>実際に記事を編集している際にはなんどもデプロイせずに</p><pre><code>~/Github/blog $ hugo server
-</code></pre><p>と実行することでローカルサーバを立て，ブラウザのURL欄に</p><p><code>localhost:1313</code></p><p>と入力することで逐次記事の状態を確認しながら作業できる．
+# Come Back up to the Project Root
+cd ..
+</code></pre><p><code>deploy.sh</code>を実行する際には</p>
+<pre><code>$ ./deploy.sh
+</code></pre>
+<p>とすると良いのだが，ファイル作成直後は実行権がなくて実行ができない．</p>
+<pre><code>$ bash ./deploy.sh
+</code></pre>
+<p>としたら実行できる．しかし，後のことも考えると</p>
+<pre><code>$ chmod +x deploy.sh
+</code></pre>
+<p>として実行権を与えておくとよい．</p>
+<h2 id="サイト確認">サイト確認</h2>
+<p>ここまでで，ネットにサイトを公開することができる．実際にサイトを閲覧するためには，ブラウザを開き，URL欄に<code>https://username,github.io</code>とするとサイトのホームが表示される．</p>
+<h2 id="編集時のススメ">編集時のススメ</h2>
+<p>実際に記事を編集している際にはなんどもデプロイせずに</p>
+<pre><code>~/Github/blog $ hugo server
+</code></pre>
+<p>と実行することでローカルサーバを立て，ブラウザのURL欄に</p>
+<p><code>localhost:1313</code></p>
+<p>と入力することで逐次記事の状態を確認しながら作業できる．
 これは
-<a rel="nofollow" href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">こちら</a>にも方法を記載した．</p></article><div class="invisible md:visible md:h-screen md:sticky md:top-20 md:ml-auto md:mr-auto md:p-3 dark:text-white border-none max-h-screen"><div class="border-2 border-gray-500 p-3 rounded-xl text-gray-50"><h2 class="border-b border-gray-500">Table of Contents</h2><ul class="overflow-y-auto overflow-x-auto font-medium text-base lg:text-sm pb-10 lg:pt-4 lg:pb-14 sticky?lg:h-(screen-18)" style="max-height:60vh;max-width:100vh"><li class="pl-0"><a href="#はじめに" class="ml-0">はじめに</a></li><li class="pl-0"><a href="#gihub-pages-x-hugo-導入手順" class="ml-0">Gihub Pages x HUGO 導入手順</a></li><li class="pl-2"><a href="#githubのアカウント作成" class="ml-2">Githubのアカウント作成</a></li><li class="pl-2"><a href="#github-pagesのためのリポジトリ作成" class="ml-2">Github Pagesのためのリポジトリ作成</a></li><li class="pl-2"><a href="#github-pagesのソースファイルを保存するリポジトリ作成" class="ml-2">Github Pagesのソースファイルを保存するリポジトリ作成</a></li><li class="pl-2"><a href="#hugoサイト作成" class="ml-2">HUGOサイト作成</a></li><li class="pl-2"><a href="#サブモジュール化" class="ml-2">サブモジュール化</a></li><li class="pl-2"><a href="#記事の作成" class="ml-2">記事の作成</a></li><li class="pl-2"><a href="#デプロイ" class="ml-2">デプロイ</a></li><li class="pl-2"><a href="#サイト確認" class="ml-2">サイト確認</a></li><li class="pl-2"><a href="#編集時のススメ" class="ml-2">編集時のススメ</a></li></ul></div></div></div></div></main><footer class="py-8"><div class="max-w-5xl px-8 mx-auto">© 2021 <a href="https://github.com/ysuzuki19" target="_blank" rel="noopener noreferrer">ysuzuki19</a>, Powered by <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a></div></footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"toc":[{"content":"はじめに","slug":"はじめに","lvl":2,"i":0},{"content":"Gihub Pages x HUGO 導入手順","slug":"gihub-pages-x-hugo-導入手順","lvl":2,"i":1},{"content":"Githubのアカウント作成","slug":"githubのアカウント作成","lvl":3,"i":2},{"content":"Github Pagesのためのリポジトリ作成","slug":"github-pagesのためのリポジトリ作成","lvl":3,"i":3},{"content":"Github Pagesのソースファイルを保存するリポジトリ作成","slug":"github-pagesのソースファイルを保存するリポジトリ作成","lvl":3,"i":4},{"content":"HUGOサイト作成","slug":"hugoサイト作成","lvl":3,"i":5},{"content":"サブモジュール化","slug":"サブモジュール化","lvl":3,"i":6},{"content":"記事の作成","slug":"記事の作成","lvl":3,"i":7},{"content":"デプロイ","slug":"デプロイ","lvl":3,"i":8},{"content":"サイト確認","slug":"サイト確認","lvl":3,"i":9},{"content":"編集時のススメ","slug":"編集時のススメ","lvl":3,"i":10}],"source":{"compiledSource":"var l=Object.defineProperty,h=Object.defineProperties;var d=Object.getOwnPropertyDescriptors;var s=Object.getOwnPropertySymbols;var i=Object.prototype.hasOwnProperty,o=Object.prototype.propertyIsEnumerable;var m=(a,n,p)=\u003en in a?l(a,n,{enumerable:!0,configurable:!0,writable:!0,value:p}):a[n]=p,e=(a,n)=\u003e{for(var p in n||(n={}))i.call(n,p)\u0026\u0026m(a,p,n[p]);if(s)for(var p of s(n))o.call(n,p)\u0026\u0026m(a,p,n[p]);return a},r=(a,n)=\u003eh(a,d(n));var c=(a,n)=\u003e{var p={};for(var t in a)i.call(a,t)\u0026\u0026n.indexOf(t)\u003c0\u0026\u0026(p[t]=a[t]);if(a!=null\u0026\u0026s)for(var t of s(a))n.indexOf(t)\u003c0\u0026\u0026o.call(a,t)\u0026\u0026(p[t]=a[t]);return p};const layoutProps={},MDXLayout=\"wrapper\";function MDXContent(p){var t=p,{components:a}=t,n=c(t,[\"components\"]);return mdx(MDXLayout,r(e(e({},layoutProps),n),{components:a,mdxType:\"MDXLayout\"}),mdx(\"h2\",e({},{id:\"\\u306F\\u3058\\u3081\\u306B\"}),mdx(\"a\",e({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u306F\\u3058\\u3081\\u306B\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u306F\\u3058\\u3081\\u306B\"),mdx(\"p\",null,\"\\u6700\\u8FD1\\uFF0CQiita\\u306B\\u8A18\\u4E8B\\u3092\\u5C11\\u3057\\u3065\\u3064\\u63B2\\u8F09\\u3057\\u3066\\u3044\\u305F\\u306E\\u3060\\u304C\\uFF0C\\u5C11\\u3057\\u3065\\u3064\\u5185\\u5BB9\\u304C\\u5897\\u3048\\u3066\\u3044\\u304F\\u306B\\u3064\\u308C\\u3066\\uFF0C\"),mdx(\"p\",null,\"\\u300C\\u81EA\\u5206\\u306E\\u30B5\\u30A4\\u30C8\\u304C\\u6B32\\u3057\\u3044\\u306A\\u3042\\u30FB\\u30FB\\u30FB\\u300D\"),mdx(\"p\",null,\"\\u3068\\u601D\\u3046\\u3088\\u3046\\u306B\\u306A\\u3063\\u3066\\u304D\\u305F\\uFF0E\\u3057\\u304B\\u3057\\uFF0C\\u8ABF\\u3079\\u3066\\u307F\\u308B\\u3068\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`\\u30FB\\u3000\\u81EA\\u5B85\\u30B5\\u30FC\\u30D0\\u3092\\u7ACB\\u3066\\u308B\n\\u30FB\\u3000\\u30EC\\u30F3\\u30BF\\u30EB\\u30B5\\u30FC\\u30D0\\u3092\\u501F\\u308A\\u308B\n`)),mdx(\"p\",null,`\\u306A\\u3069\\uFF0C\\u8CA7\\u56F0\\u5B66\\u751F\\u306B\\u306F\\u624B\\u306E\\u51FA\\u3057\\u3065\\u3089\\u3044\\u3082\\u306E\\u304C\\u6B21\\u3005\\u3068\\u51FA\\u3066\\u304D\\u305F\\uFF0E\n\\u305D\\u306E\\u4E2D\\u3067\\uFF0C\\u7C21\\u5358\\u306B\\u59CB\\u3081\\u3089\\u308C\\u3066\\u7121\\u6599\\u3067\\u3067\\u304D\\u308B\\u3082\\u306E\\u3068\\u3057\\u3066\\uFF0C`),mdx(\"p\",null,\"Github Pages\\u304C\\u51FA\\u3066\\u304D\\u305F\\uFF0EGithub Pages\\u306F\\u4EE5\\u524D\\uFF0C\"),mdx(\"p\",null,\"\\u300CGithub Pages\\u306F\\u30DA\\u30FC\\u30B8\\u516C\\u958B\\u306F\\u697D\\u3060\\u3051\\u3069html\\u3068\\u304B\\u3088\\u304F\\u308F\\u304B\\u3089\\u306A\\u3044\\u3057\\u30FB\\u30FB\\u30FB\\u300D\"),mdx(\"p\",null,\"\\u3068\\u601D\\u3063\\u3066\\uFF0C\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u3092\\u4F5C\\u3063\\u305F\\u307E\\u307E\\u4F55\\u3082\\u3067\\u304D\\u306A\\u3044\\u307E\\u307E\\u505C\\u6EDE\\u3057\\u3066\\u3044\\u305F\\uFF0E\"),mdx(\"p\",null,`\\u305D\\u3053\\u3067\\u898B\\u3064\\u3051\\u305F\\u306E\\u304CSSG(Static Site Generator)\\u3067\\u3042\\u308B\\uFF0ESSG\\u306F\\u65E5\\u672C\\u8A9E\\u3067\\u306F\\u9759\\u7684\\u30B5\\u30A4\\u30C8\\u30B8\\u30A7\\u30CD\\u30EC\\u30FC\\u30BF\\u3068\\u547C\\u3070\\u308C\\uFF0C\\u305D\\u306E\\u540D\\u306E\\u901A\\u308A\\u9759\\u7684\\u306A\\u30B5\\u30A4\\u30C8\\u3092\\u751F\\u6210\\u3059\\u308B\\u3053\\u3068\\u304C\\u3067\\u304D\\u308B\\uFF0E\nSSG\\u306FHUGO\\u3092\\u4F7F\\u3063\\u3066\\u3044\\u308B\\u306E\\u3060\\u304C\\uFF0CHUGO\\u306FGO\\u8A00\\u8A9E\\u3067\\u958B\\u767A\\u3055\\u308C\\u3066\\u304A\\u308A\\uFF0C\\u9AD8\\u901F\\u306B\\u52D5\\u4F5C\\u3059\\u308B\\u3068\\u8A00\\u308F\\u308C\\u3066\\u3044\\u308B\\uFF0E\\uFF08\\u4ED6\\u3092\\u5B9F\\u969B\\u306B\\u4F7F\\u3063\\u305F\\u3053\\u3068\\u304C\\u306A\\u3044\\u306E\\u3067\\u672C\\u5F53\\u306F\\u308F\\u304B\\u308A\\u307E\\u305B\\u3093\\uFF0E\\uFF09`),mdx(\"p\",null,`\\u30D1\\u30BD\\u30B3\\u30F3\\u306F\\u82E6\\u624B\\u306A\\u306E\\u3067\\uFF0C\\u74B0\\u5883\\u69CB\\u7BC9\\u306B\\u306F\\uFF11\\u65E5\\u307B\\u3069\\u304B\\u304B\\u3063\\u3066\\u3057\\u307E\\u3063\\u305F\\u304C\\uFF0C\\u624B\\u9806\\u3068\\u3057\\u3066\\u306F\\u7C21\\u5358\\u306B\\u5C0E\\u5165\\u3059\\u308B\\u3053\\u3068\\u304C\\u3067\\u304D\\u305F\\uFF0E\\u4ED6\\u306E\\u65B9\\u306E\\u624B\\u9806\\u7D39\\u4ECB\\u306B\\uFF0C\\u3069\\u3053\\u3067\\u30B3\\u30DE\\u30F3\\u30C9\\u3092\\u5B9F\\u884C\\u3057\\u305F\\u3089\\u826F\\u3044\\u304B\\u3092\\u8FFD\\u52A0\\u3057\\u3066\\u7D39\\u4ECB\\u3059\\u308B\\uFF0E\n\\u81EA\\u5206\\u306F\\uFF0CGithub\\u3067\\u7BA1\\u7406\\u3057\\u3066\\u3044\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306F\\u3059\\u3079\\u3066`,mdx(\"inlineCode\",{parentName:\"p\"},\"~/Github/\"),`\\u306B\\u3042\\u308B\\u306E\\u3067\\uFF0C\\u305D\\u306E\\u90E8\\u5206\\u3060\\u3051\\u81EA\\u5206\\u4F3C\\u5408\\u308F\\u305B\\u3066\\u3082\\u3089\\u3048\\u3070\\u3044\\u3044\\u3068\\u601D\\u3046\\uFF0E\n\\u3053\\u3053\\u3067\\u306F\\uFF0C\\u74B0\\u5883\\u69CB\\u7BC9\\u306E\\u624B\\u9806\\u3092\\u7D39\\u4ECB\\u3059\\u308B\\uFF0E\\u624B\\u9806\\u306E\\u6982\\u8981\\u306F\\u4EE5\\u4E0B\\uFF0E`),mdx(\"h2\",e({},{id:\"gihub-pages-x-hugo-\\u5C0E\\u5165\\u624B\\u9806\"}),mdx(\"a\",e({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#gihub-pages-x-hugo-\\u5C0E\\u5165\\u624B\\u9806\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"Gihub Pages x HUGO \\u5C0E\\u5165\\u624B\\u9806\"),mdx(\"ol\",null,mdx(\"li\",{parentName:\"ol\"},\"Github\\u306E\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u4F5C\\u6210\"),mdx(\"li\",{parentName:\"ol\"},\"Github Pages \\u306E\\u305F\\u3081\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"),mdx(\"li\",{parentName:\"ol\"},\"Github Pages \\u306E\\u30BD\\u30FC\\u30B9\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u4FDD\\u5B58\\u3059\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"),mdx(\"li\",{parentName:\"ol\"},\"\\u30B5\\u30D6\\u30E2\\u30B8\\u30E5\\u30FC\\u30EB\\u5316\"),mdx(\"li\",{parentName:\"ol\"},\"HUGO\\u30B5\\u30A4\\u30C8\\u4F5C\\u6210\"),mdx(\"li\",{parentName:\"ol\"},\"\\u8A18\\u4E8B\\u306E\\u4F5C\\u6210\"),mdx(\"li\",{parentName:\"ol\"},\"\\u30C7\\u30D7\\u30ED\\u30A4\"),mdx(\"li\",{parentName:\"ol\"},\"\\u30B5\\u30A4\\u30C8\\u78BA\\u8A8D\")),mdx(\"p\",null,\"\\u4EE5\\u4E0A\\u304C\\u624B\\u9806\\u3067\\u3042\\u308B\\u304C\\uFF0C\\u74B0\\u5883\\u69CB\\u7BC9\\u4E2D\\u306F\\u307B\\u3068\\u3093\\u3069\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo\"}),\"chanmitsu55\\u3055\\u3093\\u306E\\u3053\\u3061\\u3089\\u306E\\u8A18\\u4E8B\"),\"\\u3092\\u53C2\\u8003\\u306B\\u3055\\u305B\\u3066\\u3082\\u3089\\u3063\\u305F\\u306E\\u3067\\uFF0C\\u3053\\u3061\\u3089\\u3092\\u898B\\u3066\\u3082\\u3089\\u3046\\u3068\\u308F\\u304B\\u308A\\u3084\\u3059\\u3044\\u3068\\u601D\\u3046\\uFF0E\"),mdx(\"p\",null,\"Github\\u306F\\u77E5\\u3063\\u3066\\u3044\\u308B\\u4EBA\\u304C\\u591A\\u3044\\u3068\\u601D\\u3046\\u304C\\uFF0CGithub Pages\\u3068\\u306FGithub\\u3067\\u30B5\\u30A4\\u30C8\\u3092\\u516C\\u958B\\u3059\\u308B\\u30B5\\u30FC\\u30D3\\u30B9\\u3067\\u3042\\u308B\\uFF0E\"),mdx(\"h3\",e({},{id:\"github\\u306E\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u4F5C\\u6210\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#github\\u306E\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u4F5C\\u6210\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"Github\\u306E\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u4F5C\\u6210\"),mdx(\"p\",null,\"Github\\u306E\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u3092\\u3059\\u3067\\u306B\\u6301\\u3063\\u3066\\u3044\\u308B\\u5834\\u5408\\u306F\\u30B9\\u30EB\\u30FC\\u3057\\u3066\\u826F\\u3044\\u304C\\uFF0C\\u307E\\u3060\\u306A\\u65B9\\u306F\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://github.com\"}),\"Github\\u306E\\u30DB\\u30FC\\u30E0\"),\"\\u304B\\u3089\\u307E\\u305A\\u306F\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u3092\\u4F5C\\u308B\\uFF0E\\u307E\\u305F\\uFF0C\\u4F5C\\u6210\\u3057\\u305F\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u3092\\u30ED\\u30FC\\u30AB\\u30EB\\u306B\\u30AF\\u30ED\\u30FC\\u30F3\\u3059\\u308B\\uFF0E\"),mdx(\"h3\",e({},{id:\"github-pages\\u306E\\u305F\\u3081\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#github-pages\\u306E\\u305F\\u3081\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"Github Pages\\u306E\\u305F\\u3081\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"),mdx(\"p\",null,\"Github\\u3067\\u306F\\uFF0C\\u901A\\u5E38\\u306F\\u597D\\u304D\\u306A\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u540D\\u3092\\u3064\\u3051\\u308B\\u3053\\u3068\\u304C\\u3067\\u304D\\u308B\\u306E\\u3060\\u304C\\uFF0C\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u540D\\u3092\",mdx(\"inlineCode\",{parentName:\"p\"},\"username.github.io\"),\"\\u3068\\u3059\\u308B\\u3068\\u30CD\\u30C3\\u30C8\\u306B\\u516C\\u958B\\u3055\\u308C\\u308B\\uFF0E\"),mdx(\"div\",e({},{className:\"remark-code-title\"}),\"~/Github\"),mdx(\"pre\",e({},{className:\"language-bash\"}),mdx(\"code\",e({parentName:\"pre\"},{className:\"language-bash\"}),\"$ \",mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` ~/Github\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),` clone https://github.com/username/username.github.io\n`)),mdx(\"h3\",e({},{id:\"github-pages\\u306E\\u30BD\\u30FC\\u30B9\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u4FDD\\u5B58\\u3059\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#github-pages\\u306E\\u30BD\\u30FC\\u30B9\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u4FDD\\u5B58\\u3059\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"Github Pages\\u306E\\u30BD\\u30FC\\u30B9\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u4FDD\\u5B58\\u3059\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u4F5C\\u6210\"),mdx(\"p\",null,\"Github Pages x HUGO\\u3067\\u30D6\\u30ED\\u30B0\\u306E\\u4F5C\\u6210\\u65B9\\u6CD5\\u3092\\u7D39\\u4ECB\\u3057\\u3066\\u3044\\u308B\\u65B9\\u3092\\u307F\\u308B\\u3068\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"username.github.io\"),\"\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u3068\\u30BD\\u30FC\\u30B9\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u4FDD\\u5B58\\u3059\\u308B\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306F\\u5206\\u3051\\u305F\\u65B9\\u304C\\u3044\\u3044\\u3088\\u3046\\u3060\\uFF0E\\u4ECA\\u56DE\\u306F\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"blog\"),\"\\u3068\\u3044\\u3046\\u540D\\u524D\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u3092\\u4F5C\\u6210\\u3057\\u305F\\uFF0E\"),mdx(\"div\",e({},{className:\"remark-code-title\"}),\"~/Github\"),mdx(\"pre\",e({},{className:\"language-bash\"}),mdx(\"code\",e({parentName:\"pre\"},{className:\"language-bash\"}),\"$ \",mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` ~/Github\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),` clone https://github.com/username/blog\n`)),mdx(\"h3\",e({},{id:\"hugo\\u30B5\\u30A4\\u30C8\\u4F5C\\u6210\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#hugo\\u30B5\\u30A4\\u30C8\\u4F5C\\u6210\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"HUGO\\u30B5\\u30A4\\u30C8\\u4F5C\\u6210\"),mdx(\"p\",null,\"HUGO\\u30B3\\u30DE\\u30F3\\u30C9\\u3092\\u7528\\u3044\\u3066HUGO\\u30B5\\u30A4\\u30C8\\u3092\\u4F5C\\u6210\\u3059\\u308B\\uFF0E\\u3053\\u3053\\u3067\\uFF0C\\u30B5\\u30A4\\u30C8\\u306E\\u30C6\\u30FC\\u30DE\\u306F\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://themes.gohugo.io\"}),\"\\u3053\\u3061\\u3089\"),\"\\u304B\\u3089\\u9078\\u629E\\u3059\\u308B\\u3053\\u3068\\u304C\\u3067\\u304D\\uFF0C\\u597D\\u307F\\u306E\\u30C6\\u30FC\\u30DE\\u304C\\u3042\\u308C\\u3070github\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306A\\u3069\\u304C\\u8A18\\u8F09\\u3055\\u308C\\u3066\\u3044\\u308B\\uFF0E\"),mdx(\"div\",e({},{className:\"remark-code-title\"}),\"~/Github\"),mdx(\"pre\",e({},{className:\"language-bash\"}),mdx(\"code\",e({parentName:\"pre\"},{className:\"language-bash\"}),\"$ \",mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` ~/Gibhub\n$ hugo new site temp\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` temp/theme\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),` clone https://github.com/appernetic/hugo-bootstrap-premium\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token punctuation\"}),\"..\"),`\n`)),mdx(\"p\",null,\"\\u3053\\u3053\\u307E\\u3067\\u3067\\uFF0CHUGO\\u30B5\\u30A4\\u30C8\\u3068\\u4F7F\\u7528\\u3059\\u308B\\u30C6\\u30FC\\u30DE\\u306F\\u6E96\\u5099\\u3055\\u308C\\u305F\\uFF0E\\u6B21\\u306F\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"~Github/temp/config.toml\"),\"\\u3092\\u66F8\\u304D\\u63DB\\u3048\\u308B\\u5FC5\\u8981\\u304C\\u3042\\u308B\\uFF0E\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://github.com/gohugoio/hugo/blob/master/docs/config.toml\"}),\"\\u516C\\u5F0F\\u306E\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\"),\"\\u306B\\u8A18\\u8F09\\u3055\\u308C\\u3066\\u3044\\u308B\\uFF0E\\u4EE5\\u4E0B\\u306E\",mdx(\"inlineCode\",{parentName:\"p\"},\"config.toml\"),\"\\u306F\\u5148\\u307B\\u3069\\u8A00\\u53CA\\u3057\\u305F\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://chanmitsu55.github.io/2017/12/25/2017-12-25-create-blog-by-hugo/\"}),\"chanmitsu55\\u3055\\u3093\\u306E\\u3053\\u3061\\u3089\\u306E\\u8A18\\u4E8B\"),\"\\u3092\\u53C2\\u8003\\u306B\\u3057\\u305F\\uFF0E\"),mdx(\"p\",null,\"\\u81EA\\u5206\\u306E\",mdx(\"inlineCode\",{parentName:\"p\"},\"config.toml\"),\"\\u306B\\u3059\\u308B\\u969B\\u306F\",mdx(\"inlineCode\",{parentName:\"p\"},\"username\"),\"\\u306A\\u3069\\u3092\\u81EA\\u5206\\u306B\\u5408\\u3046\\u3088\\u3046\\u306B\\u5909\\u66F4\\u3059\\u308B\\u3068\\u826F\\u3044\\uFF0E\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`baseURL = \"https://username.github.io/\"\nlanguageCode = \"ja-jp\"\nweight = 1\ntitle = \"title\"\npublishDir = \"public\"\ntheme= \"hugo-bootstrap-premium\"\nhasCJKLanguage = true\npaginate = 10\npaginatePath = \"page\"\n\n[permalinks]\n    post = \"/:year/:month/:day/:filename/\"\n    code = \"/:filename/\"\n\n[author]\n    name = \"author name\"\n    email = \"mailaddress@yahoo.co.jp\"\n\n[params.theme]\n    name = \"yeti\"\n\n[params]\n    BrandImage = \"/logo.png\"\n    brand = \"brand name\"\n    topline = \"topline\"\n    footline = \"Copyright\u0026copy; \u003ca href='/about/'\u003ename\u003c/a\u003e\"\n    showRightSidebar = true\n    highlight = \"default\"\n    twitter  = \"acount id\"\n    github   = \"acount id\"\n\n[[menu.main]]\n    name = \"Home\"\n    identifier = \"home\"\n    url = \"/\"\n    weight = -200\n    pre = \"\u003ci class='fa fa-home'\u003e\u003c/i\u003e\"\n\n[[menu.main]]\n    name = \"Archives\"\n    identifier = \"archives\"\n    url = \"/post/\"\n    weight = -180\n    pre = \"\u003ci class='fa fa-archive'\u003e\u003c/i\u003e\"\n\n[[menu.main]]\n    name = \"About\"\n    identifier = \"\"\n    url = \"/about/\"\n    weight = -100\n    pre = \"\u003ci class='fa fa-info-circle'\u003e\u003c/i\u003e\"\n\n`)),mdx(\"p\",null,\"\\u3053\\u3061\\u3089\\u3082\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://github.com/gohugoio/hugo/blob/master/docs/config.toml\"}),\"\\u516C\\u5F0F\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\"),\"\\u306B\\u30B5\\u30F3\\u30D7\\u30EB\\u304C\\u3042\\u308B\\u306E\\u3067\\uFF0C\\u5C11\\u3057\\u3065\\u3064\\u81EA\\u5206\\u7528\\u306B\\u5909\\u66F4\\u3057\\u3066\\u3044\\u3053\\u3046\\u3068\\u601D\\u3046\\uFF0E\"),mdx(\"h3\",e({},{id:\"\\u30B5\\u30D6\\u30E2\\u30B8\\u30E5\\u30FC\\u30EB\\u5316\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u30B5\\u30D6\\u30E2\\u30B8\\u30E5\\u30FC\\u30EB\\u5316\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u30B5\\u30D6\\u30E2\\u30B8\\u30E5\\u30FC\\u30EB\\u5316\"),mdx(\"p\",null,\"\\u30B5\\u30D6\\u30E2\\u30B8\\u30E5\\u30FC\\u30EB\\u5316\\u3059\\u308B\\u305F\\u3081\\u306B\\u306F\\uFF0C\\u4E00\\u5EA6\",mdx(\"inlineCode\",{parentName:\"p\"},\"~/Github/blog\"),\"\\u5185\\u306E\",mdx(\"inlineCode\",{parentName:\"p\"},\"public\"),\"\\u3092\\u6D88\\u53BB\\u3059\\u308B\\u5FC5\\u8981\\u304C\\u3042\\u308B\\uFF0E\\u3053\\u306E\\u65B9\\u6CD5\\u306F\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://gohugo.io/hosting-and-deployment/hosting-on-github/#step-by-step-instructions\"}),\"\\u516C\\u5F0F\\u30C9\\u30AD\\u30E5\\u30E1\\u30F3\\u30C8\"),\"\\u306B\\u8A18\\u8F09\\u3055\\u308C\\u3066\\u3044\\u308B\\uFF0E\"),mdx(\"div\",e({},{className:\"remark-code-title\"}),\"~/Github/blog\"),mdx(\"pre\",e({},{className:\"language-bash\"}),mdx(\"code\",e({parentName:\"pre\"},{className:\"language-bash\"}),\"$ \",mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` ~/Github/blog\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"rm\"),` -rf public\n$ `,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),\" summodule \",mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"add\"),` -b master https://github.com/username/username.github.io public\n`)),mdx(\"h3\",e({},{id:\"\\u8A18\\u4E8B\\u306E\\u4F5C\\u6210\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u8A18\\u4E8B\\u306E\\u4F5C\\u6210\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u8A18\\u4E8B\\u306E\\u4F5C\\u6210\"),mdx(\"p\",null,\"\\u8A18\\u4E8B\\u306E\\u4F5C\\u6210\\u306F\",mdx(\"inlineCode\",{parentName:\"p\"},\"hugo\"),\"\\u30B3\\u30DE\\u30F3\\u3069\\u3092\\u7528\\u3044\\u308B\\u3068\\u7C21\\u5358\\u306B\\u3067\\u304D\\u308B\\uFF0E\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`$ cd ~/Github/blog\n$ hugo new post/articlename.md\n`)),mdx(\"p\",null,\"\\u3053\\u3053\\u3067\\u4F5C\\u6210\\u3055\\u308C\\u305F\\u30D5\\u30A1\\u30A4\\u30EB\\u3092\\u7DE8\\u96C6\\u3059\\u308B\\u3053\\u3068\\u3067\\u8A18\\u4E8B\\u304C\\u5B8C\\u6210\\u3059\\u308B\\uFF0E\\u751F\\u6210\\u30D5\\u30A1\\u30A4\\u30EB\\u306E4\\u884C\\u76EE\\u306B\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`draft : true\n`)),mdx(\"p\",null,\"\\u3068\\u3042\\u308A\\uFF0C\\u3053\\u308C\\u306F\\u4E0B\\u66F8\\u304D\\u4E2D\\u3092\\u610F\\u5473\\u3059\\u308B\\uFF0E\\u30CD\\u30C3\\u30C8\\u306B\\u8F09\\u305B\\u308B\\u305F\\u3081\\u306B\\u306F\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`draft : false\n`)),mdx(\"p\",null,\"\\u306B\\u5909\\u66F4\\u3059\\u308B\\u3068\\u826F\\u3044\\uFF0E\"),mdx(\"h3\",e({},{id:\"\\u30C7\\u30D7\\u30ED\\u30A4\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u30C7\\u30D7\\u30ED\\u30A4\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u30C7\\u30D7\\u30ED\\u30A4\"),mdx(\"p\",null,mdx(\"inlineCode\",{parentName:\"p\"},\"~/Gibhub/blog\"),\"\\u5185\\u306B\\u8A18\\u4E8B\\u3092\\u66F8\\u3044\\u3066\\u3082\\u30C7\\u30D7\\u30ED\\u30A4\\u3057\\u306A\\u3051\\u308C\\u3070Github Pages\\u3067\\u516C\\u958B\\u3055\\u308C\\u306A\\u3044\\uFF0E\\u30C7\\u30D7\\u30ED\\u30A4\\u3059\\u308B\\u51E6\\u7406\\u306E\\u30B9\\u30AF\\u30EA\\u30D7\\u30C8\\u304C\",mdx(\"a\",e({parentName:\"p\"},{href:\"https://gohugo.io/hosting-and-deployment/hosting-on-github/#put-it-into-a-script\"}),\"\\u516C\\u5F0F\"),\"\\u3067\\u7D39\\u4ECB\\u3055\\u308C\\u3066\\u3044\\u308B\\uFF0E\\u4EE5\\u4E0B\\u306E\\u30D5\\u30A1\\u30A4\\u30EB\\u306F\",mdx(\"inlineCode\",{parentName:\"p\"},\"~/Github/blog/deploy.sh\"),\"\\u3068\\u3059\\u308B\\uFF0E\"),mdx(\"pre\",e({},{className:\"language-bash\"}),mdx(\"code\",e({parentName:\"pre\"},{className:\"language-bash\"}),mdx(\"span\",e({parentName:\"code\"},{className:\"token shebang important\"}),\"#!/bin/bash\"),`\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"echo\"),\" -e \",mdx(\"span\",e({parentName:\"code\"},{className:\"token string\"}),'\"',mdx(\"span\",e({parentName:\"span\"},{className:\"token entity\",title:\"\\\\033\"}),\"\\\\033\"),\"[0;32mDeploying updates to GitHub...\",mdx(\"span\",e({parentName:\"span\"},{className:\"token entity\",title:\"\\\\033\"}),\"\\\\033\"),'[0m\"'),`\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Build the project.\"),`\nhugo\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Go To Public folder\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),` public\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Add changes to git.\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"add\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\".\"),`\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Commit changes.\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token assign-left variable\"}),\"msg\"),mdx(\"span\",e({parentName:\"code\"},{className:\"token operator\"}),\"=\"),mdx(\"span\",e({parentName:\"code\"},{className:\"token string\"}),'\"rebuilding site ',mdx(\"span\",e({parentName:\"span\"},{className:\"token variable\"}),mdx(\"span\",e({parentName:\"span\"},{className:\"token variable\"}),\"`\"),mdx(\"span\",e({parentName:\"span\"},{className:\"token function\"}),\"date\"),mdx(\"span\",e({parentName:\"span\"},{className:\"token variable\"}),\"`\")),'\"'),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token keyword\"}),\"if\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token punctuation\"}),\"[\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token variable\"}),\"$#\"),\" -eq \",mdx(\"span\",e({parentName:\"code\"},{className:\"token number\"}),\"1\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token punctuation\"}),\"]\"),`\n  `,mdx(\"span\",e({parentName:\"code\"},{className:\"token keyword\"}),\"then\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token assign-left variable\"}),\"msg\"),mdx(\"span\",e({parentName:\"code\"},{className:\"token operator\"}),\"=\"),mdx(\"span\",e({parentName:\"code\"},{className:\"token string\"}),'\"',mdx(\"span\",e({parentName:\"span\"},{className:\"token variable\"}),\"$1\"),'\"'),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token keyword\"}),\"fi\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),\" commit -m \",mdx(\"span\",e({parentName:\"code\"},{className:\"token string\"}),'\"',mdx(\"span\",e({parentName:\"span\"},{className:\"token variable\"}),\"$msg\"),'\"'),`\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Push source and build repos.\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token function\"}),\"git\"),` push origin master\n\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token comment\"}),\"# Come Back up to the Project Root\"),`\n`,mdx(\"span\",e({parentName:\"code\"},{className:\"token builtin class-name\"}),\"cd\"),\" \",mdx(\"span\",e({parentName:\"code\"},{className:\"token punctuation\"}),\"..\"),`\n`)),mdx(\"p\",null,mdx(\"inlineCode\",{parentName:\"p\"},\"deploy.sh\"),\"\\u3092\\u5B9F\\u884C\\u3059\\u308B\\u969B\\u306B\\u306F\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`$ ./deploy.sh\n`)),mdx(\"p\",null,\" \\u3068\\u3059\\u308B\\u3068\\u826F\\u3044\\u306E\\u3060\\u304C\\uFF0C\\u30D5\\u30A1\\u30A4\\u30EB\\u4F5C\\u6210\\u76F4\\u5F8C\\u306F\\u5B9F\\u884C\\u6A29\\u304C\\u306A\\u304F\\u3066\\u5B9F\\u884C\\u304C\\u3067\\u304D\\u306A\\u3044\\uFF0E\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`$ bash ./deploy.sh\n`)),mdx(\"p\",null,\"\\u3068\\u3057\\u305F\\u3089\\u5B9F\\u884C\\u3067\\u304D\\u308B\\uFF0E\\u3057\\u304B\\u3057\\uFF0C\\u5F8C\\u306E\\u3053\\u3068\\u3082\\u8003\\u3048\\u308B\\u3068\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`$ chmod +x deploy.sh\n`)),mdx(\"p\",null,\"\\u3068\\u3057\\u3066\\u5B9F\\u884C\\u6A29\\u3092\\u4E0E\\u3048\\u3066\\u304A\\u304F\\u3068\\u3088\\u3044\\uFF0E\"),mdx(\"h3\",e({},{id:\"\\u30B5\\u30A4\\u30C8\\u78BA\\u8A8D\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u30B5\\u30A4\\u30C8\\u78BA\\u8A8D\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u30B5\\u30A4\\u30C8\\u78BA\\u8A8D\"),mdx(\"p\",null,\"\\u3053\\u3053\\u307E\\u3067\\u3067\\uFF0C\\u30CD\\u30C3\\u30C8\\u306B\\u30B5\\u30A4\\u30C8\\u3092\\u516C\\u958B\\u3059\\u308B\\u3053\\u3068\\u304C\\u3067\\u304D\\u308B\\uFF0E\\u5B9F\\u969B\\u306B\\u30B5\\u30A4\\u30C8\\u3092\\u95B2\\u89A7\\u3059\\u308B\\u305F\\u3081\\u306B\\u306F\\uFF0C\\u30D6\\u30E9\\u30A6\\u30B6\\u3092\\u958B\\u304D\\uFF0CURL\\u6B04\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"https://username,github.io\"),\"\\u3068\\u3059\\u308B\\u3068\\u30B5\\u30A4\\u30C8\\u306E\\u30DB\\u30FC\\u30E0\\u304C\\u8868\\u793A\\u3055\\u308C\\u308B\\uFF0E\"),mdx(\"h3\",e({},{id:\"\\u7DE8\\u96C6\\u6642\\u306E\\u30B9\\u30B9\\u30E1\"}),mdx(\"a\",e({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u7DE8\\u96C6\\u6642\\u306E\\u30B9\\u30B9\\u30E1\"}),mdx(\"span\",e({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u7DE8\\u96C6\\u6642\\u306E\\u30B9\\u30B9\\u30E1\"),mdx(\"p\",null,\"\\u5B9F\\u969B\\u306B\\u8A18\\u4E8B\\u3092\\u7DE8\\u96C6\\u3057\\u3066\\u3044\\u308B\\u969B\\u306B\\u306F\\u306A\\u3093\\u3069\\u3082\\u30C7\\u30D7\\u30ED\\u30A4\\u305B\\u305A\\u306B\"),mdx(\"pre\",null,mdx(\"code\",e({parentName:\"pre\"},{}),`~/Github/blog $ hugo server\n`)),mdx(\"p\",null,\"\\u3068\\u5B9F\\u884C\\u3059\\u308B\\u3053\\u3068\\u3067\\u30ED\\u30FC\\u30AB\\u30EB\\u30B5\\u30FC\\u30D0\\u3092\\u7ACB\\u3066\\uFF0C\\u30D6\\u30E9\\u30A6\\u30B6\\u306EURL\\u6B04\\u306B\"),mdx(\"p\",null,mdx(\"inlineCode\",{parentName:\"p\"},\"localhost:1313\")),mdx(\"p\",null,`\\u3068\\u5165\\u529B\\u3059\\u308B\\u3053\\u3068\\u3067\\u9010\\u6B21\\u8A18\\u4E8B\\u306E\\u72B6\\u614B\\u3092\\u78BA\\u8A8D\\u3057\\u306A\\u304C\\u3089\\u4F5C\\u696D\\u3067\\u304D\\u308B\\uFF0E\n\\u3053\\u308C\\u306F\n`,mdx(\"a\",e({parentName:\"p\"},{href:\"https://ysuzuki19.github.io/2019/04/18/hugotutorial/\"}),\"\\u3053\\u3061\\u3089\"),\"\\u306B\\u3082\\u65B9\\u6CD5\\u3092\\u8A18\\u8F09\\u3057\\u305F\\uFF0E\"))}MDXContent.isMDXComponent=!0;\n","scope":{}},"frontMatter":{"title":"Github Pages x HUGOをセットアップする","date":"2019-04-19T14:26:27+09:00","description":"便利なブログ作成！！","tags":["github pages","hugo","blog"]}},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"hugo-setup"},"buildId":"YOp8L7a2_eIT7Qpo4Nhql","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-eef578260fd80f8fff94.js"></script><script src="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" async=""></script><script src="/_next/static/chunks/framework-92300432a1172ef1338b.js" async=""></script><script src="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" async=""></script><script src="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" async=""></script><script src="/_next/static/chunks/985-867e3d5e21e417a5de61.js" async=""></script><script src="/_next/static/chunks/522-2597210efd9529a81949.js" async=""></script><script src="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" async=""></script><script src="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" async=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_buildManifest.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_ssgManifest.js" async=""></script></body></html>
+<a href="https://ysuzuki19.github.io/2019/04/18/hugotutorial/">こちら</a>にも方法を記載した．</p>
+</div>
+				
+				<footer class="entry__footer">
+					
+					
+<div class="entry__share share">
+	<a class="share__link btn" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Facebook" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&amp;text=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&amp;title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&amp;title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Telegram" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&amp;title=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2fhugo-setup%2f&description=Github%20Pages%20x%20HUGO%e3%82%92%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97%e3%81%99%e3%82%8b" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=800,height=720,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pinterest" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="m265 65c-104 0-157 75-157 138 0 37 14 71 45 83 5 2 10 0 12-5l3-18c2-6 1-7-2-12-9-11-15-24-15-43 0-56 41-106 108-106 60 0 92 37 92 85 0 64-28 116-70 116-23 0-40-18-34-42 6-27 19-57 19-77 0-18-9-34-30-34-24 0-42 25-42 58 0 20 7 34 7 34l-29 120a249 249 0 0 0 2 86l3-1c2-3 31-37 40-72l16-61c7 15 29 28 53 28 71 0 119-64 119-151 0-66-56-126-140-126z"/></svg>
+	</a>
+</div>
+				</footer>
+				
+			</article>
+		</div>
+	</main>
+	
+<div class="authorbox block">
+	<div class="author">
+		<div class="author__body">
+			<div class="author__name">
+				ysuzuki
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+	
+
+	</div>
+	<footer class="footer">
+<div class="footer__social social">
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="mailto:ysuzuki.cpp@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/ysuzuki19">
+			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/ysuzuki19">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+</div>
+	<div class="footer__copyright">© 2021 ysuzuki. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+<script src="/js/custom.js"></script>
+</body>
+</html>

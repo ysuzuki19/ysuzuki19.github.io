@@ -1,28 +1,187 @@
-<!DOCTYPE html><html lang="en"><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M22TSGCN18"></script><script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+<!DOCTYPE html>
+<html class="no-js" lang="ja-jp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#1b1b1b">
+	<title>ReactのWarning: validateDOMNesting解消 | ysuzuki blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="ReactのWarning: validateDOMNesting解消" />
+<meta property="og:description" content="ReactでSPAを開発していたところ，Warning: validateDOMNesting(...): &lt;input&gt; cannot appear ...という警告が表示された． はじめは訳がわからなかったが，最終的には解決で" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ysuzuki19.github.io/post/react-warn-appear-as-a-child-of/" />
+<meta property="article:published_time" content="2021-04-11T16:27:28+09:00" />
+<meta property="article:modified_time" content="2021-04-11T16:27:28+09:00" />
 
-              gtag('config', 'G-M22TSGCN18');
-            </script><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><script>!function(){try{var d=document.documentElement.classList;d.remove('light','dark');var e=localStorage.getItem("theme");if(e){d.add(e)}else{d.add('dark');}}catch(t){}}();</script><title>ReactのWarning: validateDOMNesting解消 - ys memos</title><meta content="タグを入れ子にする順番が決められているらしい・・・" name="description"/><meta property="og:url" content="https://ysuzuki19.github.io/post/react-warn-appear-as-a-child-of/"/><link rel="canonical" href="https://ysuzuki19.github.io/post/react-warn-appear-as-a-child-of/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="Hunter Chang - Website"/><meta property="og:description" content="タグを入れ子にする順番が決められているらしい・・・"/><meta property="og:title" content="ReactのWarning: validateDOMNesting解消 - ys memos"/><meta property="og:image" content="https://ysuzuki19.github.ioundefined"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@huntarosan"/><meta name="twitter:title" content="ReactのWarning: validateDOMNesting解消 - ys memos"/><meta name="twitter:description" content="タグを入れ子にする順番が決められているらしい・・・"/><meta name="twitter:image" content="https://ysuzuki19.github.ioundefined"/><meta property="article:published_time" content="2021-04-11T16:27:28+09:00"/><meta name="next-head-count" content="18"/><link rel="preload" href="/_next/static/css/e90abd1aa5013b041726.css" as="style"/><link rel="stylesheet" href="/_next/static/css/e90abd1aa5013b041726.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework-92300432a1172ef1338b.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" as="script"/><link rel="preload" href="/_next/static/chunks/985-867e3d5e21e417a5de61.js" as="script"/><link rel="preload" href="/_next/static/chunks/522-2597210efd9529a81949.js" as="script"/><link rel="preload" href="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" as="script"/><link rel="preload" href="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" as="script"/></head><body><div id="__next"><header class="sticky top-0 left-0 right-0"><nav class="flex items-center flex-wrap py-2"><a class="text-gray-900 dark:text-white md:pr-6 md:py-4 ml-10 md:mr-12 font-bold text-2xl" href="/">ys memos</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/">Home</a><a class="text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/about/">About</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/features/">Features</a></nav></header><main><div class="max-w-5xl px-8 py-4 mx-auto"><h1 class="mb-3 text-gray-900 dark:text-white">ReactのWarning: validateDOMNesting解消</h1><div class="md:grid md:grid-cols-3 divide-x border-none"><article class="prose dark:prose-dark col-span-2"><p class="mb-10 text-sm text-gray-500 dark:text-gray-400">April 11, 2021</p><p>ReactでSPAを開発していたところ，<code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear ...</code>という警告が表示された．</p><p>はじめは訳がわからなかったが，最終的には解決できた．</p><h2 class="flex" id="tldr"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/react-warn-appear-as-a-child-of/#tldr"><span class="icon icon-link"></span></a>TL;DR</h2><p><code>&lt;tr&gt;</code>直下に<code>&lt;input&gt;</code>タグを入れるのはやめ，<code>&lt;td&gt;</code>を一度はさもう！</p><h2 class="flex" id="警告ログ抜粋"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/react-warn-appear-as-a-child-of/#%E8%AD%A6%E5%91%8A%E3%83%AD%E3%82%B0%E6%8A%9C%E7%B2%8B"><span class="icon icon-link"></span></a>警告ログ抜粋</h2><pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;tr&gt;.
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ReactのWarning: validateDOMNesting解消"/>
+<meta name="twitter:description" content="ReactでSPAを開発していたところ，Warning: validateDOMNesting(...): &lt;input&gt; cannot appear ...という警告が表示された． はじめは訳がわからなかったが，最終的には解決で"/>
+
+	<link rel="stylesheet" href="/css/bundle.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/themes/dark-blue.css">
+	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="manifest" href="/manifest.json">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-162997770-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body kind-page">
+	<header class="header">
+	<a class="logo" href="/">ysuzuki blog</a>
+	
+</header>
+	<div class="primary">
+	
+	<main class="main">
+		
+<nav class="breadcrumb block" aria-label="breadcrumb">
+	<ol class="breadcrumb__list">
+		
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/">home</a>
+		</li>
+		<li class="breadcrumb__item">
+			<a class="breadcrumbs__link" href="/post/">Posts</a>
+		</li>
+		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">ReactのWarning: validateDOMNesting解消</li>
+	</ol>
+</nav>
+		<div class="single block">
+			<article class="entry">
+				<h1 class="entry__title">ReactのWarning: validateDOMNesting解消</h1>
+<details class="entry__toc toc" open>
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tldr">TL;DR</a></li>
+    <li><a href="#警告ログ抜粋">警告ログ抜粋</a></li>
+    <li><a href="#原因">原因</a></li>
+    <li><a href="#おまけ">おまけ</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+</details>
+				<div class="entry__content"><p>ReactでSPAを開発していたところ，<code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear ...</code>という警告が表示された．</p>
+<p>はじめは訳がわからなかったが，最終的には解決できた．</p>
+<h2 id="tldr">TL;DR</h2>
+<p><code>&lt;tr&gt;</code>直下に<code>&lt;input&gt;</code>タグを入れるのはやめ，<code>&lt;td&gt;</code>を一度はさもう！</p>
+<h2 id="警告ログ抜粋">警告ログ抜粋</h2>
+<pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;tr&gt;.
     at input
     at tr
     at table
     ... # この先は，ネストされたコンポーネントが順に表示される
-</code></pre><h2 class="flex" id="原因"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/react-warn-appear-as-a-child-of/#%E5%8E%9F%E5%9B%A0"><span class="icon icon-link"></span></a>原因</h2><p>以下の文は，</p><pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;tr&gt;.
-</code></pre><p>「<code>&lt;tr&gt;</code>の下に<code>&lt;input&gt;</code>は入れられないよ！」みたいなことを言っている．</p><p>実は，警告が出ているが，アプリの見た目自体は希望通りに表示されており，何が問題なのかわからなかった．</p><p>しかし，よくよく探ってみると，<code>&lt;tr&gt;</code>の下に<code>&lt;td&gt;</code>を入れなければならないようで，以下のように変更を加えた．</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>hogehoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h2 id="原因">原因</h2>
+<p>以下の文は，</p>
+<pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;tr&gt;.
+</code></pre><p>「<code>&lt;tr&gt;</code>の下に<code>&lt;input&gt;</code>は入れられないよ！」みたいなことを言っている．</p>
+<p>実は，警告が出ているが，アプリの見た目自体は希望通りに表示されており，何が問題なのかわからなかった．</p>
+<p>しかし，よくよく探ってみると，<code>&lt;tr&gt;</code>の下に<code>&lt;td&gt;</code>を入れなければならないようで，以下のように変更を加えた．</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">td</span>&gt;hogehoge&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;<span style="color:#f92672">input</span> /&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
 
 ↓
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>hogehoge<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token punctuation">/&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
-</code></pre><p>以上で，上述した警告は表示されなくなった．</p><h2 class="flex" id="おまけ"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/react-warn-appear-as-a-child-of/#%E3%81%8A%E3%81%BE%E3%81%91"><span class="icon icon-link"></span></a>おまけ</h2><p><code>&lt;tr&gt;</code>の下に<code>&lt;input&gt;</code>があるのが問題なのかと思い，<code>&lt;tr&gt;</code>を消して<code>&lt;table&gt;</code>の下に<code>&lt;input&gt;</code>が来るようにしたところ，
-以下の警告が出力された．</p><pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;table&gt;.
-</code></pre><p>これを踏まえると，<code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</code>の下に<code>&lt;input&gt;</code>を入れなくてはならないらしい．</p><h2 class="flex" id="参考"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/react-warn-appear-as-a-child-of/#%E5%8F%82%E8%80%83"><span class="icon icon-link"></span></a>参考</h2><ul><li><a href="https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr" target="_blank" rel="noopener noreferrer">https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a></li></ul></article><div class="invisible md:visible md:h-screen md:sticky md:top-20 md:ml-auto md:mr-auto md:p-3 dark:text-white border-none max-h-screen"><div class="border-2 border-gray-500 p-3 rounded-xl text-gray-50"><h2 class="border-b border-gray-500">Table of Contents</h2><ul class="overflow-y-auto overflow-x-auto font-medium text-base lg:text-sm pb-10 lg:pt-4 lg:pb-14 sticky?lg:h-(screen-18)" style="max-height:60vh;max-width:100vh"><li class="pl-0"><a href="#tldr" class="ml-0">TL;DR</a></li><li class="pl-0"><a href="#警告ログ抜粋" class="ml-0">警告ログ抜粋</a></li><li class="pl-0"><a href="#原因" class="ml-0">原因</a></li><li class="pl-0"><a href="#おまけ" class="ml-0">おまけ</a></li><li class="pl-0"><a href="#参考" class="ml-0">参考</a></li></ul></div></div></div></div></main><footer class="py-8"><div class="max-w-5xl px-8 mx-auto">© 2021 <a href="https://github.com/ysuzuki19" target="_blank" rel="noopener noreferrer">ysuzuki19</a>, Powered by <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a></div></footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"toc":[{"content":"TL;DR","slug":"tldr","lvl":2,"i":0},{"content":"警告ログ抜粋","slug":"警告ログ抜粋","lvl":2,"i":1},{"content":"原因","slug":"原因","lvl":2,"i":2},{"content":"おまけ","slug":"おまけ","lvl":2,"i":3},{"content":"参考","slug":"参考","lvl":2,"i":4}],"source":{"compiledSource":"var c=Object.defineProperty,l=Object.defineProperties;var d=Object.getOwnPropertyDescriptors;var s=Object.getOwnPropertySymbols;var o=Object.prototype.hasOwnProperty,i=Object.prototype.propertyIsEnumerable;var m=(n,e,p)=\u003ee in n?c(n,e,{enumerable:!0,configurable:!0,writable:!0,value:p}):n[e]=p,a=(n,e)=\u003e{for(var p in e||(e={}))o.call(e,p)\u0026\u0026m(n,p,e[p]);if(s)for(var p of s(e))i.call(e,p)\u0026\u0026m(n,p,e[p]);return n},r=(n,e)=\u003el(n,d(e));var N=(n,e)=\u003e{var p={};for(var t in n)o.call(n,t)\u0026\u0026e.indexOf(t)\u003c0\u0026\u0026(p[t]=n[t]);if(n!=null\u0026\u0026s)for(var t of s(n))e.indexOf(t)\u003c0\u0026\u0026i.call(n,t)\u0026\u0026(p[t]=n[t]);return p};const layoutProps={},MDXLayout=\"wrapper\";function MDXContent(p){var t=p,{components:n}=t,e=N(t,[\"components\"]);return mdx(MDXLayout,r(a(a({},layoutProps),e),{components:n,mdxType:\"MDXLayout\"}),mdx(\"p\",null,\"React\\u3067SPA\\u3092\\u958B\\u767A\\u3057\\u3066\\u3044\\u305F\\u3068\\u3053\\u308D\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"Warning: validateDOMNesting(...): \u003cinput\u003e cannot appear ...\"),\"\\u3068\\u3044\\u3046\\u8B66\\u544A\\u304C\\u8868\\u793A\\u3055\\u308C\\u305F\\uFF0E\"),mdx(\"p\",null,\"\\u306F\\u3058\\u3081\\u306F\\u8A33\\u304C\\u308F\\u304B\\u3089\\u306A\\u304B\\u3063\\u305F\\u304C\\uFF0C\\u6700\\u7D42\\u7684\\u306B\\u306F\\u89E3\\u6C7A\\u3067\\u304D\\u305F\\uFF0E\"),mdx(\"h2\",a({},{id:\"tldr\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#tldr\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"TL;DR\"),mdx(\"p\",null,mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctr\u003e\"),\"\\u76F4\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003cinput\u003e\"),\"\\u30BF\\u30B0\\u3092\\u5165\\u308C\\u308B\\u306E\\u306F\\u3084\\u3081\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctd\u003e\"),\"\\u3092\\u4E00\\u5EA6\\u306F\\u3055\\u3082\\u3046\\uFF01\"),mdx(\"h2\",a({},{id:\"\\u8B66\\u544A\\u30ED\\u30B0\\u629C\\u7C8B\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u8B66\\u544A\\u30ED\\u30B0\\u629C\\u7C8B\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u8B66\\u544A\\u30ED\\u30B0\\u629C\\u7C8B\"),mdx(\"pre\",null,mdx(\"code\",a({parentName:\"pre\"},{}),`Warning: validateDOMNesting(...): \u003cinput\u003e cannot appear as a child of \u003ctr\u003e.\n    at input\n    at tr\n    at table\n    ... # \\u3053\\u306E\\u5148\\u306F\\uFF0C\\u30CD\\u30B9\\u30C8\\u3055\\u308C\\u305F\\u30B3\\u30F3\\u30DD\\u30FC\\u30CD\\u30F3\\u30C8\\u304C\\u9806\\u306B\\u8868\\u793A\\u3055\\u308C\\u308B\n`)),mdx(\"h2\",a({},{id:\"\\u539F\\u56E0\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u539F\\u56E0\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u539F\\u56E0\"),mdx(\"p\",null,\"\\u4EE5\\u4E0B\\u306E\\u6587\\u306F\\uFF0C\"),mdx(\"pre\",null,mdx(\"code\",a({parentName:\"pre\"},{}),`Warning: validateDOMNesting(...): \u003cinput\u003e cannot appear as a child of \u003ctr\u003e.\n`)),mdx(\"p\",null,\"\\u300C\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctr\u003e\"),\"\\u306E\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003cinput\u003e\"),\"\\u306F\\u5165\\u308C\\u3089\\u308C\\u306A\\u3044\\u3088\\uFF01\\u300D\\u307F\\u305F\\u3044\\u306A\\u3053\\u3068\\u3092\\u8A00\\u3063\\u3066\\u3044\\u308B\\uFF0E\"),mdx(\"p\",null,\"\\u5B9F\\u306F\\uFF0C\\u8B66\\u544A\\u304C\\u51FA\\u3066\\u3044\\u308B\\u304C\\uFF0C\\u30A2\\u30D7\\u30EA\\u306E\\u898B\\u305F\\u76EE\\u81EA\\u4F53\\u306F\\u5E0C\\u671B\\u901A\\u308A\\u306B\\u8868\\u793A\\u3055\\u308C\\u3066\\u304A\\u308A\\uFF0C\\u4F55\\u304C\\u554F\\u984C\\u306A\\u306E\\u304B\\u308F\\u304B\\u3089\\u306A\\u304B\\u3063\\u305F\\uFF0E\"),mdx(\"p\",null,\"\\u3057\\u304B\\u3057\\uFF0C\\u3088\\u304F\\u3088\\u304F\\u63A2\\u3063\\u3066\\u307F\\u308B\\u3068\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctr\u003e\"),\"\\u306E\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctd\u003e\"),\"\\u3092\\u5165\\u308C\\u306A\\u3051\\u308C\\u3070\\u306A\\u3089\\u306A\\u3044\\u3088\\u3046\\u3067\\uFF0C\\u4EE5\\u4E0B\\u306E\\u3088\\u3046\\u306B\\u5909\\u66F4\\u3092\\u52A0\\u3048\\u305F\\uFF0E\"),mdx(\"pre\",a({},{className:\"language-html\"}),mdx(\"code\",a({parentName:\"pre\"},{className:\"language-html\"}),mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"tr\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n  `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),\"hogehoge\",mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c/\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n  `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"input\"),\" \",mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"/\u003e\")),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c/\"),\"tr\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n\n\\u2193\n\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"tr\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n  `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),\"hogehoge\",mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c/\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n  `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n    `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c\"),\"input\"),\" \",mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"/\u003e\")),`\n  `,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c/\"),\"td\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token tag\"}),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003c/\"),\"tr\"),mdx(\"span\",a({parentName:\"span\"},{className:\"token punctuation\"}),\"\u003e\")),`\n`)),mdx(\"p\",null,\"\\u4EE5\\u4E0A\\u3067\\uFF0C\\u4E0A\\u8FF0\\u3057\\u305F\\u8B66\\u544A\\u306F\\u8868\\u793A\\u3055\\u308C\\u306A\\u304F\\u306A\\u3063\\u305F\\uFF0E\"),mdx(\"h2\",a({},{id:\"\\u304A\\u307E\\u3051\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u304A\\u307E\\u3051\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u304A\\u307E\\u3051\"),mdx(\"p\",null,mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctr\u003e\"),\"\\u306E\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003cinput\u003e\"),\"\\u304C\\u3042\\u308B\\u306E\\u304C\\u554F\\u984C\\u306A\\u306E\\u304B\\u3068\\u601D\\u3044\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctr\u003e\"),\"\\u3092\\u6D88\\u3057\\u3066\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctable\u003e\"),\"\\u306E\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003cinput\u003e\"),`\\u304C\\u6765\\u308B\\u3088\\u3046\\u306B\\u3057\\u305F\\u3068\\u3053\\u308D\\uFF0C\n\\u4EE5\\u4E0B\\u306E\\u8B66\\u544A\\u304C\\u51FA\\u529B\\u3055\\u308C\\u305F\\uFF0E`),mdx(\"pre\",null,mdx(\"code\",a({parentName:\"pre\"},{}),`Warning: validateDOMNesting(...): \u003cinput\u003e cannot appear as a child of \u003ctable\u003e.\n`)),mdx(\"p\",null,\"\\u3053\\u308C\\u3092\\u8E0F\\u307E\\u3048\\u308B\\u3068\\uFF0C\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003ctable\u003e\u003ctr\u003e\u003ctd\u003e\"),\"\\u306E\\u4E0B\\u306B\",mdx(\"inlineCode\",{parentName:\"p\"},\"\u003cinput\u003e\"),\"\\u3092\\u5165\\u308C\\u306A\\u304F\\u3066\\u306F\\u306A\\u3089\\u306A\\u3044\\u3089\\u3057\\u3044\\uFF0E\"),mdx(\"h2\",a({},{id:\"\\u53C2\\u8003\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u53C2\\u8003\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u53C2\\u8003\"),mdx(\"ul\",null,mdx(\"li\",{parentName:\"ul\"},mdx(\"a\",a({parentName:\"li\"},{href:\"https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr\"}),\"https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr\"))))}MDXContent.isMDXComponent=!0;\n","scope":{}},"frontMatter":{"title":"ReactのWarning: validateDOMNesting解消","date":"2021-04-11T16:27:28+09:00","description":"タグを入れ子にする順番が決められているらしい・・・","tags":["react","warning","html"]}},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"react-warn-appear-as-a-child-of"},"buildId":"YOp8L7a2_eIT7Qpo4Nhql","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-eef578260fd80f8fff94.js"></script><script src="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" async=""></script><script src="/_next/static/chunks/framework-92300432a1172ef1338b.js" async=""></script><script src="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" async=""></script><script src="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" async=""></script><script src="/_next/static/chunks/985-867e3d5e21e417a5de61.js" async=""></script><script src="/_next/static/chunks/522-2597210efd9529a81949.js" async=""></script><script src="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" async=""></script><script src="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" async=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_buildManifest.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_ssgManifest.js" async=""></script></body></html>
+&lt;<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">td</span>&gt;hogehoge&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">input</span> /&gt;
+  &lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+</code></pre></div><p>以上で，上述した警告は表示されなくなった．</p>
+<h2 id="おまけ">おまけ</h2>
+<p><code>&lt;tr&gt;</code>の下に<code>&lt;input&gt;</code>があるのが問題なのかと思い，<code>&lt;tr&gt;</code>を消して<code>&lt;table&gt;</code>の下に<code>&lt;input&gt;</code>が来るようにしたところ，
+以下の警告が出力された．</p>
+<pre><code>Warning: validateDOMNesting(...): &lt;input&gt; cannot appear as a child of &lt;table&gt;.
+</code></pre><p>これを踏まえると，<code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</code>の下に<code>&lt;input&gt;</code>を入れなくてはならないらしい．</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr">https://stackoverflow.com/questions/54345856/checking-checkbox-using-label-in-tr</a></li>
+</ul>
+</div>
+				
+				<footer class="entry__footer">
+					
+					
+<div class="entry__share share">
+	<a class="share__link btn" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Facebook" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&amp;text=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&amp;title=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&amp;title=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Telegram" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&title=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&amp;title=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+	<a class="share__link btn" title="Save to Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2freact-warn-appear-as-a-child-of%2f&description=React%e3%81%aeWarning%3a%20validateDOMNesting%e8%a7%a3%e6%b6%88" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=800,height=720,toolbar=0,status=0'); return false">
+		<svg class="share__icon" aria-label="Pinterest" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="m265 65c-104 0-157 75-157 138 0 37 14 71 45 83 5 2 10 0 12-5l3-18c2-6 1-7-2-12-9-11-15-24-15-43 0-56 41-106 108-106 60 0 92 37 92 85 0 64-28 116-70 116-23 0-40-18-34-42 6-27 19-57 19-77 0-18-9-34-30-34-24 0-42 25-42 58 0 20 7 34 7 34l-29 120a249 249 0 0 0 2 86l3-1c2-3 31-37 40-72l16-61c7 15 29 28 53 28 71 0 119-64 119-151 0-66-56-126-140-126z"/></svg>
+	</a>
+</div>
+				</footer>
+				
+			</article>
+		</div>
+	</main>
+	
+<div class="authorbox block">
+	<div class="author">
+		<div class="author__body">
+			<div class="author__name">
+				ysuzuki
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+	
+
+	</div>
+	<footer class="footer">
+<div class="footer__social social">
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="mailto:ysuzuki.cpp@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/ysuzuki19">
+			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/ysuzuki19">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+</div>
+	<div class="footer__copyright">© 2021 ysuzuki. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+<script src="/js/custom.js"></script>
+</body>
+</html>
