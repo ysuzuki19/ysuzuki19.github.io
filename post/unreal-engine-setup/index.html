@@ -1,224 +1,52 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ja-jp">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1b1b1b">
-	<title>UbuntuへのUnrealEngineセットアップ | ysuzuki blog</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
-		<meta property="og:title" content="UbuntuへのUnrealEngineセットアップ" />
-<meta property="og:description" content="UbuntuへのUnrealEngineのインストール。 Windows/MacOSへのインストールは、インストーラがダウンロードできるようだ" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://ysuzuki19.github.io/post/unreal-engine-setup/" />
-<meta property="article:published_time" content="2020-11-02T19:08:30+09:00" />
-<meta property="article:modified_time" content="2020-11-02T19:08:30+09:00" />
+<!DOCTYPE html><html lang="en"><head><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M22TSGCN18"></script><script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="UbuntuへのUnrealEngineセットアップ"/>
-<meta name="twitter:description" content="UbuntuへのUnrealEngineのインストール。 Windows/MacOSへのインストールは、インストーラがダウンロードできるようだ"/>
-
-	<link rel="stylesheet" href="/css/bundle.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="stylesheet" href="/css/themes/dark-blue.css">
-	<link rel="icon" href="/icons/16.png" sizes="16x16" type="image/png">
-	<link rel="icon" href="/icons/32.png" sizes="32x32" type="image/png">
-	<link rel="manifest" href="/manifest.json">
-		
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-162997770-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-</head>
-<body class="body kind-page">
-	<header class="header">
-	<a class="logo" href="/">ysuzuki blog</a>
-	
-</header>
-	<div class="primary">
-	
-	<main class="main">
-		
-<nav class="breadcrumb block" aria-label="breadcrumb">
-	<ol class="breadcrumb__list">
-		
-		<li class="breadcrumb__item">
-			<a class="breadcrumbs__link" href="/">home</a>
-		</li>
-		<li class="breadcrumb__item">
-			<a class="breadcrumbs__link" href="/post/">Posts</a>
-		</li>
-		<li class="breadcrumbs__item breadcrumb__item--active" aria-current="page">UbuntuへのUnrealEngineセットアップ</li>
-	</ol>
-</nav>
-		<div class="single block">
-			<article class="entry">
-				<h1 class="entry__title">UbuntuへのUnrealEngineセットアップ</h1>
-<details class="entry__toc toc" open>
-	<summary class="toc__title">Table of Contents</summary>
-	<nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-epicgamesアカウントの登録">1. EpicGamesアカウントの登録</a></li>
-    <li><a href="#2-ライセンスへの同意">2. ライセンスへの同意</a></li>
-    <li><a href="#3-githubアカウントの連携">3. Githubアカウントの連携</a></li>
-    <li><a href="#4-リモートリポジトリにアクセス">4. リモートリポジトリにアクセス</a></li>
-    <li><a href="#5-readmeのインストール手順を再確認">5. READMEのインストール手順を再確認</a></li>
-    <li><a href="#6-インストール">6. インストール</a></li>
-    <li><a href="#7-起動">7. 起動</a></li>
-    <li><a href="#8-ueをランチャーから起動できるようにする">8. UEをランチャーから起動できるようにする</a></li>
-  </ul>
-</nav>
-</details>
-				<div class="entry__content"><p>UbuntuへのUnrealEngineのインストール。
+              gtag('config', 'G-M22TSGCN18');
+            </script><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><script>!function(){try{var d=document.documentElement.classList;d.remove('light','dark');var e=localStorage.getItem("theme");if(e){d.add(e)}else{d.add('dark');}}catch(t){}}();</script><title>UbuntuへのUnrealEngineセットアップ - ys memos</title><meta content="Linux版は自分でビルドする必要があるみたいです" name="description"/><meta property="og:url" content="https://ysuzuki19.github.io/post/unreal-engine-setup/"/><link rel="canonical" href="https://ysuzuki19.github.io/post/unreal-engine-setup/"/><meta property="og:type" content="article"/><meta property="og:site_name" content="Hunter Chang - Website"/><meta property="og:description" content="Linux版は自分でビルドする必要があるみたいです"/><meta property="og:title" content="UbuntuへのUnrealEngineセットアップ - ys memos"/><meta property="og:image" content="https://ysuzuki19.github.ioundefined"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@huntarosan"/><meta name="twitter:title" content="UbuntuへのUnrealEngineセットアップ - ys memos"/><meta name="twitter:description" content="Linux版は自分でビルドする必要があるみたいです"/><meta name="twitter:image" content="https://ysuzuki19.github.ioundefined"/><meta property="article:published_time" content="2020-11-02T19:08:30+09:00"/><meta name="next-head-count" content="18"/><link rel="preload" href="/_next/static/css/e90abd1aa5013b041726.css" as="style"/><link rel="stylesheet" href="/_next/static/css/e90abd1aa5013b041726.css" data-n-g=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework-92300432a1172ef1338b.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" as="script"/><link rel="preload" href="/_next/static/chunks/985-867e3d5e21e417a5de61.js" as="script"/><link rel="preload" href="/_next/static/chunks/522-2597210efd9529a81949.js" as="script"/><link rel="preload" href="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" as="script"/><link rel="preload" href="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" as="script"/></head><body><div id="__next"><header class="sticky top-0 left-0 right-0"><nav class="flex items-center flex-wrap py-2"><a class="text-gray-900 dark:text-white md:pr-6 md:py-4 ml-10 md:mr-12 font-bold text-2xl" href="/">ys memos</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/">Home</a><a class="text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/about/">About</a><a class="invisible md:visible text-gray-900 dark:text-white md:ml-10 md:pr-6 md:py-4" href="/features/">Features</a></nav></header><main><div class="max-w-5xl px-8 py-4 mx-auto"><h1 class="mb-3 text-gray-900 dark:text-white">UbuntuへのUnrealEngineセットアップ</h1><div class="md:grid md:grid-cols-3 divide-x border-none"><article class="prose dark:prose-dark col-span-2"><p class="mb-10 text-sm text-gray-500 dark:text-gray-400">November 02, 2020</p><p>UbuntuへのUnrealEngineのインストール。
 Windows/MacOSへのインストールは、インストーラがダウンロードできるようだが、Linux版はなくソースコードからインストールする必要があるとのこと。
 UE5に向けてUE4を練習しようと思ってインストールした。
-そのメモを記す。</p>
-<h1 id="環境">環境</h1>
-<p>もろもろ</p>
-<pre><code>AMD Ryzen 3600X
+そのメモを記す。</p><h2 class="flex" id="環境"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#%E7%92%B0%E5%A2%83"><span class="icon icon-link"></span></a>環境</h2><p>もろもろ</p><pre><code>AMD Ryzen 3600X
 NVIDIA GeForce 2070 SUPER
 
 Ubuntu20.04LTS
-</code></pre><h1 id="参考">参考</h1>
-<p>作業は<a href="https://www.unrealengine.com/en-US/">EpicGamesの公式ページ</a>を参考にした。</p>
-<h1 id="手順">手順</h1>
-<h2 id="1-epicgamesアカウントの登録">1. EpicGamesアカウントの登録</h2>
-<p>OAuthでログインした。</p>
-<h2 id="2-ライセンスへの同意">2. ライセンスへの同意</h2>
-<p>UEのライセンスの確認して同意(ちゃんと読んでください)。
-QAを見ると、UE5ではUE4からライセンス事項の変更がないとのことで安心した。</p>
-<h2 id="3-githubアカウントの連携">3. Githubアカウントの連携</h2>
-<p>UEはライセンスに同意すると、ソースコードにアクセスできるようになる。
+</code></pre><h2 class="flex" id="参考"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#%E5%8F%82%E8%80%83"><span class="icon icon-link"></span></a>参考</h2><p>作業は<a href="https://www.unrealengine.com/en-US/" target="_blank" rel="noopener noreferrer">EpicGamesの公式ページ<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>を参考にした。</p><h2 class="flex" id="手順"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#%E6%89%8B%E9%A0%86"><span class="icon icon-link"></span></a>手順</h2><h3 class="flex" id="1-epicgamesアカウントの登録"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#1-epicgames%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E7%99%BB%E9%8C%B2"><span class="icon icon-link"></span></a>1. EpicGamesアカウントの登録</h3><p>OAuthでログインした。</p><h3 class="flex" id="2-ライセンスへの同意"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#2-%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%B8%E3%81%AE%E5%90%8C%E6%84%8F"><span class="icon icon-link"></span></a>2. ライセンスへの同意</h3><p>UEのライセンスの確認して同意(ちゃんと読んでください)。
+QAを見ると、UE5ではUE4からライセンス事項の変更がないとのことで安心した。</p><h3 class="flex" id="3-githubアカウントの連携"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#3-github%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E9%80%A3%E6%90%BA"><span class="icon icon-link"></span></a>3. Githubアカウントの連携</h3><p>UEはライセンスに同意すると、ソースコードにアクセスできるようになる。
 インストーラがダウンロードできないLinux版ではリポジトリからソースコードを持ってきてインストールする必要がある(リポジトリ内にインストーラがある)。
-プライベートリポジトリとなっており、アクセスするためにGithubアカウントを認証する必要がある。</p>
-<h2 id="4-リモートリポジトリにアクセス">4. リモートリポジトリにアクセス</h2>
-<p><a href="https://github.com/EpicGames/UnrealEngine">公式のUEリポジトリ</a>にアクセスし、<code>release</code>ブランチを選択（デフォルトで<code>release</code>）。
-その後、<code>git clone</code>または<code>Download ZIP</code>でコードをローカルPCにダウンロード。</p>
-<h2 id="5-readmeのインストール手順を再確認">5. READMEのインストール手順を再確認</h2>
-<p><a href="https://docs.unrealengine.com/en-US/Platforms/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html">EpicGamesのページにもインストール手順</a>は書いてあるが、ここからは<a href="https://github.com/EpicGames/UnrealEngine#linux">Githubリポジトリのインストール手順</a>
-も確認しながら進める。</p>
-<h2 id="6-インストール">6. インストール</h2>
-<p>ローカルリポジトリに移動し、以下を実行。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./Setup.sh
+プライベートリポジトリとなっており、アクセスするためにGithubアカウントを認証する必要がある。</p><h3 class="flex" id="4-リモートリポジトリにアクセス"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#4-%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AB%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9"><span class="icon icon-link"></span></a>4. リモートリポジトリにアクセス</h3><p><a href="https://github.com/EpicGames/UnrealEngine" target="_blank" rel="noopener noreferrer">公式のUEリポジトリ<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>にアクセスし、<code>release</code>ブランチを選択（デフォルトで<code>release</code>）。
+その後、<code>git clone</code>または<code>Download ZIP</code>でコードをローカルPCにダウンロード。</p><h3 class="flex" id="5-readmeのインストール手順を再確認"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#5-readme%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%89%8B%E9%A0%86%E3%82%92%E5%86%8D%E7%A2%BA%E8%AA%8D"><span class="icon icon-link"></span></a>5. READMEのインストール手順を再確認</h3><p><a href="https://docs.unrealengine.com/en-US/Platforms/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html" target="_blank" rel="noopener noreferrer">EpicGamesのページにもインストール手順<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>は書いてあるが、ここからは<a href="https://github.com/EpicGames/UnrealEngine#linux" target="_blank" rel="noopener noreferrer">Githubリポジトリのインストール手順<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" style="display:inline-block"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg></a>
+も確認しながら進める。</p><h3 class="flex" id="6-インストール"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#6-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><span class="icon icon-link"></span></a>6. インストール</h3><p>ローカルリポジトリに移動し、以下を実行。</p><pre class="language-bash"><code class="language-bash">./Setup.sh
 ./GenerateProjectFiles.sh
-make <span style="color:#75715e"># -jオプションをつけなくても複数CPU負荷が100%なので、並列化はユーザが気にする必要はなさそう</span>
-</code></pre></div><h2 id="7-起動">7. 起動</h2>
-<p>実行ファイルが<code>UnrealEngine-release/Engine/Binaries/Linux/UE4Editor</code>となっている。
-ターミナルから<code>./UnrealEngine-release/Engine/Binaries/Linux/UE4Editor</code>のようにすると<code>UnrealEngine</code>が起動する。</p>
-<h2 id="8-ueをランチャーから起動できるようにする">8. UEをランチャーから起動できるようにする</h2>
-<p>上記コマンドでUnrealEditorを開けたが、ターミナル外（ランチャー）から起動したいので、設定する。
-Ubuntu20.04で試したところ、手を加えない状態ではランチャーから直接起動することはできなかった。</p>
-<p>ランチャーに追加されたアプリケーションは、<code>~/.local/share/applications</code>以下に保存されている。
-確認したところ、<code>com.epicgames.XXX</code>が3種類あった。</p>
-<p>ここでは、<code>.local/share/applications/com.epicgames.UnrealEngineEditor.desktop</code>を編集する。</p>
-<p>変更前のファイルがこちら。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env xdg-open
-</span><span style="color:#75715e"></span>
-<span style="color:#f92672">[</span>Desktop Entry<span style="color:#f92672">]</span>
-Version<span style="color:#f92672">=</span>1.0
-Type<span style="color:#f92672">=</span>Application
-Exec<span style="color:#f92672">=</span>/home/&lt;username&gt;/Lib/UnrealEngine-release/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -editor %f
-Path<span style="color:#f92672">=</span>/home/&lt;username&gt;/Lib/UnrealEngine-release/Engine/Binaries/Linux
-Name<span style="color:#f92672">=</span>Unreal Engine Editor
-Icon<span style="color:#f92672">=</span>ubinary
-Terminal<span style="color:#f92672">=</span>false
-StartupWMClass<span style="color:#f92672">=</span>UE4Editor
-MimeType<span style="color:#f92672">=</span>application/uproject
-Comment<span style="color:#f92672">=</span>Created By Unreal Engine
-</code></pre></div><p>変更後のファイルがこちら。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env xdg-open
-</span><span style="color:#75715e"></span>
-<span style="color:#f92672">[</span>Desktop Entry<span style="color:#f92672">]</span>
-Version<span style="color:#f92672">=</span>1.0
-Type<span style="color:#f92672">=</span>Application
-Exec<span style="color:#f92672">=</span>/home/&lt;username&gt;/Lib/UnrealEngine-release/Engine/Binaries/Linux/UE4Editor <span style="color:#75715e"># ← ココだけ変更</span>
-Path<span style="color:#f92672">=</span>/home/&lt;username&gt;/Lib/UnrealEngine-release/Engine/Binaries/Linux
-Name<span style="color:#f92672">=</span>Unreal Engine Editor
-Icon<span style="color:#f92672">=</span>ubinary
-Terminal<span style="color:#f92672">=</span>false
-StartupWMClass<span style="color:#f92672">=</span>UE4Editor
-MimeType<span style="color:#f92672">=</span>application/uproject
-Comment<span style="color:#f92672">=</span>Created By Unreal Engine
-</code></pre></div><p>この変更は、ランチャーから実行するコマンドを変更したというもの。<a href="./#7-%E8%B5%B7%E5%8B%95">上の項</a>で起動コマンドを確認していたので、そちらに合わせて変更した。
-これにより、ランチャーからUE4を起動できるようになった（思ったよりも起動時間が長いので注意）。</p>
-<p><del>他の２つはどうやら意味がなさそうで邪魔なので消した。</del>(自己責任でよろしくお願いいたします。)</p>
-</div>
-				
-				<footer class="entry__footer">
-					
-					
-<div class="entry__share share">
-	<a class="share__link btn" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Facebook" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
-	</a>
-	<a class="share__link btn" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&amp;text=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
-	</a>
-	<a class="share__link btn" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&amp;title=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Reddit" role="img" width="32" height="32" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
-	</a>
-	<a class="share__link btn" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&amp;title=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Telegram" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
-	</a>
-	<a class="share__link btn" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&title=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
-	</a>
-	<a class="share__link btn" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="VK" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
-	</a>
-	<a class="share__link btn" title="Save to Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&amp;title=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Pocket" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
-	</a>
-	<a class="share__link btn" title="Save to Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fysuzuki19.github.io%2fpost%2funreal-engine-setup%2f&description=Ubuntu%e3%81%b8%e3%81%aeUnrealEngine%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save to Pocket', 'width=800,height=720,toolbar=0,status=0'); return false">
-		<svg class="share__icon" aria-label="Pinterest" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="m265 65c-104 0-157 75-157 138 0 37 14 71 45 83 5 2 10 0 12-5l3-18c2-6 1-7-2-12-9-11-15-24-15-43 0-56 41-106 108-106 60 0 92 37 92 85 0 64-28 116-70 116-23 0-40-18-34-42 6-27 19-57 19-77 0-18-9-34-30-34-24 0-42 25-42 58 0 20 7 34 7 34l-29 120a249 249 0 0 0 2 86l3-1c2-3 31-37 40-72l16-61c7 15 29 28 53 28 71 0 119-64 119-151 0-66-56-126-140-126z"/></svg>
-	</a>
-</div>
-				</footer>
-				
-			</article>
-		</div>
-	</main>
-	
-<div class="authorbox block">
-	<div class="author">
-		<div class="author__body">
-			<div class="author__name">
-				ysuzuki
-			</div>
-		</div>
-	</div>
-</div>
-	
+<span class="token function">make</span> <span class="token comment"># -jオプションをつけなくても複数CPU負荷が100%なので、並列化はユーザが気にする必要はなさそう</span>
+</code></pre><h3 class="flex" id="7-起動"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#7-%E8%B5%B7%E5%8B%95"><span class="icon icon-link"></span></a>7. 起動</h3><p>実行ファイルが<code>UnrealEngine-release/Engine/Binaries/Linux/UE4Editor</code>となっている。
+ターミナルから<code>./UnrealEngine-release/Engine/Binaries/Linux/UE4Editor</code>のようにすると<code>UnrealEngine</code>が起動する。</p><h3 class="flex" id="8-ueをランチャーから起動できるようにする"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 28 28" fill="currentColor"></svg><a rel="nofollow" href="/post/unreal-engine-setup/#8-ue%E3%82%92%E3%83%A9%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%E3%81%8B%E3%82%89%E8%B5%B7%E5%8B%95%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B"><span class="icon icon-link"></span></a>8. UEをランチャーから起動できるようにする</h3><p>上記コマンドでUnrealEditorを開けたが、ターミナル外（ランチャー）から起動したいので、設定する。
+Ubuntu20.04で試したところ、手を加えない状態ではランチャーから直接起動することはできなかった。</p><p>ランチャーに追加されたアプリケーションは、<code>~/.local/share/applications</code>以下に保存されている。
+確認したところ、<code>com.epicgames.XXX</code>が3種類あった。</p><p>ここでは、<code>.local/share/applications/com.epicgames.UnrealEngineEditor.desktop</code>を編集する。</p><p>変更前のファイルがこちら。</p><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env xdg-open</span>
 
+<span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
+<span class="token assign-left variable">Version</span><span class="token operator">=</span><span class="token number">1.0</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>Application
+<span class="token assign-left variable">Exec</span><span class="token operator">=</span>/home/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/Lib/UnrealEngine-release/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -editor %f
+<span class="token assign-left variable">Path</span><span class="token operator">=</span>/home/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/Lib/UnrealEngine-release/Engine/Binaries/Linux
+<span class="token assign-left variable">Name</span><span class="token operator">=</span>Unreal Engine Editor
+<span class="token assign-left variable">Icon</span><span class="token operator">=</span>ubinary
+<span class="token assign-left variable">Terminal</span><span class="token operator">=</span>false
+<span class="token assign-left variable">StartupWMClass</span><span class="token operator">=</span>UE4Editor
+<span class="token assign-left variable">MimeType</span><span class="token operator">=</span>application/uproject
+<span class="token assign-left variable">Comment</span><span class="token operator">=</span>Created By Unreal Engine
+</code></pre><p>変更後のファイルがこちら。</p><pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/usr/bin/env xdg-open</span>
 
-
-	
-
-	</div>
-	<footer class="footer">
-<div class="footer__social social">
-		<a class="social__link" target="_blank" rel="noopener noreferrer" href="mailto:ysuzuki.cpp@gmail.com">
-			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
-		</a>
-		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/ysuzuki19">
-			<svg class="social__icon" aria-label="Github" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
-		</a>
-		<a class="social__link" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/ysuzuki19">
-			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
-		</a>
-</div>
-	<div class="footer__copyright">© 2021 ysuzuki. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/binario" rel="nofollow noopener" target="_blank">Binario</a> theme.</span></div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
-
-<script src="/js/custom.js"></script>
-</body>
-</html>
+<span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span>
+<span class="token assign-left variable">Version</span><span class="token operator">=</span><span class="token number">1.0</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>Application
+<span class="token assign-left variable">Exec</span><span class="token operator">=</span>/home/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/Lib/UnrealEngine-release/Engine/Binaries/Linux/UE4Editor <span class="token comment"># ← ココだけ変更</span>
+<span class="token assign-left variable">Path</span><span class="token operator">=</span>/home/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/Lib/UnrealEngine-release/Engine/Binaries/Linux
+<span class="token assign-left variable">Name</span><span class="token operator">=</span>Unreal Engine Editor
+<span class="token assign-left variable">Icon</span><span class="token operator">=</span>ubinary
+<span class="token assign-left variable">Terminal</span><span class="token operator">=</span>false
+<span class="token assign-left variable">StartupWMClass</span><span class="token operator">=</span>UE4Editor
+<span class="token assign-left variable">MimeType</span><span class="token operator">=</span>application/uproject
+<span class="token assign-left variable">Comment</span><span class="token operator">=</span>Created By Unreal Engine
+</code></pre><p>この変更は、ランチャーから実行するコマンドを変更したというもの。<code>7-起動</code>で起動コマンドを確認していたので、そちらに合わせて変更した。
+これにより、ランチャーからUE4を起動できるようになった（思ったよりも起動時間が長いので注意）。</p><p><del>他の２つはどうやら意味がなさそうで邪魔なので消した。</del>(自己責任でよろしくお願いいたします。)</p></article><div class="invisible md:visible md:h-screen md:sticky md:top-20 md:ml-auto md:mr-auto md:p-3 dark:text-white border-none max-h-screen"><div class="border-2 border-gray-500 p-3 rounded-xl text-gray-50"><h2 class="border-b border-gray-500">Table of Contents</h2><ul class="overflow-y-auto overflow-x-auto font-medium text-base lg:text-sm pb-10 lg:pt-4 lg:pb-14 sticky?lg:h-(screen-18)" style="max-height:60vh;max-width:100vh"><li class="pl-0"><a href="#環境" class="ml-0">環境</a></li><li class="pl-0"><a href="#参考" class="ml-0">参考</a></li><li class="pl-0"><a href="#手順" class="ml-0">手順</a></li><li class="pl-2"><a href="#1-epicgamesアカウントの登録" class="ml-2">1. EpicGamesアカウントの登録</a></li><li class="pl-2"><a href="#2-ライセンスへの同意" class="ml-2">2. ライセンスへの同意</a></li><li class="pl-2"><a href="#3-githubアカウントの連携" class="ml-2">3. Githubアカウントの連携</a></li><li class="pl-2"><a href="#4-リモートリポジトリにアクセス" class="ml-2">4. リモートリポジトリにアクセス</a></li><li class="pl-2"><a href="#5-readmeのインストール手順を再確認" class="ml-2">5. READMEのインストール手順を再確認</a></li><li class="pl-2"><a href="#6-インストール" class="ml-2">6. インストール</a></li><li class="pl-2"><a href="#7-起動" class="ml-2">7. 起動</a></li><li class="pl-2"><a href="#8-ueをランチャーから起動できるようにする" class="ml-2">8. UEをランチャーから起動できるようにする</a></li></ul></div></div></div></div></main><footer class="py-8"><div class="max-w-5xl px-8 mx-auto">© 2021 <a href="https://github.com/ysuzuki19" target="_blank" rel="noopener noreferrer">ysuzuki19</a>, Powered by <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a></div></footer></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"toc":[{"content":"環境","slug":"環境","lvl":2,"i":0},{"content":"参考","slug":"参考","lvl":2,"i":1},{"content":"手順","slug":"手順","lvl":2,"i":2},{"content":"1. EpicGamesアカウントの登録","slug":"1-epicgamesアカウントの登録","lvl":3,"i":3},{"content":"2. ライセンスへの同意","slug":"2-ライセンスへの同意","lvl":3,"i":4},{"content":"3. Githubアカウントの連携","slug":"3-githubアカウントの連携","lvl":3,"i":5},{"content":"4. リモートリポジトリにアクセス","slug":"4-リモートリポジトリにアクセス","lvl":3,"i":6},{"content":"5. READMEのインストール手順を再確認","slug":"5-readmeのインストール手順を再確認","lvl":3,"i":7},{"content":"6. インストール","slug":"6-インストール","lvl":3,"i":8},{"content":"7. 起動","slug":"7-起動","lvl":3,"i":9},{"content":"8. UEをランチャーから起動できるようにする","slug":"8-ueをランチャーから起動できるようにする","lvl":3,"i":10}],"source":{"compiledSource":"var l=Object.defineProperty,N=Object.defineProperties;var d=Object.getOwnPropertyDescriptors;var t=Object.getOwnPropertySymbols;var r=Object.prototype.hasOwnProperty,o=Object.prototype.propertyIsEnumerable;var i=(e,n,s)=\u003en in e?l(e,n,{enumerable:!0,configurable:!0,writable:!0,value:s}):e[n]=s,a=(e,n)=\u003e{for(var s in n||(n={}))r.call(n,s)\u0026\u0026i(e,s,n[s]);if(t)for(var s of t(n))o.call(n,s)\u0026\u0026i(e,s,n[s]);return e},m=(e,n)=\u003eN(e,d(n));var c=(e,n)=\u003e{var s={};for(var p in e)r.call(e,p)\u0026\u0026n.indexOf(p)\u003c0\u0026\u0026(s[p]=e[p]);if(e!=null\u0026\u0026t)for(var p of t(e))n.indexOf(p)\u003c0\u0026\u0026o.call(e,p)\u0026\u0026(s[p]=e[p]);return s};const layoutProps={},MDXLayout=\"wrapper\";function MDXContent(s){var p=s,{components:e}=p,n=c(p,[\"components\"]);return mdx(MDXLayout,m(a(a({},layoutProps),n),{components:e,mdxType:\"MDXLayout\"}),mdx(\"p\",null,`Ubuntu\\u3078\\u306EUnrealEngine\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u3002\nWindows/MacOS\\u3078\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u306F\\u3001\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30E9\\u304C\\u30C0\\u30A6\\u30F3\\u30ED\\u30FC\\u30C9\\u3067\\u304D\\u308B\\u3088\\u3046\\u3060\\u304C\\u3001Linux\\u7248\\u306F\\u306A\\u304F\\u30BD\\u30FC\\u30B9\\u30B3\\u30FC\\u30C9\\u304B\\u3089\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u3059\\u308B\\u5FC5\\u8981\\u304C\\u3042\\u308B\\u3068\\u306E\\u3053\\u3068\\u3002\nUE5\\u306B\\u5411\\u3051\\u3066UE4\\u3092\\u7DF4\\u7FD2\\u3057\\u3088\\u3046\\u3068\\u601D\\u3063\\u3066\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u3057\\u305F\\u3002\n\\u305D\\u306E\\u30E1\\u30E2\\u3092\\u8A18\\u3059\\u3002`),mdx(\"h2\",a({},{id:\"\\u74B0\\u5883\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u74B0\\u5883\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u74B0\\u5883\"),mdx(\"p\",null,\"\\u3082\\u308D\\u3082\\u308D\"),mdx(\"pre\",null,mdx(\"code\",a({parentName:\"pre\"},{}),`AMD Ryzen 3600X\nNVIDIA GeForce 2070 SUPER\n\nUbuntu20.04LTS\n`)),mdx(\"h2\",a({},{id:\"\\u53C2\\u8003\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u53C2\\u8003\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u53C2\\u8003\"),mdx(\"p\",null,\"\\u4F5C\\u696D\\u306F\",mdx(\"a\",a({parentName:\"p\"},{href:\"https://www.unrealengine.com/en-US/\"}),\"EpicGames\\u306E\\u516C\\u5F0F\\u30DA\\u30FC\\u30B8\"),\"\\u3092\\u53C2\\u8003\\u306B\\u3057\\u305F\\u3002\"),mdx(\"h2\",a({},{id:\"\\u624B\\u9806\"}),mdx(\"a\",a({parentName:\"h2\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#\\u624B\\u9806\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"\\u624B\\u9806\"),mdx(\"h3\",a({},{id:\"1-epicgames\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u767B\\u9332\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#1-epicgames\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u767B\\u9332\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"1. EpicGames\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u767B\\u9332\"),mdx(\"p\",null,\"OAuth\\u3067\\u30ED\\u30B0\\u30A4\\u30F3\\u3057\\u305F\\u3002\"),mdx(\"h3\",a({},{id:\"2-\\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u3078\\u306E\\u540C\\u610F\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#2-\\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u3078\\u306E\\u540C\\u610F\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"2. \\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u3078\\u306E\\u540C\\u610F\"),mdx(\"p\",null,`UE\\u306E\\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u306E\\u78BA\\u8A8D\\u3057\\u3066\\u540C\\u610F(\\u3061\\u3083\\u3093\\u3068\\u8AAD\\u3093\\u3067\\u304F\\u3060\\u3055\\u3044)\\u3002\nQA\\u3092\\u898B\\u308B\\u3068\\u3001UE5\\u3067\\u306FUE4\\u304B\\u3089\\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u4E8B\\u9805\\u306E\\u5909\\u66F4\\u304C\\u306A\\u3044\\u3068\\u306E\\u3053\\u3068\\u3067\\u5B89\\u5FC3\\u3057\\u305F\\u3002`),mdx(\"h3\",a({},{id:\"3-github\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u9023\\u643A\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#3-github\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u9023\\u643A\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"3. Github\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u306E\\u9023\\u643A\"),mdx(\"p\",null,`UE\\u306F\\u30E9\\u30A4\\u30BB\\u30F3\\u30B9\\u306B\\u540C\\u610F\\u3059\\u308B\\u3068\\u3001\\u30BD\\u30FC\\u30B9\\u30B3\\u30FC\\u30C9\\u306B\\u30A2\\u30AF\\u30BB\\u30B9\\u3067\\u304D\\u308B\\u3088\\u3046\\u306B\\u306A\\u308B\\u3002\n\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30E9\\u304C\\u30C0\\u30A6\\u30F3\\u30ED\\u30FC\\u30C9\\u3067\\u304D\\u306A\\u3044Linux\\u7248\\u3067\\u306F\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u304B\\u3089\\u30BD\\u30FC\\u30B9\\u30B3\\u30FC\\u30C9\\u3092\\u6301\\u3063\\u3066\\u304D\\u3066\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u3059\\u308B\\u5FC5\\u8981\\u304C\\u3042\\u308B(\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u5185\\u306B\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30E9\\u304C\\u3042\\u308B)\\u3002\n\\u30D7\\u30E9\\u30A4\\u30D9\\u30FC\\u30C8\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u3068\\u306A\\u3063\\u3066\\u304A\\u308A\\u3001\\u30A2\\u30AF\\u30BB\\u30B9\\u3059\\u308B\\u305F\\u3081\\u306BGithub\\u30A2\\u30AB\\u30A6\\u30F3\\u30C8\\u3092\\u8A8D\\u8A3C\\u3059\\u308B\\u5FC5\\u8981\\u304C\\u3042\\u308B\\u3002`),mdx(\"h3\",a({},{id:\"4-\\u30EA\\u30E2\\u30FC\\u30C8\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306B\\u30A2\\u30AF\\u30BB\\u30B9\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#4-\\u30EA\\u30E2\\u30FC\\u30C8\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306B\\u30A2\\u30AF\\u30BB\\u30B9\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"4. \\u30EA\\u30E2\\u30FC\\u30C8\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306B\\u30A2\\u30AF\\u30BB\\u30B9\"),mdx(\"p\",null,mdx(\"a\",a({parentName:\"p\"},{href:\"https://github.com/EpicGames/UnrealEngine\"}),\"\\u516C\\u5F0F\\u306EUE\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\"),\"\\u306B\\u30A2\\u30AF\\u30BB\\u30B9\\u3057\\u3001\",mdx(\"inlineCode\",{parentName:\"p\"},\"release\"),\"\\u30D6\\u30E9\\u30F3\\u30C1\\u3092\\u9078\\u629E\\uFF08\\u30C7\\u30D5\\u30A9\\u30EB\\u30C8\\u3067\",mdx(\"inlineCode\",{parentName:\"p\"},\"release\"),`\\uFF09\\u3002\n\\u305D\\u306E\\u5F8C\\u3001`,mdx(\"inlineCode\",{parentName:\"p\"},\"git clone\"),\"\\u307E\\u305F\\u306F\",mdx(\"inlineCode\",{parentName:\"p\"},\"Download ZIP\"),\"\\u3067\\u30B3\\u30FC\\u30C9\\u3092\\u30ED\\u30FC\\u30AB\\u30EBPC\\u306B\\u30C0\\u30A6\\u30F3\\u30ED\\u30FC\\u30C9\\u3002\"),mdx(\"h3\",a({},{id:\"5-readme\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u624B\\u9806\\u3092\\u518D\\u78BA\\u8A8D\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#5-readme\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u624B\\u9806\\u3092\\u518D\\u78BA\\u8A8D\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"5. README\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u624B\\u9806\\u3092\\u518D\\u78BA\\u8A8D\"),mdx(\"p\",null,mdx(\"a\",a({parentName:\"p\"},{href:\"https://docs.unrealengine.com/en-US/Platforms/Linux/BeginnerLinuxDeveloper/SettingUpAnUnrealWorkflow/index.html\"}),\"EpicGames\\u306E\\u30DA\\u30FC\\u30B8\\u306B\\u3082\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u624B\\u9806\"),\"\\u306F\\u66F8\\u3044\\u3066\\u3042\\u308B\\u304C\\u3001\\u3053\\u3053\\u304B\\u3089\\u306F\",mdx(\"a\",a({parentName:\"p\"},{href:\"https://github.com/EpicGames/UnrealEngine#linux\"}),\"Github\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306E\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\\u624B\\u9806\"),`\n\\u3082\\u78BA\\u8A8D\\u3057\\u306A\\u304C\\u3089\\u9032\\u3081\\u308B\\u3002`),mdx(\"h3\",a({},{id:\"6-\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#6-\\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"6. \\u30A4\\u30F3\\u30B9\\u30C8\\u30FC\\u30EB\"),mdx(\"p\",null,\"\\u30ED\\u30FC\\u30AB\\u30EB\\u30EA\\u30DD\\u30B8\\u30C8\\u30EA\\u306B\\u79FB\\u52D5\\u3057\\u3001\\u4EE5\\u4E0B\\u3092\\u5B9F\\u884C\\u3002\"),mdx(\"pre\",a({},{className:\"language-bash\"}),mdx(\"code\",a({parentName:\"pre\"},{className:\"language-bash\"}),`./Setup.sh\n./GenerateProjectFiles.sh\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token function\"}),\"make\"),\" \",mdx(\"span\",a({parentName:\"code\"},{className:\"token comment\"}),\"# -j\\u30AA\\u30D7\\u30B7\\u30E7\\u30F3\\u3092\\u3064\\u3051\\u306A\\u304F\\u3066\\u3082\\u8907\\u6570CPU\\u8CA0\\u8377\\u304C100%\\u306A\\u306E\\u3067\\u3001\\u4E26\\u5217\\u5316\\u306F\\u30E6\\u30FC\\u30B6\\u304C\\u6C17\\u306B\\u3059\\u308B\\u5FC5\\u8981\\u306F\\u306A\\u3055\\u305D\\u3046\"),`\n`)),mdx(\"h3\",a({},{id:\"7-\\u8D77\\u52D5\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#7-\\u8D77\\u52D5\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"7. \\u8D77\\u52D5\"),mdx(\"p\",null,\"\\u5B9F\\u884C\\u30D5\\u30A1\\u30A4\\u30EB\\u304C\",mdx(\"inlineCode\",{parentName:\"p\"},\"UnrealEngine-release/Engine/Binaries/Linux/UE4Editor\"),`\\u3068\\u306A\\u3063\\u3066\\u3044\\u308B\\u3002\n\\u30BF\\u30FC\\u30DF\\u30CA\\u30EB\\u304B\\u3089`,mdx(\"inlineCode\",{parentName:\"p\"},\"./UnrealEngine-release/Engine/Binaries/Linux/UE4Editor\"),\"\\u306E\\u3088\\u3046\\u306B\\u3059\\u308B\\u3068\",mdx(\"inlineCode\",{parentName:\"p\"},\"UnrealEngine\"),\"\\u304C\\u8D77\\u52D5\\u3059\\u308B\\u3002\"),mdx(\"h3\",a({},{id:\"8-ue\\u3092\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089\\u8D77\\u52D5\\u3067\\u304D\\u308B\\u3088\\u3046\\u306B\\u3059\\u308B\"}),mdx(\"a\",a({parentName:\"h3\"},{\"aria-hidden\":\"true\",tabIndex:-1,href:\"#8-ue\\u3092\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089\\u8D77\\u52D5\\u3067\\u304D\\u308B\\u3088\\u3046\\u306B\\u3059\\u308B\"}),mdx(\"span\",a({parentName:\"a\"},{className:\"icon icon-link\"}))),\"8. UE\\u3092\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089\\u8D77\\u52D5\\u3067\\u304D\\u308B\\u3088\\u3046\\u306B\\u3059\\u308B\"),mdx(\"p\",null,`\\u4E0A\\u8A18\\u30B3\\u30DE\\u30F3\\u30C9\\u3067UnrealEditor\\u3092\\u958B\\u3051\\u305F\\u304C\\u3001\\u30BF\\u30FC\\u30DF\\u30CA\\u30EB\\u5916\\uFF08\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\uFF09\\u304B\\u3089\\u8D77\\u52D5\\u3057\\u305F\\u3044\\u306E\\u3067\\u3001\\u8A2D\\u5B9A\\u3059\\u308B\\u3002\nUbuntu20.04\\u3067\\u8A66\\u3057\\u305F\\u3068\\u3053\\u308D\\u3001\\u624B\\u3092\\u52A0\\u3048\\u306A\\u3044\\u72B6\\u614B\\u3067\\u306F\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089\\u76F4\\u63A5\\u8D77\\u52D5\\u3059\\u308B\\u3053\\u3068\\u306F\\u3067\\u304D\\u306A\\u304B\\u3063\\u305F\\u3002`),mdx(\"p\",null,\"\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u306B\\u8FFD\\u52A0\\u3055\\u308C\\u305F\\u30A2\\u30D7\\u30EA\\u30B1\\u30FC\\u30B7\\u30E7\\u30F3\\u306F\\u3001\",mdx(\"inlineCode\",{parentName:\"p\"},\"~/.local/share/applications\"),`\\u4EE5\\u4E0B\\u306B\\u4FDD\\u5B58\\u3055\\u308C\\u3066\\u3044\\u308B\\u3002\n\\u78BA\\u8A8D\\u3057\\u305F\\u3068\\u3053\\u308D\\u3001`,mdx(\"inlineCode\",{parentName:\"p\"},\"com.epicgames.XXX\"),\"\\u304C3\\u7A2E\\u985E\\u3042\\u3063\\u305F\\u3002\"),mdx(\"p\",null,\"\\u3053\\u3053\\u3067\\u306F\\u3001\",mdx(\"inlineCode\",{parentName:\"p\"},\".local/share/applications/com.epicgames.UnrealEngineEditor.desktop\"),\"\\u3092\\u7DE8\\u96C6\\u3059\\u308B\\u3002\"),mdx(\"p\",null,\"\\u5909\\u66F4\\u524D\\u306E\\u30D5\\u30A1\\u30A4\\u30EB\\u304C\\u3053\\u3061\\u3089\\u3002\"),mdx(\"pre\",a({},{className:\"language-bash\"}),mdx(\"code\",a({parentName:\"pre\"},{className:\"language-bash\"}),mdx(\"span\",a({parentName:\"code\"},{className:\"token shebang important\"}),\"#!/usr/bin/env xdg-open\"),`\n\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token punctuation\"}),\"[\"),\"Desktop Entry\",mdx(\"span\",a({parentName:\"code\"},{className:\"token punctuation\"}),\"]\"),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Version\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token number\"}),\"1.0\"),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Type\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Application\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Exec\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),\"/home/\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003c\"),\"username\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003e\"),`/Lib/UnrealEngine-release/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -editor %f\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Path\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),\"/home/\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003c\"),\"username\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003e\"),`/Lib/UnrealEngine-release/Engine/Binaries/Linux\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Name\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Unreal Engine Editor\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Icon\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`ubinary\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Terminal\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`false\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"StartupWMClass\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`UE4Editor\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"MimeType\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`application/uproject\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Comment\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Created By Unreal Engine\n`)),mdx(\"p\",null,\"\\u5909\\u66F4\\u5F8C\\u306E\\u30D5\\u30A1\\u30A4\\u30EB\\u304C\\u3053\\u3061\\u3089\\u3002\"),mdx(\"pre\",a({},{className:\"language-bash\"}),mdx(\"code\",a({parentName:\"pre\"},{className:\"language-bash\"}),mdx(\"span\",a({parentName:\"code\"},{className:\"token shebang important\"}),\"#!/usr/bin/env xdg-open\"),`\n\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token punctuation\"}),\"[\"),\"Desktop Entry\",mdx(\"span\",a({parentName:\"code\"},{className:\"token punctuation\"}),\"]\"),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Version\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token number\"}),\"1.0\"),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Type\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Application\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Exec\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),\"/home/\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003c\"),\"username\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003e\"),\"/Lib/UnrealEngine-release/Engine/Binaries/Linux/UE4Editor \",mdx(\"span\",a({parentName:\"code\"},{className:\"token comment\"}),\"# \\u2190 \\u30B3\\u30B3\\u3060\\u3051\\u5909\\u66F4\"),`\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Path\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),\"/home/\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003c\"),\"username\",mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"\u003e\"),`/Lib/UnrealEngine-release/Engine/Binaries/Linux\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Name\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Unreal Engine Editor\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Icon\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`ubinary\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Terminal\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`false\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"StartupWMClass\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`UE4Editor\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"MimeType\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`application/uproject\n`,mdx(\"span\",a({parentName:\"code\"},{className:\"token assign-left variable\"}),\"Comment\"),mdx(\"span\",a({parentName:\"code\"},{className:\"token operator\"}),\"=\"),`Created By Unreal Engine\n`)),mdx(\"p\",null,\"\\u3053\\u306E\\u5909\\u66F4\\u306F\\u3001\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089\\u5B9F\\u884C\\u3059\\u308B\\u30B3\\u30DE\\u30F3\\u30C9\\u3092\\u5909\\u66F4\\u3057\\u305F\\u3068\\u3044\\u3046\\u3082\\u306E\\u3002\",mdx(\"inlineCode\",{parentName:\"p\"},\"7-\\u8D77\\u52D5\"),`\\u3067\\u8D77\\u52D5\\u30B3\\u30DE\\u30F3\\u30C9\\u3092\\u78BA\\u8A8D\\u3057\\u3066\\u3044\\u305F\\u306E\\u3067\\u3001\\u305D\\u3061\\u3089\\u306B\\u5408\\u308F\\u305B\\u3066\\u5909\\u66F4\\u3057\\u305F\\u3002\n\\u3053\\u308C\\u306B\\u3088\\u308A\\u3001\\u30E9\\u30F3\\u30C1\\u30E3\\u30FC\\u304B\\u3089UE4\\u3092\\u8D77\\u52D5\\u3067\\u304D\\u308B\\u3088\\u3046\\u306B\\u306A\\u3063\\u305F\\uFF08\\u601D\\u3063\\u305F\\u3088\\u308A\\u3082\\u8D77\\u52D5\\u6642\\u9593\\u304C\\u9577\\u3044\\u306E\\u3067\\u6CE8\\u610F\\uFF09\\u3002`),mdx(\"p\",null,mdx(\"del\",{parentName:\"p\"},\"\\u4ED6\\u306E\\uFF12\\u3064\\u306F\\u3069\\u3046\\u3084\\u3089\\u610F\\u5473\\u304C\\u306A\\u3055\\u305D\\u3046\\u3067\\u90AA\\u9B54\\u306A\\u306E\\u3067\\u6D88\\u3057\\u305F\\u3002\"),\"(\\u81EA\\u5DF1\\u8CAC\\u4EFB\\u3067\\u3088\\u308D\\u3057\\u304F\\u304A\\u9858\\u3044\\u3044\\u305F\\u3057\\u307E\\u3059\\u3002)\"))}MDXContent.isMDXComponent=!0;\n","scope":{}},"frontMatter":{"title":"UbuntuへのUnrealEngineセットアップ","date":"2020-11-02T19:08:30+09:00","description":"Linux版は自分でビルドする必要があるみたいです","tags":["ue","unrealengine","ubuntu"]}},"__N_SSG":true},"page":"/post/[slug]","query":{"slug":"unreal-engine-setup"},"buildId":"YOp8L7a2_eIT7Qpo4Nhql","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-eef578260fd80f8fff94.js"></script><script src="/_next/static/chunks/webpack-189c53927ffd3caf09c3.js" async=""></script><script src="/_next/static/chunks/framework-92300432a1172ef1338b.js" async=""></script><script src="/_next/static/chunks/main-4d2133114e7c7d2adf44.js" async=""></script><script src="/_next/static/chunks/pages/_app-4bb1718a4b36c9535e3d.js" async=""></script><script src="/_next/static/chunks/985-867e3d5e21e417a5de61.js" async=""></script><script src="/_next/static/chunks/522-2597210efd9529a81949.js" async=""></script><script src="/_next/static/chunks/648-e8ce3fab0a2fae17ac38.js" async=""></script><script src="/_next/static/chunks/394-cb8f1a8f12da821e90d8.js" async=""></script><script src="/_next/static/chunks/pages/post/%5Bslug%5D-bcff3e323a01c8e04e57.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_buildManifest.js" async=""></script><script src="/_next/static/YOp8L7a2_eIT7Qpo4Nhql/_ssgManifest.js" async=""></script></body></html>
