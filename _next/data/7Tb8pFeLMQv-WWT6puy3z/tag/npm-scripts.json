@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"date":"2021-05-10T22:55:39+09:00","description":"複数プロジェクト作ってデプロイ先を分けます","slug":"firebase-switch-prod-stage","title":"firebaseで本番環境とステージング環境を使い分けるnpm-scripts","tags":["firebase","npm","npm-scripts","staging","test"]}],"tag":"npm-scripts"},"__N_SSG":true}
