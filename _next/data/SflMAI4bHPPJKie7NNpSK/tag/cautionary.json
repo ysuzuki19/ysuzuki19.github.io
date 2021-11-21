@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"date":"2021-11-21T23:09:39","description":"TypeScriptの型チェックを活用するための注意点ですよー","slug":"nextjs-typescript-nextpage-invalid-props","title":"next.jsのNextPageが違う型のPropsを受ける時の修正点","tags":["nextjs","typescript","cautionary"]}],"tag":"cautionary"},"__N_SSG":true}
