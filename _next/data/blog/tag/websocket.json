@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2021-07-31T01:11:32","description":"ブラウザで動作します．websocket使います．","slug":"pointcloud-websocket-communication","title":"Webを介した点群ビューワー作った","tags":["react","cpp","boost","websocket"]}],"tag":"websocket"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"Webを介した点群ビューワー作った","description":"ブラウザで動作します．websocket使います．","date":"2021-07-31T01:11:32","slug":"pointcloud-websocket-communication","tags":["react","cpp","boost","websocket"]}],"tag":"websocket"},"__N_SSG":true}

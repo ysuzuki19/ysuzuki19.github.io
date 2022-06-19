@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2021-10-24T23:25:55","description":"node_modulesや.venvを検知して，再帰的に削除するスクリプト","slug":"shellscript-clear-envs-recursely","title":"shellscriptによる自動化でディスク容量を削減する案","tags":["shell","shellscript","bash","node_modules","venv"]}],"tag":"venv"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"shellscriptによる自動化でディスク容量を削減する案","description":"node_modulesや.venvを検知して，再帰的に削除するスクリプト","date":"2021-10-24T23:25:55","slug":"shellscript-clear-envs-recursely","tags":["shell","shellscript","bash","node_modules","venv"]}],"tag":"venv"},"__N_SSG":true}

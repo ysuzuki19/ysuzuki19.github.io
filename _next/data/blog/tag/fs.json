@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2020-11-19T14:15:36+09:00","description":"boost::fsでgitのルートを見つけた","slug":"cpp-find-git-root","title":"C++でGitRootを探す方法","tags":["c++","git","boost","fs"]}],"tag":"fs"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"C++でGitRootを探す方法","description":"boost::fsでgitのルートを見つけた","date":"2020-11-19T14:15:36+09:00","slug":"cpp-find-git-root","tags":["c++","git","boost","fs"]}],"tag":"fs"},"__N_SSG":true}

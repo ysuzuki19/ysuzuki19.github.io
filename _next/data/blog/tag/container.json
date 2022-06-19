@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2021-12-10T17:45:45","description":"なんかコンテナが起動しない・・・","slug":"docker-postgres-address-already-in-use","title":"docker on ubuntuでaddress already in useの解消","tags":["docker","container","ubuntu","postgres","error"]}],"tag":"container"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"docker on ubuntuでaddress already in useの解消","description":"なんかコンテナが起動しない・・・","date":"2021-12-10T17:45:45","slug":"docker-postgres-address-already-in-use","tags":["docker","container","ubuntu","postgres","error"]}],"tag":"container"},"__N_SSG":true}

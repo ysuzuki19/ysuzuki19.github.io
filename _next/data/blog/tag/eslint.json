@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2022-05-27T23:31:24","description":"自分用設定をnpmに公開することで，頑張ってコピペする手間を省きます","slug":"nodejs-setup-eslint-shared-config","title":"ESLintの設定の手間からの解放","tags":["nodejs","npm","eslint","setup"]}],"tag":"eslint"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"ESLintの設定の手間からの解放","description":"自分用設定をnpmに公開することで，頑張ってコピペする手間を省きます","date":"2022-05-27T23:31:24","slug":"nodejs-setup-eslint-shared-config","tags":["nodejs","npm","eslint","setup"]}],"tag":"eslint"},"__N_SSG":true}

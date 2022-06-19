@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"date":"2021-04-03T17:58:54+09:00","description":"keyを入れる","slug":"react-warning-unique-key-prop","title":"Reactのunique \"key\" prop警告の解消方法","tags":["react","warning","key"]}],"tag":"key"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"Reactのunique \"key\" prop警告の解消方法","description":"keyを入れる","date":"2021-04-03T17:58:54+09:00","slug":"react-warning-unique-key-prop","tags":["react","warning","key"]}],"tag":"key"},"__N_SSG":true}
