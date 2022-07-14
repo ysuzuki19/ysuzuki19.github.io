@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"npmにtypescriptで開発したpackageを公開するための方法","description":"方法よりも設定がメインです","date":"2021-09-28T22:36:51","slug":"npm-how-to-publish-typescript-package","tags":["npm","typescript","react","hooks","rollup","package"]}],"tag":"rollup"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"npmにtypescriptで開発したpackageを公開するための方法","description":"方法よりも設定がメインです","date":"2021/09/28","slug":"npm-how-to-publish-typescript-package","tags":["npm","typescript","react","hooks","rollup","package"]}],"tag":"rollup"},"__N_SSG":true}

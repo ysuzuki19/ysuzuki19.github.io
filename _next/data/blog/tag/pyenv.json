@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"pyenvをauto activate","description":"ディレクトリベースで実行環境を管理するpyenvを自動アクティベートするBashの設定","date":"2021-06-16T21:26:51","slug":"pyenv-auto-activate","tags":["python","pyenv","bash","automation"]}],"tag":"pyenv"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"pyenvをauto activate","description":"ディレクトリベースで実行環境を管理するpyenvを自動アクティベートするBashの設定","date":"2021/06/16","slug":"pyenv-auto-activate","tags":["python","pyenv","bash","automation"]}],"tag":"pyenv"},"__N_SSG":true}

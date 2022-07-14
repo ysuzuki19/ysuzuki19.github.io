@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"reactでd3を使って線グラフを描く","description":"React内でD3を直接扱います","date":"2022-05-02T15:42:56","slug":"react-d3-line-chart","tags":["react","d3","ts","data","visualization"]}],"tag":"ts"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"reactでd3を使って線グラフを描く","description":"React内でD3を直接扱います","date":"2022/05/02","slug":"react-d3-line-chart","tags":["react","d3","ts","data","visualization"]}],"tag":"ts"},"__N_SSG":true}

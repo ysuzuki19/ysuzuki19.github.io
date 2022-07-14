@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"reactの任意propsにデフォルト指定のfunctionを入れる方法","description":"デフォルト値に対してデフォルト関数とでも呼ぶのでしょうか","date":"2021-09-21T22:27:11","slug":"react-props-default-function","tags":["react","typescript","default","tips","function","props"]}],"tag":"tips"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"reactの任意propsにデフォルト指定のfunctionを入れる方法","description":"デフォルト値に対してデフォルト関数とでも呼ぶのでしょうか","date":"2021/09/21","slug":"react-props-default-function","tags":["react","typescript","default","tips","function","props"]}],"tag":"tips"},"__N_SSG":true}

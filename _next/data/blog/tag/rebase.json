@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"コードレビュー後のgit rebaseメモ","description":"コードレビューを受けた後の作業のメモ書き。","date":"2020-11-01T02:10:02+09:00","slug":"git-rebase-method","tags":["git","rebase","command"]}],"tag":"rebase"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"コードレビュー後のgit rebaseメモ","description":"コードレビューを受けた後の作業のメモ書き。","date":"2020/11/01","slug":"git-rebase-method","tags":["git","rebase","command"]}],"tag":"rebase"},"__N_SSG":true}

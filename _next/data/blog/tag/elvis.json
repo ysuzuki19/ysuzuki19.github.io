@@ -1,1 +1,1 @@
-{"pageProps":{"posts":[{"title":"react-typescriptのpropsにデフォルト値を使う方法","description":"エルビス演算子という方法もあります．","date":"2021-09-12T02:21:30","slug":"react-typescript-default-value","tags":["react","typescript","props","hooks","default","elvis"]}],"tag":"elvis"},"__N_SSG":true}
+{"pageProps":{"posts":[{"title":"react-typescriptのpropsにデフォルト値を使う方法","description":"エルビス演算子という方法もあります．","date":"2021/09/12","slug":"react-typescript-default-value","tags":["react","typescript","props","hooks","default","elvis"]}],"tag":"elvis"},"__N_SSG":true}
