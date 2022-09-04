@@ -7,4 +7,3 @@ Host: https://ysuzuki19.github.io
 
 # Sitemaps
 Sitemap: https://ysuzuki19.github.io/sitemap.xml
-Sitemap: https://ysuzuki19.github.io/sitemap-0.xml
