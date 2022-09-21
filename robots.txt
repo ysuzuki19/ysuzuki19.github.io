@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://ysuzuki19.github.io
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://ysuzuki19.github.io/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml
