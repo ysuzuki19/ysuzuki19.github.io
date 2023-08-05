@@ -1,1 +1,0 @@
-{"pageProps":{"posts":[{"title":"RustのWASMでprintln的ににlogをする","description":"println!同等に使えるようなマクロでコンソールにlogをします。","date":"2023/08/04","slug":"rust-wasm-console-log","tags":["rust","macro","wasm-bindgen","wasm","web","frontend","tool"]}],"tag":"wasm-bindgen"},"__N_SSG":true}
