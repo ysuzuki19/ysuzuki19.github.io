@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"rustで最強のCustomResult,CustomErrorを定義する方法","description":"thiserrorを使って何でも受け取れるエラー型を定義します。","date":"2023/08/31","slug":"rust-custom-error-result","tags":["rust","custom","error","thiserror"]}],"tag":"thiserror"},"__N_SSG":true}
