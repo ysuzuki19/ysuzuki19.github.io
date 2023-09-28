@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"rustで簡単にBuilderパターンを自動実装する方法","description":"typed-builderの紹介です。フィールドの各種設定も含みます。","date":"2023/09/29","slug":"rust-introduction-crate-typed-builder","tags":["rust","tutorial","introduction","typed-builder","builder","macro"]}],"tag":"typed-builder"},"__N_SSG":true}
