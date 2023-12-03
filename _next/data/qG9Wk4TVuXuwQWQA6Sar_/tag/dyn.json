@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustのstd::io::Writerを引数にする関数のwriteをStringに格納する方法","description":"Rustならではの手法（ニュータイプ/Trait）を取ります","date":"2023/11/29","slug":"rust-io-writer-for-string","tags":["rust","trait","di","new-type","dyn","impl"]}],"tag":"dyn"},"__N_SSG":true}
