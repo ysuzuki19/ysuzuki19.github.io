@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustで&str,String向けメソッドを一度に実装する方法","description":"文字列への処理を一気に実装し、利用時にも実装の手間を省くためのサンプル","date":"2024/01/28","slug":"rust-impl-from-for-str-and-string","tags":["rust","tips","from","convert","generics"]}],"tag":"generics"},"__N_SSG":true}

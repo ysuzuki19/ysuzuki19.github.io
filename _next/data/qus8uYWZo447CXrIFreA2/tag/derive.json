@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustのenumにdefault値を持たせる","description":"deriveしつつ、変換時もそれを適用します。","date":"2024/01/28","slug":"rust-impl-default-for-enum","tags":["rust","tips","enum","default","derive"]}],"tag":"derive"},"__N_SSG":true}
