@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustの関数に様々な型を渡せるようにする方法","description":"traitを活用します","date":"2024/08/25","slug":"rust-fn-pass-multiple-types","tags":["rust","function","type","trait"]}],"tag":"type"},"__N_SSG":true}
