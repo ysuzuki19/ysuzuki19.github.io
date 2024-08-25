@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustのthread spawnで、変数名を増やさない方法","description":"２つの方法を紹介します","date":"2024/08/25","slug":"rust-thread-spawn-move-tips","tags":["rust","thread","tips"]}],"tag":"thread"},"__N_SSG":true}
