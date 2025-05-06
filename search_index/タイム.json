@@ -1,1 +1,1 @@
-{"command-git-credential":1,"rust-tcp-echo-server":1}
+{"command-git-credential":1,"rust-tcp-echo-server":1,"rust-tokio-blocking":2}

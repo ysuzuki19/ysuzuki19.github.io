@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Rustのtokioでblockingな処理を実行する","description":"外部クレートなどで、非同期対応していない場合の対処方法","date":"2025/05/06","slug":"rust-tokio-blocking","tags":["rust","tokio","async","blocking","tips"]}],"tag":"tokio"},"__N_SSG":true}
