@@ -1,1 +1,1 @@
-{"docker-postgres-address-already-in-use":1,"rust-axum-extension-custom-struct":1,"rust-axum-extension-simply-use":1,"rust-tcp-echo-server":4,"rust-axum-utoipa-memo":2,"rust-example-kvs-4-kvs-server-impl":2}
+{"docker-postgres-address-already-in-use":1,"rust-tcp-echo-server":4,"rust-axum-extension-custom-struct":1,"rust-axum-extension-simply-use":1,"rust-axum-utoipa-memo":2,"rust-example-kvs-4-kvs-server-impl":2}
