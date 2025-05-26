@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Goで安全に使えるOption型を書いてみた","description":"より安全に「存在するかわからない」を表現できることを目指します。","date":"2025/05/26","slug":"golang-self-impl-option","tags":["go","golang","safety"]}],"tag":"safety"},"__N_SSG":true}
