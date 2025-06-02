@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Golangのpkg.go.devの更新を促すリクエストをGitHub Actionsで送る","description":"pkg.go.devのlatestをreleaseとともに更新リクエストを投げるようにする方法の紹介","date":"2025/06/02","slug":"golang-pkg-go-dev-update-request","tags":["golang","oss","github","cd"]}],"tag":"cd"},"__N_SSG":true}
