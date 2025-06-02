@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"Goのgenerateツールを実装したときの後処理メモ","description":"formatやimport整理などを行うメモ","date":"2025/06/03","slug":"golang-generate-tool-postgenerate","tags":["golang","generate","generator","tips"]}],"tag":"generator"},"__N_SSG":true}
