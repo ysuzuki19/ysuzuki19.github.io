@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"golangci-lintにカスタムAnalysisを取り込んでビルド","description":"エディタとの親和性のため、pluginsを取り込んでビルドする方法を紹介します。","date":"2025/06/03","slug":"golang-golangci-lint-custom-plugins-build","tags":["golang","linter","lint","golangci-lint","plugin","tips"]}],"tag":"plugin"},"__N_SSG":true}
