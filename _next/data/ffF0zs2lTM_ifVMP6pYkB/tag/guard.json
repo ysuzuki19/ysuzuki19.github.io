@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"RustのaxumでAuthGuard的な機能を実装する方法","description":"handlerに対して引数を追加するだけで、認証必須handlerにする方法を紹介します","date":"2025/06/07","slug":"rust-axum-auth-guard","tags":["rust","axum","auth","guard"]}],"tag":"guard"},"__N_SSG":true}
