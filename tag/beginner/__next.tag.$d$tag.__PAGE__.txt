@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[718975,["/_next/static/chunks/02r.51bu7bc2c.js","/_next/static/chunks/0_4-d6wyfk3u3.js","/_next/static/chunks/0i.l9589uvx0j.js","/_next/static/chunks/0zat~lq3f1885.js","/_next/static/chunks/0iqzt2t_bv0t7.js"],"default"]
+3:I[897367,["/_next/static/chunks/02r.51bu7bc2c.js","/_next/static/chunks/0_4-d6wyfk3u3.js","/_next/static/chunks/0i.l9589uvx0j.js","/_next/static/chunks/0zat~lq3f1885.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"posts":[{"title":"Gatsbyの gsap.defaulttimeline is not a function","description":"gatsbyのgsapエラー解消","date":"2021/05/13","slug":"gatsby-gsap-erro","tags":["gatsby","beginner","error","gsap"]},{"title":"C++のvectorの使い方","description":"TypeError:  gsap.default.timeline is not a function ..を解消する","date":"2020/04/23","slug":"vector-memo","tags":["cpp","memorandom","beginner"]}],"tag":"beginner"}],[["$","script","script-0",{"src":"/_next/static/chunks/0iqzt2t_bv0t7.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Otl5VbxKC9D2WW8XUgwpZ"}
+5:null

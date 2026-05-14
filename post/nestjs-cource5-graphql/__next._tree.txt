@@ -1,0 +1,5 @@
+:HL["/_next/static/chunks/0hrck.2brhpn_.css","style"]
+:HL["/images/nestjs-cource5-graphql/playground-start.png","image"]
+:HL["/images/nestjs-cource5-graphql/playground-createtodo.png","image"]
+:HL["/images/nestjs-cource5-graphql/playground-todo.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"post","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nestjs-cource5-graphql","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Otl5VbxKC9D2WW8XUgwpZ"}

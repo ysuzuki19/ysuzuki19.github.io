@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[718975,["/_next/static/chunks/02r.51bu7bc2c.js","/_next/static/chunks/0_4-d6wyfk3u3.js","/_next/static/chunks/0i.l9589uvx0j.js","/_next/static/chunks/0zat~lq3f1885.js","/_next/static/chunks/0iqzt2t_bv0t7.js"],"default"]
+3:I[897367,["/_next/static/chunks/02r.51bu7bc2c.js","/_next/static/chunks/0_4-d6wyfk3u3.js","/_next/static/chunks/0i.l9589uvx0j.js","/_next/static/chunks/0zat~lq3f1885.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"posts":[{"title":"コーディングを１年学び、AtCoderの過去問を解き直してみる","description":"stap up of 1 year","date":"2020/04/27","slug":"atcoder-pastquestions10-one-year","tags":["cpp","atcoder","coding"]},{"title":"プログラミング初心者が解いたAtCoderの過去問","description":"学習初期に解いてみたものです","date":"2019/04/19","slug":"atcoder-pastquestions10","tags":["c++","atcoder","coding"]}],"tag":"coding"}],[["$","script","script-0",{"src":"/_next/static/chunks/0iqzt2t_bv0t7.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Otl5VbxKC9D2WW8XUgwpZ"}
+5:null
