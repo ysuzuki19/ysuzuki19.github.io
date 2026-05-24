@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/0hrck.2brhpn_.css","style"]
+:HL["/_next/static/chunks/0aw-9m__kgzo-.css","style"]
 :HL["/images/ubuntu-low-disk-space/system-monitor-filesystem.png","image"]
 :HL["/images/ubuntu-low-disk-space/disk-usage-before.png","image"]
 :HL["/images/ubuntu-low-disk-space/disk-usave-focus.png","image"]
 :HL["/images/ubuntu-low-disk-space/disk-usage-after.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"post","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"ubuntu-low-disk-space","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Tvp76sijWnmmMvgVwJIbU"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"post","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"ubuntu-low-disk-space","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"beUbYmVRFEDfsh65jjIQO"}

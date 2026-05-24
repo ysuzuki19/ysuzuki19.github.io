@@ -5,7 +5,7 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpattern
     font-family: monospace;
     white-space: pre;
     width: auto;
-    background-color: ${"light"===i?"#5b6166":"#101827"};
+    background-color: #272822;
     padding: 0.8571429em 1.1428571em;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
@@ -27,7 +27,7 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpattern
       border-radius: 10px;
       background-color: ${"light"===i?"#A8A8A8":"#555"};
     }
-  `;return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(l,{className:`${e} diff-highlight`,children:r}),(0,t.jsx)(a,{})]})},code:({className:e,children:r})=>{let i=o.default.code`
+  `;return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(l,{className:e,children:r}),(0,t.jsx)(a,{})]})},code:({className:e,children:r})=>{let i=o.default.code`
     overflow-x: auto;
     font-weight: 400;
     color: inherit;
